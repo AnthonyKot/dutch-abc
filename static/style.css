@@ -319,6 +319,19 @@ p.nl, .nl-block {
 }
 .fence strong { color: var(--trap); }
 
+/* ---- draft-status line, directly under the lede ---- */
+.status {
+  margin: 0 0 1.6rem; padding: .6rem .85rem;
+  border: 1px solid var(--rule); border-left: 3px solid var(--accent-soft);
+  border-radius: 6px; background: var(--bg-raised);
+  font-family: var(--sans); font-size: .88rem; color: var(--ink-soft);
+}
+.status .label {
+  display: block; margin-bottom: .12rem;
+  color: var(--accent); font-size: .66rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+
 /* ---- prerequisite / orientation bands ---- */
 .prereq {
   margin: .8rem 0 1.1rem; padding: .65rem .8rem;
