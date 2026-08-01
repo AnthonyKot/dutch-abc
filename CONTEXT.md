@@ -41,15 +41,20 @@ someone surrounded by written Dutch — post, forms, signage, contracts, the buu
 work email, the blue envelope on the mat — who routes around every piece of it. Asks a colleague.
 Runs it through a translator. Files it unread and hopes.
 
-**The thesis: what blocks an adult reading real Dutch is not vocabulary. It is that Dutch text is
-built out of a few devices that make the words you know unrecognisable.** Nouns are welded into
-compounds that no dictionary contains. Verbs split in half and the halves sit ten words apart.
+**The thesis: vocabulary matters, but it is not the whole problem. Dutch text is built out of a few
+recurring devices that can make words the reader already knows hard to recognise.** Nouns are welded
+into compounds that will not appear as dictionary entries. Verbs split in half and the halves sit ten
+words apart.
 Pronouns fuse with prepositions into *daarbij*, *hiervan*, *waarop*. Officialese nominalises its verbs
 and hides its one actionable sentence in the fourth paragraph.
 
-Each of those is mechanical, learnable in a sitting, and almost never taught — because a course
-teaches you to read *the course*, and the course was written to be readable. **This book is about
-Dutch that was not written for you.**
+Each of those is mechanical rather than mysterious, and the core mechanism of each can be explained
+in a page. Courses teach several of them as grammar — the verified teaching order in this file records
+*Taaltalent* covering separable verbs twice, gender, the imperfect and relative pronouns — but they
+rarely assemble them into a practical method for reading real documents. **That is the book's claim,
+and it is deliberately narrower than "nobody teaches this": it is that nobody puts it together for
+this task.** Do not let a chapter drift back to the stronger version; the project's own source notes
+refute it.
 
 ## Reader
 
@@ -71,7 +76,7 @@ Concretely, the reader can:
 - tell which noun a *die* / *dat* / *waarvan* clause is attached to;
 - read *daarbij*, *hiervan*, *waarop* without stalling;
 - skim a formal letter and locate the two sentences that say **what is required** and **by when**;
-- read a belastingdienst letter end to end and know what it wants.
+- read a Belastingdienst letter end to end and know what it wants.
 
 The last one is the exit criterion and the last chapter.
 
@@ -94,12 +99,12 @@ The last one is the exit criterion and the last chapter.
 **Every example is a piece of real Dutch text the reader could have received.** The test: *where would
 this have arrived?* If there is no answer, cut it.
 
-- Letters and forms: gemeente, belastingdienst, zorgverzekeraar, huurcommissie, energy, bank
+- Letters and forms: gemeente, Belastingdienst, zorgverzekeraar, huurcommissie, energy, bank
 - Contracts and statements: employment, tenancy, insurance policy, jaaropgave
 - Marktplaats listings, buurtapp and WhatsApp messages, work email — the informal written register
 - Signage, packaging, ticket machines, parking apps, NS disruption notices
 
-**Genre is content, not backdrop.** A brief from the belastingdienst and a buurtapp message are
+**Genre is content, not backdrop.** A brief from the Belastingdienst and a buurtapp message are
 different languages, and the book says which devices belong to which. Parts IV and V exist for that.
 
 **Keep one document running.** *No Such Form* kept $X_0(11)$ visible through its hardest Part so the
@@ -164,7 +169,7 @@ readable — but advisory, not a build gate. See Verification.
 |---|------|--------------|-------|
 | 12 | z-o-z | The furniture of Dutch documents: abbreviations (*o.a., d.w.z., i.v.m., t/m, m.b.t., z.o.z., a.u.b., excl.*), dates, money, and how amounts and periods are written. ***Half drie* is 2:30, not 3:30.** | Small, unglamorous, and the source of seven years of real errors — missed appointments and wrong payments. Donaldson: numerals printed 222–234, **Appendix 3 abbreviations printed 260–264**. Justify by the failure, not the grammar. |
 | 13 | anatomy-of-a-brief | The shape of a Dutch official letter: *kenmerk*, *betreft*, the dated opening, the conditions, the one actionable sentence, the *bezwaar* paragraph, *zie ommezijde*. Where each lives, and how to skim to the two that matter. | Genre, not grammar. Donaldson's Appendix 1 (printed 244–247) is letter *writing*, which is the mirror image and usable as evidence of the conventions. The highest practical payoff per page in the book. |
-| 14 | the-blue-envelope | One real belastingdienst letter, read completely, using every device in the book — compounds, the bracket, a split verb, two relative clauses, *daarbij*, an imperfect, a *dient u te*, a passive, a *tenzij*, three abbreviations. | The destination. Nothing new is introduced; everything is consumed. If a device in this letter has no earlier chapter, that is a spine defect — fix the spine, not the letter. |
+| 14 | the-blue-envelope | One real Belastingdienst letter, read completely, using every device in the book — compounds, the bracket, a split verb, two relative clauses, *daarbij*, an imperfect, a *dient u te*, a passive, a *tenzij*, three abbreviations. | The destination. Nothing new is introduced; everything is consumed. If a device in this letter has no earlier chapter, that is a spine defect — fix the spine, not the letter. |
 
 ## Sequencing notes
 
