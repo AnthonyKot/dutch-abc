@@ -4,13 +4,19 @@ Chosen 2026-08-02. The letter chapters 01–13 keep returning to, and that chapt
 
 The specimen lives in `sources/specimen-aanslag.txt` (git-ignored, fully redacted, **every monetary
 amount replaced with invented figures** — a person's income is private even with the name removed).
-This file records what is structurally true about the genre. It contains terminology and section
-headings, which are citable the way a chapter title is; it contains no reproduced exposition.
+This file records what is structurally true about the genre.
+
+⚠ **Policy note, after external review.** The device tables below quote whole sentences from the
+specimen. That is inconsistent with the standing "no source text is reproduced" rule as written. The
+resolution: **this is a git-ignored-adjacent working note, and the rule governs the published book,
+not the evidence file** — but the rule must say so rather than being quietly broken. Two obligations
+follow, and they are not optional: nothing quoted here may reach `chapters/`, and every Dutch example
+in a published chapter is written for this book. See CONTEXT.md, *Sourcing discipline*.
 
 ## Why this letter
 
-It is the document a resident cannot ignore, it arrives annually, and it is dense: eleven distinct
-devices from the fourteen chapters appear in a two-page letter. It also happens to be *available* —
+It is the document a resident cannot ignore, it arrives annually, and it is dense: twelve distinct
+devices from the fourteen chapters appear in a two-page letter (twelve, counting the table below; the earlier text said eleven). It also happens to be *available* —
 the reader has two years of them.
 
 ## Device map — verified against the specimen
@@ -19,13 +25,13 @@ the reader has two years of them.
 |----|--------|----------------|----------|
 | 01 | compounds | *inkomstenbelasting, volksverzekeringen, loonheffing, heffingskortingen, arbeidskorting, aanslagnummer, bezwaarformulier, bezwaarschrift, rendementsgrondslag, spaartegoeden, verzamelinkomen, belastingconsulent, bronheffing, aftrekposten, rekeningnummer, inkomensafhankelijke regelingen* | **superb** |
 | 02 | verb bracket | *Dan moet uw bezwaarschrift op 28 mei 2026 binnen **zijn** bij de Belastingdienst* · *Dan ontvangt u het bedrag meestal binnen 2 weken nadat wij uw rekeningnummer hebben **ontvangen*** | strong |
-| 03 | separable verbs at distance | ***maken** het bedrag binnen 1 week na de datum van deze beschikking **over*** — ten words apart · *geeft uw rekeningnummer gemakkelijk **door*** · *hebt **ingevuld*** · *Log **in*** | **superb** |
+| 03 | separable verbs at distance | ***maken** het bedrag binnen 1 week na de datum van deze beschikking **over*** — eleven tokens apart · *geeft uw rekeningnummer gemakkelijk **door*** · *hebt **ingevuld*** · *Log **in*** | **superb** |
 | 04 | verb forms that change shape | participles throughout — *ingevuld, vastgesteld, gebaseerd, toegekend, uitbetaald, ontvangen, verrekend*; **no finite imperfect**, which is what reframed the chapter | strong for participles |
-| 05 | de/het → die/dat | *het bedrag **dat** u ontvangt* against *deze aanslag* / *de reden* — a clean minimal pair inside one letter | strong |
-| 06 | relative clauses | *het bedrag dat u ontvangt* · *Aandeel rendementsgrondslag dat aan u wordt toegekend* (relative clause with a passive inside it) | good |
+| 05 | de/het → die/dat | *het bedrag **dat** u ontvangt* — neuter singular takes *dat*. ⚠ **Not a minimal pair**: *deze aanslag* / *de reden* carry no relative clause. A real pair needs a *de*-word with *die* (*de reden **die** …*), which this letter does not supply — construct one, or take it from the IND form | partial |
+| 06 | relative clauses | *het bedrag dat u ontvangt* · *Aandeel rendementsgrondslag dat aan u wordt toegekend* ⚠ — the second contains a **passive**, introduced in chapter 09, so it cannot be used in 06 as it stands | good, one example unusable |
 | 07 | *hier-* / *daar-* / *waar-* | ***hiermee** verrekenen* and ***Hierdoor** wordt het bedrag … lager* — two, in consecutive sentences | **superb** |
 | 08 | obligation | *Moet u nog aanslagen aan ons betalen?* · *U **hoeft** deze brief **niet af te wachten*** · *of u bezwaar moet maken* · *Kunt u* · *Wilt u* | strong, but no *dient u te* |
-| 09 | passive / nominalisation | *is gebaseerd op* · *Het rendement … **is vastgesteld** op basis van forfaitair rendement* (no actor at all) · *wordt toegekend* · *Wordt het bedrag aan u uitbetaald* · nominalisations *de verrekening*, *de berekening*, *Vastgesteld vermogen* | **superb** |
+| 09 | passive / nominalisation | *is gebaseerd op* · *Het rendement … **is vastgesteld** op basis van forfaitair rendement* (no actor at all) · *wordt toegekend* · *Wordt het bedrag aan u uitbetaald* · nominalisations *de verrekening*, *de berekening*. ⚠ *Vastgesteld vermogen* is an **attributive participle + noun**, not a nominalisation — it belongs to chapter 06 | **superb** |
 | 10 | *echter / tenzij / mits* | ⚠ **absent** — see below | **none** |
 | 11 | register | consistently *u* / *uw*; closes *Hoogachtend, de inspecteur*. But **no** *Geachte heer/mevrouw*, and nothing informal | half |
 | 12 | numbers and furniture | **€ 5.000 — dot is the thousands separator**; *9,320%* — **comma is the decimal separator**; *af* and *bij* as subtract/add markers; *1e schijf*, *2e schijf*; dates as *16 april 2026*; postcode *1000 AA* | **superb** |
@@ -47,7 +53,7 @@ Two consequences, both good:
 - **The book gains a spectrum instead of a sample.** Chapter 10 and the formal half of 11 need a
   second, un-modernised document as a foil. Candidates already in the user's Downloads: the
   huurcommissie or gemeente correspondence, the KvK *uittreksel*, the *toestemmingsverklaring*, the
-  property *waardebepaling*. **Pick one before drafting 07.**
+  property *waardebepaling*. **Selected: IND form 1310, below.**
 - **It is a genuine observation the book can make.** "The tax office rewrote its letters and the
   housing association did not" is exactly the kind of concrete, checkable claim about real Dutch that
   no course book contains.
@@ -86,8 +92,8 @@ contrast is the point. It supplies precisely what the aanslag lacked:
 |----|--------|--------------|
 | 01 | compounds | *garantstelling, logiesverstrekking, visumplichtig, visumaanvraag, Vreemdelingenwet, garantsteller, logiesverstrekker, dataprotectie, wet-en regelgeving* — note the **suspended hyphen** in the last, which the aanslag also shows in *Bank- en spaartegoeden* |
 | 06 | relative clauses | ***welke*** as the formal relative pronoun — *alle overige bescheiden **welke** kunnen dienen* — where a course teaches only *die/dat*; plus *personen … **aan wie** u logies wenst te verstrekken* |
-| 07 | *waar-* / *daar-* | *de wijze **waarop** de visumaanvraag wordt beoordeeld* · *binnen de **daarvoor** geldende wet-en regelgeving* |
-| 08 | ***dient … te*** | four times, and three of them stack a passive inside: *dient voor legalisatie van uw handtekening bij de gemeente **te worden aangeboden***. This is the form chapter 08 exists for, and the aanslag has none of it |
+| 07 | *waar-* / *daar-* | *de wijze **waarop** de visumaanvraag wordt beoordeeld* · *binnen de **daarvoor** geldende wet- en regelgeving* (the specimen prints it without the space; standard spelling has one) |
+| 08 | ***dient … te*** | four times, and three of them stack a passive inside: *dient voor legalisatie van uw handtekening bij de gemeente **te worden aangeboden***. This is the form chapter 08 exists for, and the aanslag has none of it. ⚠ Every instance embeds a **passive** (ch. 09) — chapter 08 needs a *dient te* example without one, or 09 must move earlier |
 | 09 | passive, stacked with modals | *dient te worden aangeboden* · *kunnen worden gedeeld* · *wordt beoordeeld* · *worden opgeslagen* · *wat er met uw gegevens wordt gedaan* — five layers of actor deletion in one page |
 | 10 | conditional joints | *In geval sprake is van…* · *Wanneer u … dan hoeft u…* · *voordat u begint* · *Daarnaast* · *tezamen met* · *ter onderbouwing van* |
 | 11 | register | archaic formal vocabulary a course never mentions: *bescheiden* (documents), *geschiedt*, *tezamen*, *overige*, *Raadpleeg* |
@@ -132,7 +138,7 @@ gaining a layer each time:
 
 - **ch. 02** — where does the clause actually end?
 - **ch. 03** — *maken … over* is one verb, ten words apart; neither half is findable alone
-- **ch. 01** — *beschikking* is a nominalisation, *rekening* is not the *rekeningnummer* two paragraphs down
+- **ch. 01** — ⚠ this sentence contains no compound, so it cannot carry chapter 01. Either pick a different thread sentence or introduce the thread at *rekeningnummer* / *bezwaarformulier* elsewhere in the letter. (*beschikking* is a nominalisation, which is chapter 09 — a forward reference.)
 - **ch. 12** — *binnen 1 week na de datum* is a deadline expressed relatively, and the letter contains
   three different time windows (1 week, 2 weken, 4 weken) that mean different things
 

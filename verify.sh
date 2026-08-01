@@ -60,26 +60,16 @@ for fn in sorted(glob.glob("*.html") + glob.glob("chapters/*.html")):
 sys.exit(1 if bad else 0)
 PY
 
-echo "== every piece of Dutch is marked up =="
-# The whole verification story depends on the corpus being extractable. A chapter
+echo "== every piece of Dutch is marked up (heuristic) =="
+# The whole verification story depends on the corpus being extractable: a chapter
 # that writes Dutch as bare prose silently opts out of checks/forms.py.
-python3 - <<'PY' || fail=1
-import glob, re, sys
-# Dutch function words that should never appear outside .nl markup in body prose.
-TELLS = r"\b(het|een|niet|wordt|dient|tenzij|mits|indien|daarbij|hiervan|waarop|geachte)\b"
-bad = 0
-for fn in sorted(glob.glob("chapters/*.html")):
-    t = open(fn, encoding="utf-8").read()
-    stripped = re.sub(r'<span class="nl[^"]*">.*?</span>', " ", t, flags=re.S)
-    stripped = re.sub(r'<(p class="nl"|div class="(doc|split|gloss|contrast)").*?</\1?>', " ",
-                      stripped, flags=re.S)
-    stripped = re.sub(r"<[^>]+>", " ", stripped)
-    for m in re.finditer(TELLS, stripped):
-        line = stripped[: m.start()].count("\n") + 1
-        print(f"  UNMARKED DUTCH in {fn}: '{m.group(0)}' near line {line} — wrap it in .nl")
-        bad += 1
-sys.exit(1 if bad else 0)
-PY
+#
+# The first version of this check used a regex with a backreference </\1?> that
+# can never match a closing tag, so correctly marked <p class="nl"> blocks were
+# reported as unmarked. It is now a real parser, shared with checks/. It remains a
+# HEURISTIC: it can only spot Dutch it recognises from a function-word list, so it
+# catches carelessness, not everything.
+python3 checks/markup.py || fail=1
 
 echo "== quotation scan (no reproduced source prose) =="
 # Standing step. The sources are pedagogical texts full of exactly the sentences

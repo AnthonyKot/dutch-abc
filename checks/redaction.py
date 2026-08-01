@@ -19,6 +19,14 @@ generalise:
      which is git-ignored. If that file is absent the name check is skipped and
      says so loudly rather than passing quietly.
 
+  3. THE ALLOW LIST EXEMPTED WHOLE LINES. A real BSN sharing a Markdown line with
+     the string "example.com" was skipped. It now exempts the matched text only.
+
+WHAT THIS IS: a pattern matcher for STRUCTURED identifiers and a private name
+list. It cannot recognise a street address, an unlisted name, or a fact that is
+private for reasons only a human knows. It is a safety net under a manual
+reading, never a substitute for one. Do not let the public pages claim more.
+
 False positives are expected and are the correct trade. If a match is genuinely
 fine, change the example rather than the check.
 """
@@ -31,7 +39,7 @@ NAMES_FILE = ROOT / "checks" / "names.local.txt"
 
 # Every committed text file, not just the pages. sources/ is git-ignored and is
 # the one place raw material is allowed to sit.
-SUFFIXES = {".html", ".md", ".json", ".txt", ".css", ".js"}
+SUFFIXES = {".html", ".md", ".json", ".txt", ".css", ".js", ".py", ".sh", ".yml", ".yaml", ".csv", ".svg", ".xml"}
 SKIP_DIRS = {".git", "sources", "__pycache__", ".claude"}
 
 
@@ -55,8 +63,14 @@ PATTERNS = [
     ("dotted digit group (9+ digits)", re.compile(r"\b(?:\d[\d.]{9,})\b(?<!\.)")),
     ("SVB / V-number",               re.compile(r"\b(?:VZ|V)[- ]?\d{7,10}\b")),
     ("KvK number",                   re.compile(r"(?<!\d)\d{8}(?!\d)")),
-    ("IBAN",                         re.compile(r"\bNL\d{2}[A-Z]{4}\d{10}\b")),
-    ("Dutch postcode",               re.compile(r"\b\d{4}\s?[A-Z]{2}\b")),
+    ("IBAN",                         re.compile(r"\bNL\d{2}[ ]?[A-Z]{4}(?:[ ]?\d{4}){2}[ ]?\d{2}\b|\bNL\d{2}[A-Z]{4}\d{10}\b")),
+    ("spaced/hyphenated 9-digit id", re.compile(r"\b\d{3}[ -]\d{3}[ -]\d{3}\b")),
+    # Lowercase postcodes are real, but "1310 as" is prose and "#6389ad" is a hex
+    # colour. Require either a space (then reject common two-letter words) or
+    # uppercase-without-space, and never match inside a longer alphanumeric run.
+    ("Dutch postcode",
+     re.compile(r"(?<![#\w])\d{4} (?!(?:as|is|in|of|to|it|at|be|or|on|an|so|we|he|by|do|if|no|up|us|my)\b)"
+                r"[A-Za-z]{2}\b|(?<![#\w])\d{4}[A-Z]{2}\b")),
     ("foreign postcode",             re.compile(r"\b\d{2}-\d{3}\b")),
     ("phone number",                 re.compile(r"\b(?:\+\d{2}|0)\s?\d[\s-]?\d{7,9}\b")),
     ("email address",                re.compile(r"\b[\w.+-]+@[\w-]+\.[\w.]+\b")),
@@ -65,10 +79,10 @@ PATTERNS = [
 
 # Lines that are allowed to contain a pattern: this file defines them, and the
 # specimen policy notes describe formats rather than carrying real values.
-ALLOW = re.compile(
-    r"re\.compile|NNNN|<nummer>|0000\.00\.000|1000 AA|example\.com"
-    r"|git@github\.com"          # an SSH remote in the deploy instructions, not an address
-)
+# Matched text that is a documented placeholder rather than a real identifier.
+ALLOW = re.compile(r"0000\.00\.000\.[A-Z]\.00\.00|NNNN[.\w]*|<nummer>")
+ALLOW_LITERAL = {"1000 AA", "1000 aa", "example.com", "git@github.com",
+                 "0000.00.000.X.00.00", "NL00BANK0000000000"}
 
 
 def main():
@@ -83,8 +97,9 @@ def main():
         for label, rx in PATTERNS:
             for m in rx.finditer(text):
                 line_no = text[: m.start()].count("\n") + 1
-                line = text.splitlines()[line_no - 1] if line_no <= len(text.splitlines()) else ""
-                if ALLOW.search(line):
+                # Exempt the MATCH, never the whole line: a real identifier
+                # sharing a line with a placeholder was previously skipped.
+                if ALLOW.fullmatch(m.group(0)) or m.group(0) in ALLOW_LITERAL:
                     continue
                 problems.append(f"{rel}:{line_no}  {label}: {m.group(0)!r}")
 
@@ -109,7 +124,7 @@ def main():
             print(f"  FAIL {p}")
         return 1
 
-    print(f"  {len(files)} committed files scanned, no personal data found; {name_note}")
+    print(f"  {len(files)} text files scanned for structured identifiers, none found; {name_note}")
     return 0
 
 

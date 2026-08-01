@@ -10,13 +10,14 @@ into quantum information) and *No Such Form* (the proof of Fermat's Last Theorem
 
 ## The claim
 
-What blocks an adult reading real Dutch is not vocabulary. It is that Dutch text is built out of a
-small number of devices that make the words you already know unrecognisable — compounds no dictionary
-contains, verbs split fifteen words apart, pronouns fused with prepositions into *daarbij* and
-*waarop*, and an official register that deletes the actor from its sentences.
+Vocabulary matters, but it is not the whole problem. Dutch text is built out of a small number of
+recurring devices that can make words you already know hard to recognise — compounds that will not
+appear as dictionary entries, verbs split ten or fifteen words apart, pronominal adverbs like
+*daarbij* and *waarop*, and an official register that backgrounds whoever has to act.
 
-Each is mechanical, learnable in a sitting, and almost never taught, because a course teaches you to
-read the course. This book is about the Dutch that was not written for you.
+Each is mechanical rather than mysterious, and the core mechanism of each can be explained in a page.
+Courses teach several of them as grammar, but rarely assemble them into a practical method for reading
+real documents. This book is about the Dutch that was not written for you.
 
 **Reading only.** Not listening, speaking or writing; not inburgering preparation. Stated on the
 landing page and in About rather than left to be discovered.
@@ -36,8 +37,8 @@ Each chapter follows four steps — **On the page → What it is doing → Read 
 and closes with a **kaart**: what was introduced, which earlier chapters it leaned on, and what is
 deliberately postponed. Chapters are in dependency order; nothing uses what a later chapter builds.
 
-The last chapter reads one real belastingdienst letter end to end, using every device in the book and
-introducing nothing new. If it needs something with no earlier chapter, that is a defect in the spine.
+The last chapter works through a reconstructed Belastingdienst letter end to end — composed for this
+book, modelled and checked against a real one — using every device and introducing nothing new. If it needs something with no earlier chapter, that is a defect in the spine.
 
 ## Status
 
@@ -45,9 +46,9 @@ Scaffold and the full fourteen-chapter map are in place. **No chapters written y
 
 | | |
 |---|---|
-| Part I | What makes a known word unrecognisable — compounds, the verb bracket, split verbs |
-| Part II | What refers to what — de/het and die/dat, relative clauses, the *daarbij* family |
-| Part III | Who must do what, and when — the imperfect, *dient u te*, the passive |
+| Part I | What makes a known word unrecognisable — compounds, the verb bracket, split verbs, verbs that change shape |
+| Part II | What refers to what — de/het and die/dat, modifiers on both sides of the noun, the *daarbij* family |
+| Part III | Who must do what, and when — *dient u te*, the passive and nominalisation |
 | Part IV | Register — *echter/tenzij/mits*, and formal against informal |
 | Part V | The real documents — abbreviations and dates, the anatomy of a brief, the blue envelope |
 
@@ -62,13 +63,15 @@ cannot detect it and will learn it. So the Dutch is checked by machine, not by e
 
 - **Every Dutch example is marked up** in the HTML, so the whole corpus is extractable. `verify.sh`
   fails on Dutch left as bare prose — a chapter cannot silently opt out of the checks below.
-- **`checks/forms.py`** *(hard fail)* — article agreement against `data/lexicon.json`, and every
-  compound split must reassemble to the word it claims to decompose.
-- **`checks/redaction.py`** *(hard fail)* — scans every page for personal numbers, IBANs, postcodes,
-  phone numbers, email addresses and names. Real post is this book's best material and its only
-  privacy risk.
-- **`checks/lexicon.py`** *(advisory, by decision)* — new words per chapter, cumulative total, lexicon
-  coverage, and any word used before the chapter that introduces it. Reports; never fails.
+- **`checks/forms.py`** *(hard fail)* — article agreement against `data/lexicon.json`, singular and
+  plural, and every compound split must reassemble to the word it claims to decompose. It does **not**
+  check inflection, tense formation, word order or idiom; it is a narrow net, not a proof.
+- **`checks/redaction.py`** *(hard fail)* — scans every committed text file for structured
+  identifiers (personal and account numbers, IBANs, postcodes, phone numbers, email addresses) and a
+  private list of names. It matches patterns, not meaning: a safety net under a manual reading, never
+  a substitute for one.
+- **`checks/lexicon.py`** *(advisory, by decision)* — new words per chapter, cumulative total,
+  lexicon coverage, and nouns used without a gender entry. Reports; never fails.
 - Plus the checks ported from the previous three books: computed count sync, link resolution, HTML
   well-formedness, a quotation scan, a self-assessment scan, and a ban on page numbers for books not
   in `sources/`.

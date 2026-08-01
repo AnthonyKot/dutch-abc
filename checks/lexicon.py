@@ -5,18 +5,23 @@ Deliberate decision, recorded in CONTEXT.md: a hard lexical gate would make the
 Dutch stilted, and this book is judged on whether it is worth reading. So this
 reports and the author reads it.
 
-Two numbers per chapter and one list:
-  * new words introduced, and the running total
-  * any word used in a chapter earlier than the one that introduces it
+  * new words per chapter, and the running total
+  * how much of the corpus data/lexicon.json can actually vouch for
 
-The second is the forward-reference check that made No Such Form readable. It is
-the thing to actually look at.
+NOT a forward-reference check, and it never was one. The first version claimed to
+report "any word used before the chapter that introduces it", built the data, and
+then never printed it — and the check was incoherent anyway, because it defined a
+word's introduction as its first occurrence, so by construction nothing could ever
+precede it. A real version needs explicit introduced_in metadata. Until that
+exists, this script does not pretend to provide it.
 """
 import html
 import json
 import pathlib
 import re
 import sys
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LEXICON = ROOT / "data" / "lexicon.json"
@@ -40,15 +45,12 @@ def main():
         print("  no chapters yet — nothing to report")
         return 0
 
-    introduced = {}
     seen = set()
     print(f"  {'chapter':<34} {'new':>5} {'total':>6}")
     for fn in CHAPTERS:
         words = {w.lower() for w in WORD.findall(dutch_text(fn.read_text(encoding="utf-8")))}
         new = words - seen
         seen |= words
-        for w in new:
-            introduced[w] = fn.name
         print(f"  {fn.name:<34} {len(new):>5} {len(seen):>6}")
 
     # Gender coverage: how much of the corpus checks/forms.py can actually check.
