@@ -16,8 +16,8 @@ cd "$(dirname "$0")"
 fail=0
 
 echo "== count sync (computed, not typed) =="
-files=$(ls chapters/*.html 2>/dev/null | wc -l | tr -d ' ')
-links=$(grep -oE 'href="chapters/[0-9][^"]*\.html"' index.html 2>/dev/null | sort -u | wc -l | tr -d ' ')
+files=$(ls docs/chapters/*.html 2>/dev/null | wc -l | tr -d ' ')
+links=$(grep -oE 'href="chapters/[0-9][^"]*\.html"' docs/index.html 2>/dev/null | sort -u | wc -l | tr -d ' ')
 echo "  $files chapter files on disk; $links distinct chapter links on the contents page"
 if [ "$files" != "$links" ]; then
   echo "  FAIL: contents page ($links) != chapter files ($files)"; fail=1
@@ -37,7 +37,7 @@ class P(HTMLParser):
         if tag not in KNOWN:
             print(f"  UNKNOWN TAG <{tag}> in {self.fn} line {self.getpos()[0]}")
             globals().__setitem__("bad", globals()["bad"] + 1)
-for fn in sorted(glob.glob("*.html") + glob.glob("chapters/*.html")):
+for fn in sorted(glob.glob("docs/*.html") + glob.glob("docs/chapters/*.html")):
     t = open(fn, encoding="utf-8").read()
     if not t.lstrip().lower().startswith("<!doctype html>"):
         print(f"  MISSING DOCTYPE in {fn}"); bad += 1
@@ -49,7 +49,7 @@ echo "== internal links resolve =="
 python3 - <<'PY' || fail=1
 import glob, os, re, sys
 bad = 0
-for fn in sorted(glob.glob("*.html") + glob.glob("chapters/*.html")):
+for fn in sorted(glob.glob("docs/*.html") + glob.glob("docs/chapters/*.html")):
     base = os.path.dirname(fn)
     for href in re.findall(r'href="([^"#?][^"]*)"', open(fn, encoding="utf-8").read()):
         if href.startswith(("http://", "https://", "mailto:")):
@@ -75,17 +75,17 @@ echo "== quotation scan (no reproduced source prose) =="
 # Standing step. The sources are pedagogical texts full of exactly the sentences
 # we would be tempted to lift, and real letters are quotable and must not be quoted.
 # Multibyte trap from book 2: never trust one regex on curly quotes. Read the hits.
-hits=$(grep -nE '"|“|”|<blockquote' chapters/*.html 2>/dev/null | grep -vE '="|="[^"]*"' | wc -l | tr -d ' ')
+hits=$(grep -nE '"|“|”|<blockquote' docs/chapters/*.html 2>/dev/null | grep -vE '="|="[^"]*"' | wc -l | tr -d ' ')
 echo "  $hits quotation-shaped lines to read by eye (not an automatic failure)"
-grep -nE '<blockquote' chapters/*.html 2>/dev/null | sed 's/^/  /'
+grep -nE '<blockquote' docs/chapters/*.html 2>/dev/null | sed 's/^/  /'
 
 echo "== self-assessment scan (the recurring tic) =="
 # Caught in all three previous books. A verdict about the chapter or the book is
 # the tic; an ordinary descriptive superlative about Dutch is fine.
-tic=$(grep -rniE "cleanest|clearest|sharpest|the best|most (elegant|interesting|important)|in the whole book|worth saying|the heart of this book" chapters/*.html 2>/dev/null | wc -l | tr -d ' ')
+tic=$(grep -rniE "cleanest|clearest|sharpest|the best|most (elegant|interesting|important)|in the whole book|worth saying|the heart of this book" docs/chapters/*.html 2>/dev/null | wc -l | tr -d ' ')
 if [ "$tic" != "0" ]; then
   echo "  $tic possible self-assessments — replace the verdict with what earns it:"
-  grep -rniE "cleanest|clearest|sharpest|the best|most (elegant|interesting|important)|in the whole book|worth saying|the heart of this book" chapters/*.html 2>/dev/null | sed 's/^/    /'
+  grep -rniE "cleanest|clearest|sharpest|the best|most (elegant|interesting|important)|in the whole book|worth saying|the heart of this book" docs/chapters/*.html 2>/dev/null | sed 's/^/    /'
 else
   echo "  none"
 fi
@@ -93,7 +93,7 @@ fi
 echo "== no source page numbers for books not in sources/ =="
 # Tier C discipline: cite by topic only unless a copy is here.
 if grep -rnE "(Contact!|Nederlands in gang|Delftse|Comprehensive Grammar)[^<]{0,40}(p\.|pp\.|page) ?[0-9]" \
-     chapters/*.html about.html 2>/dev/null; then
+     docs/chapters/*.html docs/about.html 2>/dev/null; then
   echo "  FAIL: page number cited for a book not in sources/"; fail=1
 else
   echo "  none"
@@ -105,6 +105,24 @@ if ls sources/*.pdf >/dev/null 2>&1 && git -C . ls-files --error-unmatch sources
 else
   echo "  none tracked"
 fi
+
+echo "== published surface is exactly docs/ =="
+# Pages serves ONLY docs/. Anything the site needs must live there; anything that
+# must not be public must not. Previously Pages published the repository root and
+# served CONTEXT.md, the checks and the source register alongside the book.
+python3 - <<'PY' || fail=1
+import pathlib, subprocess, sys
+tracked = subprocess.run(["git", "ls-files"], capture_output=True, text=True).stdout.split()
+pub = sorted(f for f in tracked if f.startswith("docs/"))
+allowed = {".html", ".css", ".js", ""}
+bad = [f for f in pub if pathlib.Path(f).suffix not in allowed]
+if bad:
+    print("  FAIL unexpected file type published under docs/: " + ", ".join(bad)); sys.exit(1)
+print(f"  {len(pub)} files published; nothing outside docs/ is served")
+for f in sorted(set(tracked) - set(pub)):
+    if f.endswith((".html", ".css")) :
+        print(f"  WARNING web asset outside docs/, will NOT be served: {f}")
+PY
 
 echo "== checks/ =="
 for f in checks/*.py; do

@@ -25,7 +25,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LEXICON = ROOT / "data" / "lexicon.json"
-CHAPTERS = sorted((ROOT / "chapters").glob("*.html"))
+CHAPTERS = sorted((ROOT / "docs" / "chapters").glob("*.html"))
 
 WORD = re.compile(r"[a-zà-ÿ]+(?:['’][a-zà-ÿ]+)?", re.I)
 

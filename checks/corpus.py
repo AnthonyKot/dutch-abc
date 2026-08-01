@@ -110,4 +110,4 @@ def strip_dutch(text):
 
 
 def chapters():
-    return sorted((ROOT / "chapters").glob("*.html"))
+    return sorted((ROOT / "docs" / "chapters").glob("*.html"))

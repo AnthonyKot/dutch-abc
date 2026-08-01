@@ -23,7 +23,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 problems = []
 
 ctx = (ROOT / "CONTEXT.md").read_text(encoding="utf-8")
-idx = (ROOT / "index.html").read_text(encoding="utf-8")
+idx = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
 
 spine = re.findall(r"^### PART [IVX]+ — (.+?) \((\d+)\)\s*$", ctx, flags=re.M)
 page = re.findall(r'<p class="part-head">Part [IVX]+ · (.+?)</p>', idx)

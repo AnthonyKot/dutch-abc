@@ -27,20 +27,21 @@ pdftoppm -png -r 110 -f $((P/2)) -l $((P/2)) sources/donaldson-dutch-reference-g
 
 | Printed | Section | Our chapter |
 |---|---|---|
-| 13 | Pronunciation — **one page** | 01 (does **not** cover it) |
-| 27–32 | Rules for the gender of Dutch nouns | 06 |
+| 13 | Pronunciation — one page | — (out of scope: reading only) |
+| 27–32 | Rules for the gender of Dutch nouns | 05 |
 | 43–49 | Diminutives, seven pages | 11 |
-| 50–57 | Personal pronouns (*u* / *je*) | 10 |
-| 74–91 | Adjectives, rules for inflection | 06 |
+| 50–57 | Personal pronouns (*u* / *je*) | 11 |
+| 74–91 | Adjectives, rules for inflection | 05 |
 | 92–111 | Adverbs; 94 intensifying; **95 Time–Manner–Place order** | 02 |
-| 146–153 | Modal auxiliary verbs | 04 |
-| 180–184 | Separable / inseparable verbs | 05 |
-| 185–189 | **Verbs followed by prepositional objects** | 09 |
-| 190–204 | Conjunctions: 190 co-ordinating, 192 subordinating | 08 |
-| 222–234 | Numerals; 229 money, **230 time**, 231 dates | 13 |
-| **235–238** | ***Er* — its own chapter** | 07 |
+| 146–153 | Modal auxiliary verbs | 08 |
+| 180–184 | Separable / inseparable verbs | 03 |
+| 185–189 | **Verbs followed by prepositional objects** | 07 |
+| 190–204 | Conjunctions: 190 co-ordinating, 192 subordinating | 10 |
+| 222–234 | Numerals; 229 money, **230 time**, 231 dates | 12 |
+| **235–238** | ***Er* — its own chapter** | 06 |
 | 239–243 | Negation | — |
 | 244–247 | Appendix 1: letter writing | 14 (writing, not reading) |
+| 125–135 | Alphabetical list of strong and irregular verbs | 04 |
 | 265–274 | Index — Donaldson's substitute for a syntax chapter | 02 |
 
 ⚠ **Donaldson is 45 years old and says himself he is "quite strongly prescriptive."** For a book whose
@@ -91,20 +92,31 @@ service did not.
      / huurcommissie markers; there is none. A WOZ-beschikking, afvalstoffenheffing, parkeervergunning
      or BRP uittreksel would all serve.
    - **A *beschikking* or *besluit* that recounts a history** — anything containing *"Wij hebben
-     vastgesteld dat…"* or *"Bij besluit van … werd…"*. **Chapter 07 is blocked on this**: neither
-     specimen contains a single imperfect, because both are procedural rather than decisional.
+     vastgesteld dat…"* or *"Bij besluit van … werd…"*. **No longer blocking**: the 2026-08-02
+     restructure made this chapter 04, about verb forms you cannot look up, which the participles in
+     both specimens support. A decisional letter would still let it show a finite imperfect in the
+     reader's own post rather than only in narrative.
 4. Official inburgering / staatsexamen A2 material — not the target, but a free coverage cross-check.
 
-## Candidate real-world corpus (in the user's Downloads, not yet copied)
+## Candidate real-world corpus (held locally, never copied in)
 
-Chapter 14's raw material, and it is genuinely the reader's own mail — better than anything published.
-**Not copied in: each needs the user's explicit say-so and a redaction pass (BSN, account numbers,
-addresses, employer) before it is used, even git-ignored.**
+Chapter 14's raw material is the reader's own mail — better than anything published.
 
-- `income-tax assessment`, `…-2025-…pdf` — belastingdienst final assessments
-- `correspondence from a social-insurance body`
-- `business-register consent form`, `business-register consent form`
-- `Handelsregister extract` — KvK extract
-- `property valuation report…pdf` — property valuation
-- `bilingual employment document` — the Dutch/English pair is itself useful: same content, two registers
-- `bilingual registration form` — bilingual form, same value
+**Filenames are deliberately NOT listed here.** An earlier version of this file named them, and two
+were themselves disclosures: one contained a street name and house number, another a case identifier.
+`checks/redaction.py` cannot catch that class of leak — it matches structured identifiers, not
+meaning — so this is a standing editorial rule, not something a script will enforce:
+
+> **Never record a source filename in a committed file.** Describe the document by type.
+
+Held locally, by type:
+
+- two Belastingdienst income-tax assessments
+- one item of correspondence from a social-insurance body
+- two consent/registration forms from the business register
+- one Handelsregister extract
+- one property valuation report
+- one bilingual employment document (the Dutch/English pair is useful in itself: same content,
+  two registers)
+
+Each needs the user's explicit say-so and a redaction pass before use, even git-ignored.

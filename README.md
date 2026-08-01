@@ -42,13 +42,13 @@ book, modelled and checked against a real one — using every device and introdu
 
 ## Status
 
-Scaffold and the full fourteen-chapter map are in place. **No chapters written yet.**
+Scaffold and the full fourteen-chapter map are in place. **Chapter 01 is written; 02–14 are not.**
 
 | | |
 |---|---|
 | Part I | What makes a known word unrecognisable — compounds, the verb bracket, split verbs, verbs that change shape |
 | Part II | What refers to what — de/het and die/dat, modifiers on both sides of the noun, the *daarbij* family |
-| Part III | Who must do what, and when — *dient u te*, the passive and nominalisation |
+| Part III | Who must do what — *dient u te*, the passive and nominalisation |
 | Part IV | Register — *echter/tenzij/mits*, and formal against informal |
 | Part V | The real documents — abbreviations and dates, the anatomy of a brief, the blue envelope |
 
@@ -99,17 +99,26 @@ Every Dutch example was written for this book or observed in the wild.
 - `.nojekyll` so GitHub Pages serves the files as-is.
 
 ```
-index.html               landing page + full 14-chapter contents
-about.html               method, scope fence, sources, verification
-chapters/NN-slug.html    one file per chapter
-static/style.css         shared styles (themes, reading components, print)
-static/theme.js          theme toggle
+docs/                    ← THE ENTIRE PUBLISHED SITE. Nothing else is served.
+  index.html             landing page + full 14-chapter contents
+  about.html             method, scope fence, sources, verification
+  chapters/NN-slug.html  one file per chapter
+  static/style.css       shared styles (themes, reading components, print)
+  static/theme.js        theme toggle
+  .nojekyll
 checks/*.py              the Dutch and privacy checks
 data/lexicon.json        gender and form register
+data/running-document.md specimen device maps
 verify.sh                all local checks
 CONTEXT.md               authoring notes: premise, spine, style guide, verified findings
-sources/README.md        what is here, page maps, what is still wanted
+sources/README.md        source register, page maps, what is still wanted
 ```
+
+**Why `docs/` exists.** Pages previously published from the repository root, which served the
+authoring notes, the checks and the source register alongside the book. Publishing from `docs/` makes
+the public surface an explicit allowlist: if a file is not in `docs/`, it is not on the site. The
+repository itself is public, so the authoring files remain readable on GitHub — that is intended for
+everything in the tree, and is why no source filename is ever recorded in a committed file.
 
 ## Deploying to GitHub Pages
 
@@ -123,7 +132,7 @@ Served from the repository root — no build, no workflow.
    git push -u origin main
    ```
 
-3. **Settings → Pages**, source *Deploy from a branch*, branch `main`, folder `/ (root)`.
+3. **Settings → Pages**, source *Deploy from a branch*, branch `main`, folder **`/docs`**.
 
 `.nojekyll` is committed and all internal links are relative, so the site works under the `/<repo>/`
 subpath without configuration.
