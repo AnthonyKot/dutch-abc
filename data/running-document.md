@@ -20,10 +20,10 @@ the reader has two years of them.
 | 01 | compounds | *inkomstenbelasting, volksverzekeringen, loonheffing, heffingskortingen, arbeidskorting, aanslagnummer, bezwaarformulier, bezwaarschrift, rendementsgrondslag, spaartegoeden, verzamelinkomen, belastingconsulent, bronheffing, aftrekposten, rekeningnummer, inkomensafhankelijke regelingen* | **superb** |
 | 02 | verb bracket | *Dan moet uw bezwaarschrift op 28 mei 2026 binnen **zijn** bij de Belastingdienst* · *Dan ontvangt u het bedrag meestal binnen 2 weken nadat wij uw rekeningnummer hebben **ontvangen*** | strong |
 | 03 | separable verbs at distance | ***maken** het bedrag binnen 1 week na de datum van deze beschikking **over*** — ten words apart · *geeft uw rekeningnummer gemakkelijk **door*** · *hebt **ingevuld*** · *Log **in*** | **superb** |
-| 04 | de/het → die/dat | *het bedrag **dat** u ontvangt* against *deze aanslag* / *de reden* — a clean minimal pair inside one letter | strong |
-| 05 | relative clauses | *het bedrag dat u ontvangt* · *Aandeel rendementsgrondslag dat aan u wordt toegekend* (relative clause with a passive inside it) | good |
-| 06 | *hier-* / *daar-* / *waar-* | ***hiermee** verrekenen* and ***Hierdoor** wordt het bedrag … lager* — two, in consecutive sentences | **superb** |
-| 07 | the imperfect | ⚠ **absent** — see below | **none** |
+| 04 | verb forms that change shape | participles throughout — *ingevuld, vastgesteld, gebaseerd, toegekend, uitbetaald, ontvangen, verrekend*; **no finite imperfect**, which is what reframed the chapter | strong for participles |
+| 05 | de/het → die/dat | *het bedrag **dat** u ontvangt* against *deze aanslag* / *de reden* — a clean minimal pair inside one letter | strong |
+| 06 | relative clauses | *het bedrag dat u ontvangt* · *Aandeel rendementsgrondslag dat aan u wordt toegekend* (relative clause with a passive inside it) | good |
+| 07 | *hier-* / *daar-* / *waar-* | ***hiermee** verrekenen* and ***Hierdoor** wordt het bedrag … lager* — two, in consecutive sentences | **superb** |
 | 08 | obligation | *Moet u nog aanslagen aan ons betalen?* · *U **hoeft** deze brief **niet af te wachten*** · *of u bezwaar moet maken* · *Kunt u* · *Wilt u* | strong, but no *dient u te* |
 | 09 | passive / nominalisation | *is gebaseerd op* · *Het rendement … **is vastgesteld** op basis van forfaitair rendement* (no actor at all) · *wordt toegekend* · *Wordt het bedrag aan u uitbetaald* · nominalisations *de verrekening*, *de berekening*, *Vastgesteld vermogen* | **superb** |
 | 10 | *echter / tenzij / mits* | ⚠ **absent** — see below | **none** |
@@ -35,7 +35,7 @@ the reader has two years of them.
 
 ### 1. The belastingdienst writes in deliberately plain language, and that is why 07 and 10 are missing
 
-This letter has **no imperfect** (chapter 07) and **none of** *echter*, *tenzij*, *mits*, *indien*
+This letter has **no finite imperfect** and **none of** *echter*, *tenzij*, *mits*, *indien*
 (chapter 10). It also has no *dient u te* (chapter 08's headline form). It uses questions as section
 headings, short sentences, and *moet* / *hoeft* rather than their formal equivalents.
 
@@ -44,7 +44,7 @@ That is not an accident of this one letter; it is the plain-language style the t
 
 Two consequences, both good:
 
-- **The book gains a spectrum instead of a sample.** Chapters 07, 10 and the formal half of 11 need a
+- **The book gains a spectrum instead of a sample.** Chapter 10 and the formal half of 11 need a
   second, un-modernised document as a foil. Candidates already in the user's Downloads: the
   huurcommissie or gemeente correspondence, the KvK *uittreksel*, the *toestemmingsverklaring*, the
   property *waardebepaling*. **Pick one before drafting 07.**
@@ -84,15 +84,15 @@ contrast is the point. It supplies precisely what the aanslag lacked:
 
 | Ch | Device | In this form |
 |----|--------|--------------|
+| 01 | compounds | *garantstelling, logiesverstrekking, visumplichtig, visumaanvraag, Vreemdelingenwet, garantsteller, logiesverstrekker, dataprotectie, wet-en regelgeving* — note the **suspended hyphen** in the last, which the aanslag also shows in *Bank- en spaartegoeden* |
+| 06 | relative clauses | ***welke*** as the formal relative pronoun — *alle overige bescheiden **welke** kunnen dienen* — where a course teaches only *die/dat*; plus *personen … **aan wie** u logies wenst te verstrekken* |
+| 07 | *waar-* / *daar-* | *de wijze **waarop** de visumaanvraag wordt beoordeeld* · *binnen de **daarvoor** geldende wet-en regelgeving* |
 | 08 | ***dient … te*** | four times, and three of them stack a passive inside: *dient voor legalisatie van uw handtekening bij de gemeente **te worden aangeboden***. This is the form chapter 08 exists for, and the aanslag has none of it |
 | 09 | passive, stacked with modals | *dient te worden aangeboden* · *kunnen worden gedeeld* · *wordt beoordeeld* · *worden opgeslagen* · *wat er met uw gegevens wordt gedaan* — five layers of actor deletion in one page |
 | 10 | conditional joints | *In geval sprake is van…* · *Wanneer u … dan hoeft u…* · *voordat u begint* · *Daarnaast* · *tezamen met* · *ter onderbouwing van* |
-| 05 | relative clauses | ***welke*** as the formal relative pronoun — *alle overige bescheiden **welke** kunnen dienen* — where a course teaches only *die/dat*; plus *personen … **aan wie** u logies wenst te verstrekken* |
-| 06 | *waar-* / *daar-* | *de wijze **waarop** de visumaanvraag wordt beoordeeld* · *binnen de **daarvoor** geldende wet-en regelgeving* |
-| 01 | compounds | *garantstelling, logiesverstrekking, visumplichtig, visumaanvraag, Vreemdelingenwet, garantsteller, logiesverstrekker, dataprotectie, wet-en regelgeving* — note the **suspended hyphen** in the last, which the aanslag also shows in *Bank- en spaartegoeden* |
 | 11 | register | archaic formal vocabulary a course never mentions: *bescheiden* (documents), *geschiedt*, *tezamen*, *overige*, *Raadpleeg* |
 
-### ⚠ A device this form exposes that the spine does not have
+### A device this form exposed that the spine did not have — now chapter 06
 
 > ***Het door u ingevulde formulier*** dient … te worden aangeboden.
 > *de **door u uitgenodigde** persoon*
@@ -101,28 +101,27 @@ An entire clause crammed between the article and its noun — *the by-you-filled
 **extended attributive participle**. English cannot do this at all, so a reader has no instinct for
 it, and formal Dutch uses it constantly. It is not in the fourteen-chapter spine.
 
-**Decision needed before drafting Part II.** Options: fold it into chapter 05 (which already teaches
-"what is attached to what", and this is the same question with the modifier on the left instead of the
-right), or give it a chapter. Folding into 05 is the cheaper answer and probably correct — 05 becomes
-*modifiers on both sides of the noun* — but it makes 05 the heaviest chapter in the book.
+**Resolved 2026-08-02: folded into chapter 06**, which becomes *modifiers on both sides* — a relative
+clause is a modifier on the right, this is the same question with the modifier on the left, and
+separating them would hide that. It makes 06 the heaviest chapter in the book, which is the accepted
+cost; a fifteenth chapter for one device would be worse. The fold required moving participle formation
+ahead of it, which is what chapter 04 now does.
 
-### Still missing after both documents: the imperfect (chapter 07)
+### The imperfect: resolved by restructuring, not by a new document
 
-Neither document contains one. Both are **procedural** — they describe standing rules and required
-actions, which is present-tense work. The imperfect lives in **decision** letters that recount a
-history: a rejection, an appeal outcome, an assessment that explains what was previously established.
+Neither document contains a finite imperfect. Both are **procedural** — they describe standing rules
+and required actions, which is present-tense work. The imperfect lives in **decision** letters that
+recount a history.
 
-Chapter 07 therefore still has no specimen. Two honest routes:
+**This is closed, and not by waiting for a document.** Old chapter 07 asked *which past tense does
+written Dutch prefer*, a question about style that these specimens cannot answer. The chapter's real
+subject for a reader is *why is this verb form not in the dictionary* — a question about lookup, which
+both specimens answer abundantly, because they are **full of participles** even with no finite
+imperfect. Reframed as *verbs that change shape* and moved to **chapter 04**, alongside the other
+lookup failures. Full reasoning in CONTEXT.md, *Why 07 became 04*.
 
-1. Get one — any *beschikking* or *besluit* with a *"U heeft op … verzocht / Wij hebben vastgesteld
-   dat … Bij besluit van … werd…"* passage. Worth asking the user for.
-2. Re-aim chapter 07 toward where the imperfect actually is for this reader: **news and narrative**
-   (NOS, a company announcement, a Wikipedia paragraph) rather than post. That is a defensible
-   reading target and arguably a more useful one — but it changes the chapter's premise from
-   "documents run on the imperfect" to "everything except your post runs on it", and the spine note
-   must be rewritten if we take it.
-
-**Do not draft 07 before this is settled.**
+A *beschikking* that recounts a history is still welcome — it would let chapter 04 show a finite
+imperfect in the reader's own post rather than only in narrative — but nothing is blocked on it.
 
 ## The thread through the book
 

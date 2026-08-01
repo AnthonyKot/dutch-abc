@@ -132,56 +132,101 @@ readable — but advisory, not a build gate. See Verification.
 
 ## Spine — 14 chapters, five parts
 
-### PART I — WHAT MAKES A KNOWN WORD UNRECOGNISABLE (3)
+**Restructured 2026-08-02.** Three open items — chapter 07 having no specimen, the extended
+attributive participle being homeless, and a forward dependency they created between them — turned
+out to be one problem with one fix. Recorded in full below, because the reasoning is the kind that
+gets silently undone later.
+
+### PART I — WHAT MAKES A KNOWN WORD UNRECOGNISABLE (4)
 
 | # | Slug | The one idea | Notes |
 |---|------|--------------|-------|
-| 01 | words-that-arent-in-the-dictionary | Dutch welds nouns into compounds without limit: *ziektekostenverzekering*, *inkomstenbelasting*, *arbeidsongeschiktheidsverzekering*. They are not in any dictionary and they are not one word — they decompose, right-to-left, and the last element is the noun that matters. | **The diagnosis chapter and the highest-value skill in the book.** Half of officialese becomes readable the moment you can split. The linking *-s-* and *-en-* are a real sub-rule. Donaldson has noun formation; the courses have nothing systematic. |
-| 02 | the-verb-at-the-end | The verb bracket, at reading speed. Dutch puts one verb second and throws the rest to the end of the clause, so the meaning-bearing word arrives last. Reading — unlike listening — you can jump to the end first, and should. | Highest-dependency chapter: 03, 06, 07, 08 and 09 all speak its language. Donaldson **refused** to write a word-order chapter — every formalisation he had seen "fails miserably" — which is the argument for a reading *strategy* over a rule table. His Time–Manner–Place order (printed 95) is usable. |
-| 03 | verbs-that-split | Separable verbs at a distance: *bel … op*, *neem … mee*, *geeft … aan*. In a long written clause the two halves can sit fifteen words apart, and neither half alone is findable. | Taught twice before A2 by *Taaltalent* — so this is not an introduction. It is about the *reading* failure: you looked up *bel*, you looked up *op*, and both were wrong. |
+| 01 | words-you-cannot-look-up | Dutch welds nouns into compounds without limit: *ziektekostenverzekering*, *inkomstenbelasting*, *arbeidsongeschiktheidsverzekering*. They will not appear as dictionary entries and they are not one word — they decompose, right-to-left, and the last element is the noun that matters. | **The diagnosis chapter and the highest-value skill in the book.** A great deal of officialese becomes readable once you can split. The linking *-s-* and *-en-* are a real sub-rule. Donaldson has noun formation; the courses have nothing systematic. |
+| 02 | the-verb-at-the-end | The verb bracket, at reading speed. Dutch puts one verb second and throws the rest to the end of the clause, so the meaning-bearing word arrives last. Reading — unlike listening — you can jump to the end first, and should. | Highest-dependency chapter: 03, 04, 06, 07, 08 and 09 all speak its language. Donaldson **refused** to write a word-order chapter — every formalisation he had seen "fails miserably" — which is the argument for a reading *strategy* over a rule table. His Time–Manner–Place order (printed 95) is usable. |
+| 03 | verbs-that-split | Separable verbs at a distance: *bel … op*, *neem … mee*, *maken … over*. In a long written clause the halves can sit fifteen words apart, and neither half alone is findable. | Taught twice before A2 by *Taaltalent*, so this is not an introduction. It is about the *reading* failure: you looked up *maken*, you looked up *over*, and both were wrong. |
+| 04 | verbs-that-change-shape | Strong and irregular verbs change their stem vowel, so the form on the page is not its own dictionary entry: *ontving* → *ontvangen*, *bleek* → *blijken*, *werd* → *worden*. One stem-change story gives you **both** the imperfect and the past participle. | **Was chapter 07, "the other past tense". Reframed and moved — see the note below; this is the change that unblocked the spine.** Donaldson's alphabetical list of strong and irregular verbs (printed 125–135) is exactly the reference. Feeds 06 and 09, both of which need participles. |
 
 ### PART II — WHAT REFERS TO WHAT (3)
 
 | # | Slug | The one idea | Notes |
 |---|------|--------------|-------|
-| 04 | de-het-die-dat | *de*/*het* is not trivia for a reader: it is the tag that tells you which noun a later *die* or *dat* points back to. Roughly two-thirds *de*; all plurals *de*; all diminutives *het*. | Reframed for reading — a speaker's problem with gender is embarrassment, a reader's is ambiguity. Donaldson gives six pages of gender rules (printed 27–32), so the "80% is rule-governed" claim is sourced. |
-| 05 | the-clause-that-hangs-off | Relative clauses: *die*, *dat*, *wat*, *waarvan*, *waarbij*, *waarin*. Formal Dutch stacks them, and the verb of the relative clause goes to the end, so the reader must hold two brackets at once. | Depends on 02 and 04, and is where they pay off together. The single most common structure in a legal or official sentence. |
-| 06 | daarbij-hiervan-waarop | The *er* / *hier‑* / *daar‑* / *waar‑* + preposition family. *Daarbij, hiervan, waarop, ernaar, hierbij, waardoor.* One closed system, mechanically decodable, and utterly opaque until someone shows you it is preposition-plus-pointer written backwards. | ⚠ **Confirmed gap.** *De Opmaat* gives three uses of *er* and *Taaltalent 2* gives one; **neither gives the prepositional forms**, which are exactly the ones that saturate written Dutch. Donaldson devotes a whole chapter to *Er* (printed 235–238). Pair with 12's abbreviations as pure decoding wins. |
+| 05 | de-het-die-dat | *de*/*het* is not trivia for a reader: it is the tag that tells you which noun a later *die* or *dat* points back to. Roughly two-thirds *de*; all plurals *de*; all diminutives *het*. | Reframed for reading — a speaker's problem with gender is embarrassment, a reader's is ambiguity. Donaldson gives six pages of gender rules (printed 27–32), so the "largely rule-governed" claim is sourced. |
+| 06 | modifiers-on-both-sides | Relative clauses — *die, dat, wat, waarvan, waarbij, waarin*, and formal *welke* — stacked, each with its own verb at the end. **Then the mirror image: the extended attributive participle**, an entire clause crammed between the article and its noun — *het **door u ingevulde** formulier*. | Needs 02, 04 and 05, and is where all three pay off. **The heaviest chapter in the book, deliberately** — the attributive participle is the same question as a relative clause with the modifier on the left, and separating them would hide that. English cannot do this construction at all, so the reader has no instinct for it. |
+| 07 | daarbij-hiervan-waarop | The *er* / *hier‑* / *daar‑* / *waar‑* + preposition family. *Daarbij, hiervan, waarop, ernaar, hierbij, waardoor.* One closed system, mechanically decodable, and opaque until someone shows you it is a preposition and a pointer written backwards. | ⚠ **Confirmed gap.** *De Opmaat* gives three uses of *er* and *Taaltalent 2* gives one; **neither gives the prepositional forms**, which are exactly the ones that saturate written Dutch. Donaldson devotes a whole chapter to *Er* (printed 235–238). Pair with 12's abbreviations as pure decoding wins. |
 
-### PART III — WHO MUST DO WHAT, AND WHEN (3)
+### PART III — WHO MUST DO WHAT, AND WHEN (2)
 
 | # | Slug | The one idea | Notes |
 |---|------|--------------|-------|
-| 07 | the-other-past-tense | Courses teach the perfect first because it dominates speech. **Written Dutch — narrative, formal, official — runs on the imperfect**: *ontving, verzocht, bleek, diende*. The tense you were taught last is the one on the page. | **A cleaner claim than the spoken version this chapter had before the scope change.** Verified: *Taaltalent 1* teaches the perfect at A1, *Taaltalent 2* the imperfect at A2. The strong-verb list is the work, and Donaldson's alphabetical list (printed 125–135) is exactly the reference. |
-| 08 | moeten-dienen-hoeven | Obligation, and its written register. *Moet* becomes *dient u te*; *hoeft niet* becomes *is niet vereist*; permission becomes *kunt u*. Finding the obligation is most of what reading a letter is for. | Modal auxiliaries in Donaldson printed 146–153. *Taaltalent 2* teaches *moeten* vs *hoeven*; neither course teaches *dienen te*, which is the form that actually appears in post. |
-| 09 | nobody-does-anything | The passive and nominalisation — officialese's two habits. *Wordt verstrekt*, *is vastgesteld*, *na ontvangst van*, *het indienen van*. Both delete the actor, which is why you cannot tell who must act. | Donaldson: passive printed 161–165. The reading skill is restoring the missing subject: *who* files, *who* decides, *who* pays. Sets up 13 and 14 directly. |
+| 08 | moeten-dienen-hoeven | Obligation, and its written register. *Moet* becomes *dient u te*; *hoeft niet* becomes *is niet vereist*; permission becomes *kunt u*. Finding the obligation is most of what reading a letter is for. | Modal auxiliaries in Donaldson printed 146–153. *Taaltalent 2* teaches *moeten* vs *hoeven*; neither course teaches *dienen te*, which the IND specimen uses four times. |
+| 09 | nobody-does-anything | The passive and nominalisation — officialese's two habits. *Wordt verstrekt*, *is vastgesteld*, *na ontvangst van*, *het indienen van*. Both remove the actor, which is why you cannot tell who must act. | Needs 04's participles. Donaldson: passive printed 161–165. The reading skill is restoring the missing subject: *who* files, *who* decides, *who* pays. Sets up 13 and 14 directly. **Two chapters is the right size for this Part** — it is one question asked twice, and padding it would be padding. |
 
 ### PART IV — REGISTER (2)
 
 | # | Slug | The one idea | Notes |
 |---|------|--------------|-------|
-| 10 | echter-tenzij-mits | The logic words — the joints of a formal text. *Echter, tenzij, mits, indien, voorts, derhalve, alsmede, bijgaand.* They carry the conditions and exceptions, they are invisible to a learner, and getting one wrong inverts the meaning of a letter. | Conjunctions in Donaldson printed 190–204; *want* vs *omdat* is *Taaltalent 2* ch. 4. But *tenzij* / *mits* / *indien* are the ones in your post and no course reaches them at A2. |
-| 11 | u-je-and-the-buurtapp | The two written registers side by side: *Geachte heer/mevrouw … hoogachtend* against a buurtapp message full of diminutives and particles. What *-je* and *even*, *maar*, *hoor*, *toch* are doing when they appear in writing. | Merges the old chapters 10, 11 and 12, correctly — for a *reader* these are one topic: recognising which register you are in and what its markers mean. ⚠ **Particles confirmed absent from all three sources** (Donaldson's "intensifying adverbs", printed 94, is *heel/erg/zeer* — checked). ⚠ **Donaldson is 1981 and prescriptive; do not take his *u*/*je* usage as current.** |
+| 10 | echter-tenzij-mits | The logic words — the joints of a formal text. *Echter, tenzij, mits, indien, voorts, derhalve, alsmede, bijgaand.* They carry the conditions and the exceptions, they are easy to read past, and getting one wrong can invert the meaning of a letter. | Conjunctions in Donaldson printed 190–204; *want* vs *omdat* is *Taaltalent 2* ch. 4. But *tenzij* / *mits* / *indien* are the ones in your post and no course reaches them at A2. |
+| 11 | u-je-and-the-buurtapp | The two written registers side by side: *Geachte heer/mevrouw … hoogachtend* against a buurtapp message full of diminutives and particles. What *-je* and *even*, *maar*, *hoor*, *toch* are doing when they appear in writing. | For a *reader* these are one topic: recognising which register you are in and what its markers mean. ⚠ **Particles confirmed absent from all three sources** (Donaldson's "intensifying adverbs", printed 94, is *heel/erg/zeer* — checked). ⚠ **Donaldson is 1981 and prescriptive; do not take his *u*/*je* usage as current.** |
 
 ### PART V — THE REAL DOCUMENTS (3)
 
 | # | Slug | The one idea | Notes |
 |---|------|--------------|-------|
-| 12 | z-o-z | The furniture of Dutch documents: abbreviations (*o.a., d.w.z., i.v.m., t/m, m.b.t., z.o.z., a.u.b., excl.*), dates, money, and how amounts and periods are written. ***Half drie* is 2:30, not 3:30.** | Small, unglamorous, and the source of seven years of real errors — missed appointments and wrong payments. Donaldson: numerals printed 222–234, **Appendix 3 abbreviations printed 260–264**. Justify by the failure, not the grammar. |
-| 13 | anatomy-of-a-brief | The shape of a Dutch official letter: *kenmerk*, *betreft*, the dated opening, the conditions, the one actionable sentence, the *bezwaar* paragraph, *zie ommezijde*. Where each lives, and how to skim to the two that matter. | Genre, not grammar. Donaldson's Appendix 1 (printed 244–247) is letter *writing*, which is the mirror image and usable as evidence of the conventions. The highest practical payoff per page in the book. |
-| 14 | the-blue-envelope | One real Belastingdienst letter, read completely, using every device in the book — compounds, the bracket, a split verb, two relative clauses, *daarbij*, an imperfect, a *dient u te*, a passive, a *tenzij*, three abbreviations. | The destination. Nothing new is introduced; everything is consumed. If a device in this letter has no earlier chapter, that is a spine defect — fix the spine, not the letter. |
+| 12 | z-o-z | The furniture of Dutch documents: abbreviations (*o.a., d.w.z., i.v.m., t/m, m.b.t., z.o.z., a.u.b., excl.*), dates, money, and how amounts and periods are written. **€ 5.000 is five thousand; 9,320% has a decimal comma.** ***Half drie* is 2:30, not 3:30.** | Small, unglamorous, and the source of years of real errors — missed appointments and wrong payments. Donaldson: numerals printed 222–234, **Appendix 3 abbreviations printed 260–264**. Justify by the failure, not the grammar. Completes the toolkit; nothing new after this. |
+| 13 | anatomy-of-a-dutch-brief | The shape of a Dutch official letter: *kenmerk*, *betreft*, the dated opening, the conditions, the one actionable sentence, the *bezwaar* paragraph, *zie ommezijde*. Where each lives, and how to skim to the two that matter. | Genre, not grammar. Donaldson's Appendix 1 (printed 244–247) is letter *writing*, the mirror image, usable as evidence of the conventions. The highest practical payoff per page in the book. |
+| 14 | the-blue-envelope | A Belastingdienst letter, read completely, using every device in the book — compounds, the bracket, a split verb, a strong participle, two relative clauses, *daarbij*, a *dient u te*, a passive, a *tenzij*, three abbreviations. | The destination. Nothing new is introduced; everything is consumed. A **reconstruction**, not the specimen — see `data/running-document.md`. If a device in this letter has no earlier chapter, that is a spine defect: fix the spine, not the letter. |
+
+### Why 07 became 04, and what it fixed
+
+Three problems, one cause. Recorded because a later pass will otherwise "restore" the tense chapter.
+
+1. **Chapter 07 had no specimen.** Neither the aanslag nor the IND form contains a single finite
+   imperfect, because both are *procedural* — standing rules and required actions, which is
+   present-tense work. Waiting for a *beschikking* to arrive would have blocked the chapter indefinitely.
+2. **The extended attributive participle was homeless.** Found in the IND specimen
+   (*het door u ingevulde formulier*), genuinely hard, and in no chapter.
+3. **Folding it into 05 created a forward dependency.** *Ingevulde* is a past participle, and
+   participle formation lived in the old chapter 07 — two chapters later.
+
+The fix is to notice what that chapter is *actually about for a reader*. Not "which past tense does
+written Dutch prefer" — a question about style — but **"why is this verb form not in the dictionary"**,
+which is a question about lookup, and therefore the same failure as chapters 01 and 03. *Ontving* is
+not an entry; you need to get back to *ontvangen*. One stem-change story yields the imperfect **and**
+the past participle.
+
+That reframing pays three times:
+
+- **It unblocks the chapter with sources we already hold.** Finite imperfects are absent from both
+  specimens, but **participles are everywhere in both** — *ingevuld, vastgesteld, aangeboden,
+  toegekend, uitbetaald, gebaseerd, opgeslagen, beoordeeld, gedeeld*. And Donaldson printed 125–135 is
+  the strong-verb list, already mapped.
+- **It makes Part I coherent.** Four chapters, one question: *why can I not find this word?* A word
+  welded into a compound, a verb displaced to the end, a verb split in half, a verb whose stem changed.
+- **It repairs the dependency chain.** 04 now precedes both 06 (attributive participles) and 09
+  (passives), each of which needs participles. Nothing points forward.
+
+Chapters **08–14 keep their numbers**; only 04–07 moved.
+
+**Honesty requirement for chapter 04.** The old framing claimed written Dutch "runs on the imperfect".
+Do not carry that over — the two specimens refute it for procedural documents. The chapter should say
+plainly that finite imperfects are commoner in narrative and decision letters than in the forms and
+assessments that arrive most often, and that the *participles* are what the reader will meet daily.
 
 ## Sequencing notes
 
 - **Write 01 and 14 first**, the two ends of the rope, as in all three previous books. 01 fixes the
-  diagnosis and 14 fixes the destination; everything between justifies itself against both.
-  **Choose the real letter for 14 before drafting anything else** — the spine is answerable to it.
-- **02 is the highest-dependency chapter.** Write it early and well.
-- **05 needs 02 and 04 both landed.** It is the first chapter that combines rather than introduces.
-- **Part III is where a reader could stall** — three chapters of formal-register machinery. Keep the
-  running letter most visible there.
-- **06 and 12 are pure decoding wins** and are the most immediately satisfying chapters in the book.
-  Do not bury both in the same Part; 06 sits at the end of Part II deliberately.
+  diagnosis and 14 fixes the destination; everything between justifies itself against both. The
+  running document is chosen (`data/running-document.md`), so this is unblocked.
+- **02 is the highest-dependency chapter.** Six later chapters speak its language. Write it early
+  and well.
+- **04 is the second-highest, and it is new to that role.** Both 06 and 09 need its participles.
+  It was the last chapter in the old spine to be written; it is now nearly the first.
+- **06 needs 02, 04 and 05 all landed**, and is the first chapter that combines rather than
+  introduces. It is also the heaviest. Do not start it until its three inputs exist.
+- **07 and 12 are pure decoding wins** and the most immediately satisfying chapters to read. Do not
+  bury both in the same Part; 07 closes Part II deliberately.
+- **Part III is short — two chapters — and that is correct.** It asks one question twice. If it
+  starts growing a third chapter, check whether the new material belongs in Part IV.
 
 ## Sourcing discipline
 
@@ -323,12 +368,18 @@ worse than a wrong number in a maths book: the reader cannot detect it and will 
 ## Open questions for the user
 
 1. ~~Title.~~ **Settled: *DutchABC*.**
-2. ~~The running document.~~ **Settled 2026-08-02: the definitieve aanslag inkomstenbelasting.**
-   Redacted specimen in `sources/`, device map in `data/running-document.md`. Eleven of the fourteen
-   devices are exemplified in one two-page letter.
-   **Follow-on, and it is blocking chapter 07:** the tax office writes in deliberately plain language,
-   so the letter contains no imperfect, no *tenzij / mits / echter*, and no *dient u te*. A second,
-   un-modernised document is needed as a foil — huurcommissie, gemeente, the KvK uittreksel or the
-   *waardebepaling*, all already in the user's Downloads. **Pick one before drafting 07.**
-3. **Which of these four they actually tried to work through**, and where they stopped. Shapes chapter
-   01's diagnosis. "Bought it and never opened it" is also an answer, and an interesting one.
+2. ~~The running document.~~ **Settled: the definitieve aanslag, with IND form 1310 as the foil.**
+   Device maps in `data/running-document.md`.
+3. ~~Chapter 07 has no specimen / the attributive participle is homeless.~~ **Both closed by the
+   2026-08-02 restructure** — see *Why 07 became 04*. Nothing is blocked on a document arriving.
+4. **Which of the four books they actually tried to work through**, and where they stopped. Shapes
+   chapter 01's diagnosis. "Bought it and never opened it" is also an answer, and an interesting one.
+5. **Still welcome, no longer blocking:** a letter from a gemeente, and a *beschikking* that recounts
+   a history. The second would let chapter 04 show a finite imperfect in the reader's own post rather
+   than only in narrative.
+
+## Standing work
+
+- **Transcribe the gender register** from *De Opmaat*'s woordenlijst (printed 283–289) into
+  `data/lexicon.json`. Currently seeded with 17 nouns chosen by hand, which is enough to prove
+  `checks/forms.py` works and not enough to check a real chapter. Wanted before chapter 05.
