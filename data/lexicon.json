@@ -1,0 +1,29 @@
+{
+  "_comment": [
+    "Gender and form register. checks/forms.py validates every 'de X' / 'het X' in",
+    "the chapters against this file. Seeded by hand; the bulk should be transcribed",
+    "from De Opmaat's woordenlijst (printed 283-289), which marks (de)/(het) on every",
+    "noun and is grouped by thema. See CONTEXT.md -> Two source assets.",
+    "Transcribing a gender register is not reproducing prose; the examples we build",
+    "from it must still be our own."
+  ],
+  "nouns": {
+    "aanslag": { "gender": "de", "plural": "aanslagen" },
+    "belasting": { "gender": "de", "plural": "belastingen" },
+    "bedrag": { "gender": "het", "plural": "bedragen" },
+    "beslissing": { "gender": "de", "plural": "beslissingen" },
+    "bezwaar": { "gender": "het", "plural": "bezwaren" },
+    "brief": { "gender": "de", "plural": "brieven" },
+    "datum": { "gender": "de", "plural": "data" },
+    "envelop": { "gender": "de", "plural": "enveloppen" },
+    "formulier": { "gender": "het", "plural": "formulieren" },
+    "gemeente": { "gender": "de", "plural": "gemeenten" },
+    "inkomen": { "gender": "het", "plural": "inkomens" },
+    "jaar": { "gender": "het", "plural": "jaren" },
+    "kenmerk": { "gender": "het", "plural": "kenmerken" },
+    "rekening": { "gender": "de", "plural": "rekeningen" },
+    "termijn": { "gender": "de", "plural": "termijnen" },
+    "verzekering": { "gender": "de", "plural": "verzekeringen" },
+    "woning": { "gender": "de", "plural": "woningen" }
+  }
+}

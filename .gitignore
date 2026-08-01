@@ -1,0 +1,14 @@
+# Source texts — never pushed, never reproduced. See CONTEXT.md → Sourcing discipline.
+sources/*
+!sources/README.md
+
+# Scratch renders of scanned source pages
+*.ppm
+render/
+
+# Private: the name list the redaction check reads (it must not publish them)
+checks/names.local.txt
+
+__pycache__/
+*.pyc
+.DS_Store

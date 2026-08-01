@@ -1,0 +1,420 @@
+/* ============================================================
+   DutchABC — shared stylesheet
+   Plain CSS, light/dark themes, print-friendly.
+   Fourth in the series: same skeleton as The Quantum Quartet,
+   The Bridge and No Such Form. No KaTeX — this book has no
+   mathematics. The freed budget goes to reading components:
+   document facsimiles, glosses, compound splits, wrong-parse
+   contrasts.
+   ============================================================ */
+
+:root {
+  /* light theme (default) */
+  --bg:            #fbfaf7;
+  --bg-raised:     #ffffff;
+  --ink:           #1b1a17;
+  --ink-soft:      #47453f;
+  --ink-faint:     #78756c;
+  --rule:          #e3e0d8;
+  --accent:        #1f4e79;   /* document blue — the blue envelope */
+  --accent-soft:   #6389ad;
+  --link:          #1f4e79;
+  --link-hover:    #143454;
+  --known:         #2f6048;   /* what you already have; a correct parse */
+  --trap:          #9c4221;   /* the wrong parse; the failure mode */
+  --paper:         #f6f3ea;   /* document facsimile background */
+  --code-bg:       #f1efe8;
+  --max:           44rem;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans:  system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --mono:  ui-monospace, "SF Mono", "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:          #15161a;
+    --bg-raised:   #1d1f24;
+    --ink:         #eae8e2;
+    --ink-soft:    #c1bfb7;
+    --ink-faint:   #8d8b83;
+    --rule:        #32343a;
+    --accent:      #8db4dc;
+    --accent-soft: #6b8cb0;
+    --link:        #9cc0e8;
+    --link-hover:  #c4dbf5;
+    --known:       #7cc0a0;
+    --trap:        #e0a07c;
+    --paper:       #22242a;
+    --code-bg:     #24262b;
+  }
+}
+
+/* explicit toggle wins over OS preference in both directions */
+:root[data-theme="light"] {
+  --bg:#fbfaf7; --bg-raised:#ffffff; --ink:#1b1a17; --ink-soft:#47453f;
+  --ink-faint:#78756c; --rule:#e3e0d8; --accent:#1f4e79; --accent-soft:#6389ad;
+  --link:#1f4e79; --link-hover:#143454; --known:#2f6048; --trap:#9c4221;
+  --paper:#f6f3ea; --code-bg:#f1efe8;
+}
+:root[data-theme="dark"] {
+  --bg:#15161a; --bg-raised:#1d1f24; --ink:#eae8e2; --ink-soft:#c1bfb7;
+  --ink-faint:#8d8b83; --rule:#32343a; --accent:#8db4dc; --accent-soft:#6b8cb0;
+  --link:#9cc0e8; --link-hover:#c4dbf5; --known:#7cc0a0; --trap:#e0a07c;
+  --paper:#22242a; --code-bg:#24262b;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.62;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- layout ---- */
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+
+.site-header {
+  border-bottom: 1px solid var(--rule);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: saturate(1.4) blur(6px);
+}
+.site-header .wrap {
+  display: flex; align-items: center; gap: 1rem;
+  padding-top: .7rem; padding-bottom: .7rem;
+}
+.brand {
+  font-family: var(--sans);
+  font-weight: 700; letter-spacing: .02em;
+  font-size: .95rem; text-transform: uppercase;
+  color: var(--ink); text-decoration: none; white-space: nowrap;
+}
+.brand span { color: var(--accent); }
+.site-nav { margin-left: auto; display: flex; align-items: center; gap: 1.1rem; }
+.site-nav a { font-family: var(--sans); font-size: .85rem; color: var(--ink-soft); text-decoration: none; }
+.site-nav a:hover { color: var(--link-hover); }
+
+.theme-toggle {
+  font-family: var(--sans); font-size: .85rem;
+  background: transparent; border: 1px solid var(--rule);
+  color: var(--ink-soft); border-radius: 999px;
+  padding: .28rem .7rem; cursor: pointer; line-height: 1;
+}
+.theme-toggle:hover { border-color: var(--accent-soft); color: var(--ink); }
+
+main { padding: 2.6rem 0 4rem; }
+
+/* ---- typography ---- */
+h1, h2, h3 { font-family: var(--sans); line-height: 1.22; color: var(--ink); }
+h1 { font-size: 2.1rem; font-weight: 800; letter-spacing: -.01em; margin: 0 0 .4rem; }
+h2 { font-size: 1.4rem; font-weight: 700; margin: 2.6rem 0 .8rem; }
+h3 { font-size: 1.08rem; font-weight: 700; margin: 1.8rem 0 .5rem; }
+
+p { margin: 0 0 1.1rem; }
+a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: .5px; }
+a:hover { color: var(--link-hover); }
+
+strong { color: var(--ink); }
+em { color: var(--ink-soft); }
+
+ul, ol { margin: 0 0 1.1rem; padding-left: 1.4rem; }
+li { margin-bottom: .35rem; }
+
+blockquote {
+  margin: 1.4rem 0; padding: .2rem 0 .2rem 1.2rem;
+  border-left: 3px solid var(--accent-soft);
+  color: var(--ink-soft); font-style: italic;
+}
+
+code, kbd {
+  font-family: var(--mono);
+  font-size: .86em; background: var(--code-bg); padding: .1em .38em; border-radius: 4px;
+}
+pre { background: var(--code-bg); padding: 1rem 1.1rem; border-radius: 8px; overflow-x: auto; line-height: 1.5; }
+pre code { background: none; padding: 0; font-size: .8rem; }
+
+hr { border: none; border-top: 1px solid var(--rule); margin: 2.4rem 0; }
+
+table { border-collapse: collapse; width: 100%; font-family: var(--sans); font-size: .92rem; }
+.table-scroll { overflow-x: auto; margin: 1.4rem 0; }
+th, td { text-align: left; padding: .5rem .7rem; border-bottom: 1px solid var(--rule); }
+th { font-weight: 700; color: var(--ink); font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; }
+
+/* ---- eyebrow / kicker ---- */
+.kicker {
+  font-family: var(--sans); font-size: .78rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--accent);
+  margin: 0 0 .6rem;
+}
+.lede { font-size: 1.28rem; line-height: 1.5; color: var(--ink-soft); margin: 0 0 1.6rem; }
+
+/* ============================================================
+   DUTCH TEXT
+   Every piece of Dutch in this book is marked up, so the whole
+   corpus can be extracted mechanically by checks/. See CONTEXT.md
+   → Verification. This is not decoration; it is the check.
+   ============================================================ */
+
+/* inline Dutch inside an English sentence */
+.nl {
+  font-style: italic;
+  color: var(--ink);
+  font-feature-settings: "liga" 0;
+}
+/* a Dutch word being talked about as an object, not used */
+.nl.term { font-style: normal; font-weight: 600; }
+
+/* a block of Dutch: an example sentence standing alone */
+p.nl, .nl-block {
+  font-style: normal;
+  margin: 1.2rem 0;
+  padding: .1rem 0 .1rem 1rem;
+  border-left: 2px solid var(--accent-soft);
+  color: var(--ink);
+}
+
+/* Dutch line + English gloss underneath */
+.gloss { margin: 1.2rem 0; }
+.gloss .nl { display: block; font-style: normal; }
+.gloss .en {
+  display: block; margin-top: .15rem;
+  font-family: var(--sans); font-size: .9rem; color: var(--ink-faint);
+}
+
+/* ---- document facsimile: a real fragment as it arrived ---- */
+.doc {
+  margin: 1.6rem 0;
+  padding: 1.1rem 1.25rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  font-size: .98rem;
+  line-height: 1.55;
+}
+.doc .doc-head {
+  display: block; margin-bottom: .7rem; padding-bottom: .5rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--sans); font-size: .68rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint);
+}
+.doc p { margin: 0 0 .7rem; }
+.doc p:last-child { margin-bottom: 0; }
+/* the span of a fragment the chapter is about */
+.doc mark, mark.focus {
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: inherit; padding: .05em .1em; border-radius: 2px;
+}
+
+/* ---- compound splitting (chapter 01) ---- */
+.split {
+  margin: 1.4rem 0; padding: .9rem 1.1rem;
+  background: var(--bg-raised); border: 1px solid var(--rule); border-radius: 8px;
+  font-family: var(--sans);
+}
+.split .whole {
+  display: block; font-size: 1.05rem; font-weight: 600;
+  color: var(--ink); margin-bottom: .5rem; word-break: break-word;
+}
+.split .parts { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem; }
+.split .part {
+  padding: .16em .5em; border-radius: 4px;
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  color: var(--ink); font-size: .95rem;
+}
+/* the head: the rightmost element, the noun that actually matters */
+.split .part.head {
+  background: color-mix(in srgb, var(--known) 16%, transparent);
+  font-weight: 700;
+}
+/* linking -s- / -en- carry no meaning */
+.split .join { color: var(--ink-faint); font-size: .85rem; padding: 0 .1rem; }
+.split .en {
+  display: block; margin-top: .55rem;
+  font-size: .88rem; color: var(--ink-faint);
+}
+
+/* ---- wrong parse vs right parse ---- */
+.contrast { margin: 1.4rem 0; display: flex; flex-wrap: wrap; gap: .9rem; }
+.contrast > div {
+  flex: 1 1 14rem; min-width: 0;
+  padding: .8rem 1rem; border-radius: 8px; border: 1px solid var(--rule);
+  background: var(--bg-raised);
+}
+.contrast .label {
+  display: block; margin-bottom: .35rem;
+  font-family: var(--sans); font-size: .66rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.contrast .fout { border-left: 3px solid var(--trap); }
+.contrast .fout .label { color: var(--trap); }
+.contrast .goed { border-left: 3px solid var(--known); }
+.contrast .goed .label { color: var(--known); }
+.contrast p { margin: 0 0 .4rem; font-size: .96rem; }
+.contrast p:last-child { margin-bottom: 0; }
+.contrast .en { font-family: var(--sans); font-size: .86rem; color: var(--ink-faint); }
+
+/* ---- the device strip (top of each chapter) ---- */
+.device {
+  border: 1px solid var(--rule); border-left: 3px solid var(--accent);
+  border-radius: 8px; background: var(--bg-raised);
+  padding: .9rem 1.1rem; margin: 1.6rem 0 2rem;
+  font-family: var(--sans); font-size: .95rem;
+}
+.device .tag {
+  font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--accent); display: block; margin-bottom: .3rem;
+}
+
+/* ---- steps (the four sections of a chapter) ---- */
+.step { scroll-margin-top: 4rem; }
+.step > h2 { display: flex; align-items: baseline; gap: .6rem; }
+.step > h2 .num {
+  font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+  color: var(--bg); background: var(--accent);
+  border-radius: 999px; padding: .18em .6em; font-family: var(--sans);
+  position: relative; top: -.15em; white-space: nowrap;
+}
+
+/* ---- the kaart (three columns, end of each chapter) ---- */
+.kaart {
+  margin: 2.8rem 0 0; padding: 1.1rem 1.2rem;
+  border: 1px solid var(--rule); border-radius: 10px;
+  background: var(--bg-raised); font-family: var(--sans);
+}
+.kaart h2 {
+  font-size: .78rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ink-faint);
+  margin: 0 0 .9rem; border-bottom: 1px solid var(--rule); padding-bottom: .5rem;
+}
+.kaart .cols { display: flex; flex-wrap: wrap; gap: 1rem; }
+.kaart .col { flex: 1 1 11rem; min-width: 0; }
+.kaart .col h3 {
+  font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; margin: 0 0 .5rem;
+}
+.kaart .nieuw h3 { color: var(--accent); }
+.kaart .terug h3 { color: var(--known); }
+.kaart .nog-niet h3 { color: var(--ink-faint); }
+.kaart ul { list-style: none; margin: 0; padding: 0; font-size: .88rem; line-height: 1.45; }
+.kaart li { margin-bottom: .4rem; padding-left: 1.1rem; position: relative; color: var(--ink-soft); }
+.kaart .nieuw li::before { content: "+"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+.kaart .terug li::before { content: "\2190"; position: absolute; left: 0; color: var(--known); font-weight: 700; }
+.kaart .nog-niet li::before { content: "\2192"; position: absolute; left: 0; color: var(--ink-faint); }
+.kaart .kref { color: var(--ink-faint); font-size: .8em; }
+.kaart .none { margin: 0; color: var(--ink-faint); font-size: .84rem; font-style: italic; }
+
+/* ---- standing banner ---- */
+.fence {
+  margin: 1.6rem 0 2rem; padding: .85rem 1.1rem;
+  border: 1px dashed var(--trap); border-radius: 8px;
+  font-family: var(--sans); font-size: .9rem; color: var(--ink-soft);
+}
+.fence strong { color: var(--trap); }
+
+/* ---- prerequisite / orientation bands ---- */
+.prereq {
+  margin: .8rem 0 1.1rem; padding: .65rem .8rem;
+  border-left: 3px solid var(--accent-soft);
+  background: var(--bg-raised); color: var(--ink-soft);
+  font-family: var(--sans); font-size: .84rem; line-height: 1.45;
+}
+.prereq .label {
+  display: block; margin-bottom: .18rem;
+  color: var(--accent); font-size: .66rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+
+/* ---- unverified citation mark ---- */
+.unverified {
+  display: inline-block;
+  font-family: var(--sans); font-size: .62rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--trap); border: 1px solid var(--trap); border-radius: 999px;
+  padding: .02em .42em; margin-left: .3em; white-space: nowrap;
+  vertical-align: super; line-height: 1.35;
+}
+.unverified::before { content: "unverified source"; }
+
+/* ---- table of contents (landing) ---- */
+.part { margin: 2.4rem 0; }
+.part-head {
+  font-family: var(--sans); font-size: .82rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
+  border-bottom: 1px solid var(--rule); padding-bottom: .4rem; margin-bottom: .3rem;
+}
+.part-intro {
+  font-family: var(--sans); font-size: .92rem; line-height: 1.5;
+  color: var(--ink-soft); margin: .5rem 0 1rem; max-width: 42rem;
+}
+.toc { list-style: none; margin: 0; padding: 0; }
+.toc li { border-bottom: 1px solid var(--rule); margin: 0; }
+.toc a, .toc .stub { display: block; padding: .85rem .2rem; color: inherit; text-decoration: none; }
+.toc a:hover { background: var(--bg-raised); }
+.toc .stub { cursor: default; opacity: .62; }
+.toc .n { font-family: var(--sans); font-size: .8rem; color: var(--ink-faint); margin-right: .7rem; }
+.toc .adds {
+  display: block; margin-top: .2rem; font-size: .92rem;
+  color: var(--ink-soft); font-family: var(--sans);
+}
+.toc .adds .reads { color: var(--known); font-weight: 600; }
+.toc .soon {
+  font-family: var(--sans); font-size: .68rem; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--ink-faint);
+  border: 1px solid var(--rule); border-radius: 999px;
+  padding: .1em .5em; margin-left: .5rem;
+}
+
+/* ---- prev/next footer nav ---- */
+.chapter-nav {
+  display: flex; justify-content: space-between; gap: 1rem;
+  margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--rule);
+  font-family: var(--sans); font-size: .9rem;
+}
+.chapter-nav a { text-decoration: none; color: var(--ink-soft); max-width: 45%; }
+.chapter-nav a:hover { color: var(--link-hover); }
+.chapter-nav .dir {
+  display: block; font-size: .72rem; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+.chapter-nav .next { text-align: right; margin-left: auto; }
+
+.site-footer {
+  border-top: 1px solid var(--rule); color: var(--ink-faint);
+  font-family: var(--sans); font-size: .82rem;
+}
+.site-footer .wrap { padding: 1.6rem 1.25rem 2.4rem; }
+
+img, svg { max-width: 100%; }
+
+/* ---- responsive ---- */
+@media (max-width: 34rem) {
+  body { font-size: 1.06rem; }
+  h1 { font-size: 1.7rem; }
+  .lede { font-size: 1.14rem; }
+  .kaart .cols { gap: 1.1rem; }
+  .kaart .col { flex-basis: 100%; }
+  .contrast > div { flex-basis: 100%; }
+}
+
+/* ---- print ---- */
+@media print {
+  :root {
+    --bg:#fff; --bg-raised:#fff; --ink:#000; --ink-soft:#222; --ink-faint:#555;
+    --rule:#ccc; --paper:#f7f7f7;
+  }
+  .site-header, .theme-toggle, .site-nav, .chapter-nav, .site-footer { display: none !important; }
+  body { font-size: 11pt; color: #000; background: #fff; }
+  main { padding: 0; }
+  a { color: #000; text-decoration: none; }
+  .step > h2 .num { color: #000; background: none; border: 1px solid #000; }
+  .kaart, .device, .fence, .doc, .split { border: 1px solid #000; break-inside: avoid; }
+  .contrast > div { border: 1px solid #000; }
+}
