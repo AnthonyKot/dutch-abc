@@ -1,29 +1,159 @@
 {
   "_comment": [
-    "Gender and form register. checks/forms.py validates every 'de X' / 'het X' in",
-    "the chapters against this file. Seeded by hand; the bulk should be transcribed",
-    "from De Opmaat's woordenlijst (printed 283-289), which marks (de)/(het) on every",
-    "noun and is grouped by thema. See CONTEXT.md -> Two source assets.",
-    "Transcribing a gender register is not reproducing prose; the examples we build",
-    "from it must still be our own."
+    "Gender and form register. checks/forms.py validates every 'de X' / 'het X' in the",
+    "chapters against this file, singular and plural. Seeded by hand; the bulk is still",
+    "to be transcribed from De Opmaat's woordenlijst (printed 283-289), which marks",
+    "(de)/(het) on every noun and is grouped by thema. See CONTEXT.md -> Standing work.",
+    "Transcribing a gender register is not reproducing prose; the examples built from it",
+    "must still be our own.",
+    "Compound gender follows the last element (Donaldson 7.1.3, printed 32), so a",
+    "compound need only be listed when it is used with an article in a chapter."
   ],
   "nouns": {
-    "aanslag": { "gender": "de", "plural": "aanslagen" },
-    "belasting": { "gender": "de", "plural": "belastingen" },
-    "bedrag": { "gender": "het", "plural": "bedragen" },
-    "beslissing": { "gender": "de", "plural": "beslissingen" },
-    "bezwaar": { "gender": "het", "plural": "bezwaren" },
-    "brief": { "gender": "de", "plural": "brieven" },
-    "datum": { "gender": "de", "plural": "data" },
-    "envelop": { "gender": "de", "plural": "enveloppen" },
-    "formulier": { "gender": "het", "plural": "formulieren" },
-    "gemeente": { "gender": "de", "plural": "gemeenten" },
-    "inkomen": { "gender": "het", "plural": "inkomens" },
-    "jaar": { "gender": "het", "plural": "jaren" },
-    "kenmerk": { "gender": "het", "plural": "kenmerken" },
-    "rekening": { "gender": "de", "plural": "rekeningen" },
-    "termijn": { "gender": "de", "plural": "termijnen" },
-    "verzekering": { "gender": "de", "plural": "verzekeringen" },
-    "woning": { "gender": "de", "plural": "woningen" }
+    "aanslag": {
+      "gender": "de",
+      "plural": "aanslagen"
+    },
+    "arbeid": {
+      "gender": "de"
+    },
+    "bedrag": {
+      "gender": "het",
+      "plural": "bedragen"
+    },
+    "belasting": {
+      "gender": "de",
+      "plural": "belastingen"
+    },
+    "belastingjaar": {
+      "gender": "het",
+      "plural": "belastingjaren"
+    },
+    "berekening": {
+      "gender": "de",
+      "plural": "berekeningen"
+    },
+    "beslissing": {
+      "gender": "de",
+      "plural": "beslissingen"
+    },
+    "bezwaar": {
+      "gender": "het",
+      "plural": "bezwaren"
+    },
+    "brief": {
+      "gender": "de",
+      "plural": "brieven"
+    },
+    "datum": {
+      "gender": "de",
+      "plural": "data"
+    },
+    "envelop": {
+      "gender": "de",
+      "plural": "enveloppen"
+    },
+    "formulier": {
+      "gender": "het",
+      "plural": "formulieren"
+    },
+    "gegeven": {
+      "gender": "het",
+      "plural": "gegevens"
+    },
+    "gemeente": {
+      "gender": "de",
+      "plural": "gemeenten"
+    },
+    "grondslag": {
+      "gender": "de",
+      "plural": "grondslagen"
+    },
+    "heffing": {
+      "gender": "de",
+      "plural": "heffingen"
+    },
+    "heffingskorting": {
+      "gender": "de",
+      "plural": "heffingskortingen"
+    },
+    "hoogte": {
+      "gender": "de"
+    },
+    "inkomen": {
+      "gender": "het",
+      "plural": "inkomens"
+    },
+    "jaar": {
+      "gender": "het",
+      "plural": "jaren"
+    },
+    "jaaropgave": {
+      "gender": "de",
+      "plural": "jaaropgaven"
+    },
+    "kenmerk": {
+      "gender": "het",
+      "plural": "kenmerken"
+    },
+    "korting": {
+      "gender": "de",
+      "plural": "kortingen"
+    },
+    "ontbijt": {
+      "gender": "het"
+    },
+    "ontbijttafel": {
+      "gender": "de",
+      "plural": "ontbijttafels"
+    },
+    "opgave": {
+      "gender": "de",
+      "plural": "opgaven"
+    },
+    "premie": {
+      "gender": "de",
+      "plural": "premies"
+    },
+    "regel": {
+      "gender": "de",
+      "plural": "regels"
+    },
+    "rekening": {
+      "gender": "de",
+      "plural": "rekeningen"
+    },
+    "tafel": {
+      "gender": "de",
+      "plural": "tafels"
+    },
+    "termijn": {
+      "gender": "de",
+      "plural": "termijnen"
+    },
+    "verzekeraar": {
+      "gender": "de",
+      "plural": "verzekeraars"
+    },
+    "verzekering": {
+      "gender": "de",
+      "plural": "verzekeringen"
+    },
+    "wet": {
+      "gender": "de",
+      "plural": "wetten"
+    },
+    "woning": {
+      "gender": "de",
+      "plural": "woningen"
+    },
+    "woord": {
+      "gender": "het",
+      "plural": "woorden"
+    },
+    "ziekte": {
+      "gender": "de",
+      "plural": "ziektes"
+    }
   }
 }

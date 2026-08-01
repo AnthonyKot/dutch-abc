@@ -59,30 +59,54 @@ def dutch_spans(text, classes=None):
     return c.spans
 
 
-def strip_dutch(text):
-    """The page with every Dutch-bearing region and every tag removed.
+class _Stripper(HTMLParser):
+    """Collect only the text OUTSIDE every Dutch-bearing region.
 
-    What is left should be English prose. Anything Dutch in it is unmarked.
+    The first version did this with a marker-and-scan over the raw string. That
+    was wrong in a way worth recording: it replaced each Dutch opening tag with a
+    sentinel, but the matching </span> stayed in the text, so a later region's
+    depth count consumed the wrong close and leaked part of a marked span. It
+    surfaced as chapter 01's kaart heading reporting 'niet' as unmarked while
+    'Nog' was correctly stripped. Counting tags by hand across a string is the
+    bug; a parser that tracks its own stack is the fix.
     """
-    out = re.sub(
-        r'<(?P<t>span|p|div|section)\b[^>]*class="[^"]*\b(?:nl|doc|split|gloss|contrast)\b[^"]*"[^>]*>',
-        lambda m: "\x00" + m.group("t"), text)
-    # Drop from each marker to its matching close, counting nesting.
-    result, i = [], 0
-    while i < len(out):
-        j = out.find("\x00", i)
-        if j == -1:
-            result.append(out[i:]); break
-        result.append(out[i:j])
-        tag = re.match(r"\x00(\w+)", out[j:]).group(1)
-        depth, k = 1, j + 1 + len(tag)
-        pat = re.compile(rf"</?{tag}\b", re.I)
-        while depth and (m := pat.search(out, k)):
-            depth += -1 if m.group(0).startswith("</") else 1
-            k = m.end()
-        i = k
-    stripped = "".join(result)
-    return re.sub(r"<[^>]+>", " ", stripped)
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.out = []
+        self.depth = 0        # >0 while inside a Dutch region
+        self._stack = []
+
+    def handle_starttag(self, tag, attrs):
+        cls = set((dict(attrs).get("class") or "").split())
+        if self.depth:
+            self._stack.append(tag)
+        elif cls & (NL_CLASSES | DOC_CLASSES):
+            self.depth, self._stack = 1, [tag]
+
+    def handle_startendtag(self, tag, attrs):
+        pass
+
+    def handle_endtag(self, tag):
+        if not self.depth:
+            return
+        if self._stack:
+            self._stack.pop()
+        if not self._stack:
+            self.depth = 0
+
+    def handle_data(self, data):
+        self.out.append(data if not self.depth else "\n" * data.count("\n"))
+
+
+def strip_dutch(text):
+    """The page with every Dutch-bearing region removed, line numbers preserved.
+
+    What is left should be English prose; anything Dutch in it is unmarked.
+    """
+    s = _Stripper()
+    s.feed(text)
+    return "".join(s.out)
 
 
 def chapters():
