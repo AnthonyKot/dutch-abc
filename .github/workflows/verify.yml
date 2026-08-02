@@ -1,0 +1,39 @@
+# Runs the book's own verification suite on every push and pull request, so that
+# "the checks pass" is a public record rather than a claim made in a chat window.
+#
+# This does NOT deploy. Pages publishes from the main branch's /docs directory on
+# its own; nothing here touches that, and a red run will not stop a deploy. The
+# workflow exists to make the suite's result independently visible, not to gate.
+#
+# ONE REDUCTION IN COVERAGE, STATED RATHER THAN HIDDEN: checks/redaction.py reads
+# its private name list from checks/names.local.txt, which is git-ignored and
+# therefore absent here. The structured-identifier patterns — BSN, aanslagnummer,
+# IBAN, postcode, phone, email — all run. The name check does not, and the script
+# prints a warning saying so. A green run here means the patterns found nothing;
+# it does not mean a name was checked for.
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # verify.sh shells out to git ls-files for the published-surface check.
+      - name: Run ./verify.sh
+        run: |
+          chmod +x verify.sh
+          ./verify.sh

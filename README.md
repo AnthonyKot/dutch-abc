@@ -42,7 +42,9 @@ book, modelled and checked against a real one — using every device and introdu
 
 ## Status
 
-Scaffold and the full fourteen-chapter map are in place. **Chapter 01 is written; 02–14 are not.**
+Scaffold and the full fourteen-chapter map are in place. **Chapters 01 and 02 are written**; the rest
+are not. That sentence is checked against the files on disk by `checks/status.py`, here and on both
+public pages, because it has gone stale in this file twice.
 
 | | |
 |---|---|
