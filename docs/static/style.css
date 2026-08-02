@@ -458,6 +458,24 @@ img, svg { max-width: 100%; }
 }
 .worked .body > :last-child { margin-bottom: 0; }
 
+/* ---- a branch in the procedure ----
+   Distinct from .undecided on purpose. This marks a case the reader WILL hit and
+   CAN resolve, once they know to test for it — a fork, not a dead end. Same shape
+   as the undecidable box so it reads as a caution, but the accent colour rather
+   than the trap colour, because the outcome here is an answer. */
+.branch {
+  margin: 1.6rem 0; padding: .9rem 1.1rem;
+  border: 1px solid var(--rule); border-left: 3px solid var(--accent);
+  border-radius: 8px; background: var(--bg-raised);
+  font-family: var(--sans); font-size: .92rem; line-height: 1.5;
+}
+.branch h3 {
+  margin: 0 0 .45rem; font-size: .72rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--accent);
+}
+.branch p { margin: 0 0 .7rem; color: var(--ink-soft); }
+.branch > :last-child { margin-bottom: 0; }
+
 /* ---- the case the procedure cannot settle ----
    Every chapter carries one. A reading method that never admits a limit teaches
    the reader to force an answer, which on a real letter is worse than stopping. */
@@ -542,7 +560,7 @@ img, svg { max-width: 100%; }
   main { padding: 0; }
   a { color: #000; text-decoration: none; }
   .step > h2 .num { color: #000; background: none; border: 1px solid #000; }
-  .kaart, .device, .fence, .doc, .split, .check, .recall, .undecided,
+  .kaart, .device, .fence, .doc, .split, .check, .recall, .undecided, .branch,
   .worked .body { border: 1px solid #000; break-inside: avoid; }
   .worked > summary { border: none; color: #000; padding: 0; font-style: italic; }
   .contrast > div { border: 1px solid #000; }
