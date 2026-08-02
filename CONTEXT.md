@@ -185,6 +185,14 @@ gets silently undone later.
 | 03 | verbs-that-split | Separable verbs at a distance: *bel … op*, *neem … mee*, *maken … over*. In a long written clause the halves can sit fifteen words apart, and neither half alone is findable. | Taught twice before A2 by *Taaltalent*, so this is not an introduction. It is about the *reading* failure: you looked up *maken*, you looked up *over*, and both were wrong. |
 | 04 | verbs-that-change-shape | A past tense or participle on the page is usually not its own dictionary entry, and **two independent things** have happened to it. **Structure** — simple / separable / inseparable — decides where *ge-* goes and therefore where the dictionary verb begins. **Inflection** — weak / strong / irregular — decides whether the stem survived and therefore whether the reader can reverse it or must consult a table. | **Was chapter 07. Reframed and moved — see below.** ⚠ **Corrected after external review:** an earlier draft said one stem-change story yields both imperfect and participle. It does not. Vowel alternation characterises *strong* verbs only; the imperfect does not predict the participle (*worden–werd–geworden*); mixed verbs exist (*bakken–bakte–gebakken*). And six of the seven participles cited from the specimens are **weak**, so a strong-verb-only chapter would not serve 06 and 09. The *ge-* infix rule links this chapter directly back to 03. Donaldson printed 125–135 for the strong list. |
 
+⚠ **Standing correction to chapter 03, 2026-08-02.** The first published procedure said that when no
+*er/daar/hier/waar* appears, a stranded short word belongs to the verb. That is too strong. A
+postposition can close a direction or time phrase without any R-word: *de grens over*, *het huis
+uit*, *het hele jaar door*. Some movement cases admit competing grammatical analyses; the reading
+rule does not need to choose between them. The operational correction is to test the joined
+infinitive as a candidate, then look immediately left for a route, boundary or period. A successful
+dictionary lookup makes the join possible; it does not prove that this sentence uses it.
+
 ⚠ **Standing correction, 2026-08-02, after the chapter shipped — do not undo this.** This row
 originally read "**four separate reasons**, not one: weak participles / separable / inseparable /
 strong", and the chapter was drafted from it as four mutually exclusive questions with "the first one
@@ -222,6 +230,22 @@ table too (*gebracht*, *gedacht*, *gekocht*).
    participle that closes the block**, and a second article inside the block means you have not
    reached the head. `checks/forms.py` already guarded against exactly this by stopping at a nested
    article; the prose did not.
+
+   ⚠⚠ **Corrected again, 2026-08-02, in the working tree — and the second correction is a defect in
+   the first.** The replacement rule, "the head is the **word** after the participle", is itself an
+   overclaim: an ordinary adjective can still intervene. *het door u ingevulde **nieuwe** formulier*
+   has *nieuwe* after the participle and *formulier* as the head. The correct rule is **the first
+   NOUN after the participle**. Two further repairs came with it: the signal is an article followed
+   by material *no ordinary adjective could begin* — not merely "an article not followed by a noun",
+   which over-fires on *de nieuwe brief* — and a nested article does not invalidate the eventual
+   head, it only tells you to close the inner phrase and keep looking. Chapter 06's first worked
+   example now carries *nieuwe* so the sentence punishes **both** shortcuts.
+
+   **This is the single most instructive episode in the project so far.** The fix for an overclaim
+   was written as another absolute — *the word after* — and shipped inside the very chapter whose
+   defect was an absolute, in the same commit that added an editorial gate about absolutes. Gate 1
+   below is not a theoretical concern. Its scan for **always / every / never / the first / only**
+   would have caught this, run over the correction itself.
 2. **"*Wat*, not *dat*, after *alles*" is too strong.** Both occur in current standard Dutch. Only
    after a whole preceding clause is *wat* required.
 3. **"Everything a relative clause says can be packed in front" is false.** The construction wants a
@@ -232,6 +256,17 @@ table too (*gebracht*, *gedacht*, *gekocht*).
 5. ***Welke* is dated, not merely formal.** Donaldson (1981) calls it common in formal writing; that
    is a description of 1981. **This is the standing Donaldson caution firing for real** — he is
    authoritative for what a form *is*, not for current register. Modern usage prefers *die*.
+6. **"An article not followed by a noun" is not the signal.** Ordinary adjectives delay the noun
+   constantly: *de nieuwe brief*. The useful signal is narrower — an article followed by material
+   an ordinary adjective cannot begin, such as a preposition, date or adverb.
+7. **The head is not necessarily the word immediately after the participle.** Another ordinary
+   modifier can intervene: *het door u ingevulde nieuwe formulier*. The operational rule is the
+   first noun after the participle, not the next word.
+
+⚠ **Standing qualification to chapter 05, 2026-08-02.** The *die/dat* agreement rule has a narrow
+semantic exception: in an expanding relative clause, an *het*-word denoting a person can sometimes
+take *die* by meaning. The commas and human referent matter. Present gender as strong elimination
+evidence, not an exceptionless decoder, in that configuration.
 
 ### PART III — WHO MUST DO WHAT (2)
 
@@ -514,7 +549,7 @@ was asked and answered. Five items, ordered by what they would actually change.
 
 ### 1. The anti-overclaim gate — the most valuable item, because the defect has now happened three times
 
-The three blocking corrections in this book share one cause: **a useful tendency was written up as a
+The blocking corrections in this book share one cause: **a useful tendency was written up as a
 deterministic algorithm.**
 
 | Chapter | The overclaim as drafted | Why it was wrong |
@@ -522,12 +557,20 @@ deterministic algorithm.**
 | 04 | four exclusive categories, "first question that fires" | two intersecting dimensions, not four alternatives |
 | 05 | a noun immediately before `dat` means a pointer | `het feit dat…` |
 | 06 | jump ahead to the first noun | breaks on the chapter's own examples |
+| 06 | **the head is the *word* after the participle** — *the correction to the row above* | an adjective can intervene: *het door u ingevulde nieuwe formulier* |
+| 06 | "an article not followed by a noun" is the only signal you need | over-fires on *de nieuwe brief* |
+| 03 | with no `er`/`daar`/`hier`/`waar` in the clause, a stranded particle belongs to the verb | ignores direction and period phrases: *de grens over*, *het hele jaar door* |
 
-**The tell is grammatical, and it is checkable by eye.** All three were phrased as absolutes —
-*the first noun*, *wat, not dat*, *the first question that fires*. So before shipping any chapter, scan
-every procedure step for **always / every / never / the first / only / cannot** and ask whether the
-absolute survives the chapter's own examples. Chapter 06's did not, and the worked answers silently did
-the right thing while the stated rule sent the reader into the trap.
+**The fourth row is the one to remember.** The fix for an overclaim was itself an absolute, shipped in
+the same commit that added this gate. A rule can be corrected into a *different* wrong rule, and the
+new one is harder to see because it arrives wearing the authority of a correction.
+
+**The tell is grammatical, and it is checkable by eye.** Every row above was phrased as an absolute —
+*the first noun*, *the word after*, *the only signal*, *wat, not dat*, *the first question that fires*.
+So before shipping any chapter — **and before shipping any correction to one** — scan every procedure
+step for **always / every / never / the first / only / cannot / the word after** and ask whether the
+absolute survives the chapter's own examples. Chapter 06's did not, twice, and both times the worked
+answers silently did the right thing while the stated rule sent the reader into the trap.
 
 Four questions before shipping. The template enforces 3 and 4 structurally; **1 and 2 are human and
 must go on the checklist:**

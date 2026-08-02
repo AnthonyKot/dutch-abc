@@ -45,19 +45,26 @@ def main():
 
     nouns = json.loads(LEXICON.read_text(encoding="utf-8"))["nouns"]
 
-    # Derived entries are excluded from every figure below.
+    # Only the WORD LIST counts, and that is what the chapter claims.
     #
-    # data/lexicon.json carries a small tranche marked "src": "compound-head" —
-    # compounds whose gender was deduced from an entry already present, listed only
-    # so that a claim a chapter makes in prose gets machine-checked. They are not
-    # observations. Counting them would inflate "the register holds N nouns" with
-    # words the register never independently attested, and would move the de/het
-    # split by the arithmetic of a rule rather than by evidence.
+    # Chapter 05 says "across the A2 word list this book checks its examples against
+    # — 1044 nouns". That sentence is about a register with a provenance: the 50
+    # hand-seeded entries (no "src") and the bulk transcription from De Opmaat's
+    # woordenlijst ("src": "opmaat"). Everything else in data/lexicon.json was added
+    # later for a different reason — to make one chapter's example machine-checkable
+    # — and is not an observation about A2 vocabulary at all.
     #
-    # Found the moment it mattered: adding one such compound for chapter 05's own
+    # This is an allowlist rather than a denylist on purpose: a provenance tag
+    # invented next month is excluded by default instead of silently entering a
+    # published figure. Two tags have needed it so far, "compound-head" (gender
+    # deduced from an entry already present) and "chapter-example" (an ordinary noun
+    # a chapter used with an article).
+    #
+    # Found the moment it mattered: adding one derived compound for chapter 05's own
     # article-agreement exercise moved four published integers at once, and the
-    # honest correction was to fix the denominator, not the prose.
-    nouns = {w: e for w, e in nouns.items() if e.get("src") != "compound-head"}
+    # honest correction was the denominator, not the prose.
+    IN_REGISTER = (None, "opmaat")
+    nouns = {w: e for w, e in nouns.items() if e.get("src") in IN_REGISTER}
     text = re.sub(r"\s+", " ", CHAPTER.read_text(encoding="utf-8"))
     # Figures must be in prose, not in attributes. Tags become a SPACE, not nothing:
     # stripping "<td>36</td><td>36 het</td>" to "" yields "3636 het" and no \b36\b.

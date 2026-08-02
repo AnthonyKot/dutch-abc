@@ -31,11 +31,13 @@ pdftoppm -png -r 110 -f $((P/2)) -l $((P/2)) sources/donaldson-dutch-reference-g
 | 27–32 | Rules for the gender of Dutch nouns | 05 |
 | 43–49 | Diminutives, seven pages | 11 |
 | 50–57 | Personal pronouns (*u* / *je*) | 11 |
+| **62** | **§8.4.3 — *hier* + preposition replaces *dit*, *daar* + preposition replaces *dat*; "these forms are also separable"; and the time adverbs *daarna*, *daarop*, *daarvoor* are **not** separated** | 07 |
+| 63 | §8.5.3 — relative pronouns preceded by prepositions: *wie* for people, *waar-* + preposition for things | 06, 07 |
 | 74–91 | Adjectives, rules for inflection | 05 |
 | 92–111 | Adverbs; 94 intensifying; **95 Time–Manner–Place order** | 02 |
 | 146–153 | Modal auxiliary verbs | 08 |
 | 180–184 | Separable / inseparable verbs | 03 |
-| 185–189 | **Verbs followed by prepositional objects** | 07 |
+| 185–189 | **§11.23 Verbs followed by prepositional objects** — grouped under the Dutch preposition, not the verb. This is what produces *ervan overtuigd*, *eraan gedacht*, *erop gewezen*, and it is the list that usually breaks chapter 07's ambiguities | 07 |
 | 190–204 | Conjunctions: 190 co-ordinating, 192 subordinating | 10 |
 | 222–234 | Numerals; 229 money, **230 time**, 231 dates | 12 |
 | **235–238** | ***Er* — its own chapter** | 07 |

@@ -1213,6 +1213,10 @@
       "gender": "de",
       "src": "opmaat"
     },
+    "gebouw": {
+      "gender": "het",
+      "src": "chapter-example"
+    },
     "gebrek": {
       "gender": "het",
       "src": "opmaat"
@@ -1288,6 +1292,10 @@
     "gram": {
       "gender": "het",
       "src": "opmaat"
+    },
+    "grens": {
+      "gender": "de",
+      "src": "chapter-example"
     },
     "groente": {
       "gender": "de",
@@ -2210,6 +2218,10 @@
         "de"
       ],
       "src": "opmaat"
+    },
+    "meisje": {
+      "gender": "het",
+      "src": "chapter-example"
     },
     "melk": {
       "gender": "de",
