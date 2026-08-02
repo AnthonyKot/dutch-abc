@@ -1103,6 +1103,10 @@
       "gender": "het",
       "src": "opmaat"
     },
+    "feit": {
+      "gender": "het",
+      "plural": "feiten"
+    },
     "fiets": {
       "gender": "de",
       "src": "opmaat"

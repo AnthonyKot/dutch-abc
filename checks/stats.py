@@ -1,19 +1,29 @@
 #!/usr/bin/env python3
 """Statistics quoted in the chapters match the data they were computed from. HARD FAIL.
 
-Chapter 05 makes measured claims — how many nouns the register holds, what share
+Chapter 05 makes measured claims — how many nouns the register holds, how many
 are de, how many words end in -je, which words are the exceptions. Those numbers
 came from data/lexicon.json, and the moment a noun is added they are wrong on a
 published page with nothing to say so.
 
 This is the same bug as checks/spine.py and checks/status.py: a fact duplicated
-into prose, with nothing tying the copy to the original. It has now caused a
-defect three times in this project, and it caused one here — adding six nouns for
-chapter 05's own examples moved the total from 1033 to 1039 and the de share from
-72% to 73% while the drafted page still said 1036 and 72%.
+into prose with nothing tying the copy to the original. It has caused a defect
+three times in this project, and it caught two more here — adding six nouns for
+chapter 05's own examples moved the total from 1033 to 1039 while the drafted
+page still said 1036, and an external review found a stale "72%" surviving in the
+kaart after the body had been corrected to 73%.
 
-Rather than assert the numbers here (which would just move the duplication), the
-values are RECOMPUTED from the lexicon and each must appear in the chapter text.
+WHY THE CHAPTER QUOTES COUNTS AND NOT PERCENTAGES. That second failure exposed
+something worse than staleness. Adding a single noun — 'feit' — moved the de
+share from 73% back to 72%, because the ratio sits almost exactly on the rounding
+boundary. A published figure that flips when one word is added is not a claim
+worth printing, however diligently it is synchronised. The chapter now states
+exact integers, which are stable in character as well as checkable, and says
+"a little over seven in ten" for the shape of it.
+
+So this check enforces two things: every computed integer appears in the text,
+and NO bare percentage does. The second half exists so that a later pass cannot
+quietly reintroduce a brittle figure.
 """
 import collections
 import json
@@ -35,13 +45,17 @@ def main():
 
     nouns = json.loads(LEXICON.read_text(encoding="utf-8"))["nouns"]
     text = re.sub(r"\s+", " ", CHAPTER.read_text(encoding="utf-8"))
+    # Figures must be in prose, not in attributes. Tags become a SPACE, not nothing:
+    # stripping "<td>36</td><td>36 het</td>" to "" yields "3636 het" and no \b36\b.
+    stripped = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", text))
 
     g = collections.Counter("both" if isinstance(e["gender"], list) else e["gender"]
                             for e in nouns.values())
     total = sum(g.values())
-    want = [(str(total), f"lexicon total ({total} nouns)"),
-            (f"{round(100 * g['de'] / total)}%", "de share"),
-            (f"{round(100 * g['het'] / total)}%", "het share")]
+    want = [(total, f"lexicon total ({total})"),
+            (g["de"], f"de count ({g['de']})"),
+            (g["het"], f"het count ({g['het']})")]
+    names = []
 
     for suf in SUFFIXES:
         sub = {w: e["gender"] for w, e in nouns.items()
@@ -50,20 +64,27 @@ def main():
         if not sub:
             continue
         top, n = collections.Counter(sub.values()).most_common(1)[0]
-        want.append((str(len(sub)), f"-{suf} count ({len(sub)})"))
-        for w, gender in sub.items():
-            if gender != top:                      # a named exception must be named
-                want.append((w, f"-{suf} exception '{w}'"))
+        want.append((len(sub), f"-{suf} total ({len(sub)})"))
+        want.append((n, f"-{suf} conforming ({n})"))
+        names += [(w, f"-{suf} exception '{w}' must be named")
+                  for w, gender in sub.items() if gender != top]
 
-    missing = [why for value, why in want if value not in text]
-    if missing:
-        print(f"  chapter 05 quotes figures that no longer match data/lexicon.json:")
-        for m in missing:
-            print(f"  FAIL {m} — recomputed value is absent from the chapter")
+    problems = [why for value, why in want if not re.search(rf"\b{value}\b", stripped)]
+    problems += [why for name, why in names if name not in stripped]
+
+    # No bare percentages: see the module docstring. Rounded shares are unstable.
+    for pct in set(re.findall(r"\b(\d{1,3})%", stripped)):
+        problems.append(f"percentage '{pct}%' in the chapter — quote exact counts instead, "
+                        f"a rounded share flips when one noun is added")
+
+    if problems:
+        print("  chapter 05's figures do not agree with data/lexicon.json:")
+        for p in problems:
+            print(f"  FAIL {p}")
         return 1
 
-    print(f"  chapter 05's {len(want)} quoted figures all agree with the lexicon "
-          f"({total} nouns, {round(100 * g['de'] / total)}% de)")
+    print(f"  chapter 05: {len(want)} counts and {len(names)} named exceptions all agree with the "
+          f"lexicon ({total} nouns); no unstable percentages")
     return 0
 
 
