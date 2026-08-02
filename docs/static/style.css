@@ -483,6 +483,19 @@ img, svg { max-width: 100%; }
 }
 .worked .body > :last-child { margin-bottom: 0; }
 
+/* ---- the stopping point ----
+   CONTEXT gate 2: the usable operation must be extractable without reading the
+   whole chapter. Everything above this line is the method; everything below is
+   qualification, register and reference. Piloted in chapter 08; chapter 04 is the
+   one that most needs it retrofitted. */
+.stop {
+  margin: 2.2rem 0; padding: .7rem 1rem;
+  border-top: 2px solid var(--known); border-bottom: 1px solid var(--rule);
+  background: var(--bg-raised);
+  font-family: var(--sans); font-size: .88rem; color: var(--ink-soft);
+}
+.stop strong { color: var(--known); }
+
 /* ---- a branch in the procedure ----
    Distinct from .undecided on purpose. This marks a case the reader WILL hit and
    CAN resolve, once they know to test for it — a fork, not a dead end. Same shape
@@ -585,7 +598,7 @@ img, svg { max-width: 100%; }
   main { padding: 0; }
   a { color: #000; text-decoration: none; }
   .step > h2 .num { color: #000; background: none; border: 1px solid #000; }
-  .kaart, .device, .fence, .doc, .split, .check, .recall, .undecided, .branch,
+  .kaart, .device, .fence, .doc, .split, .check, .recall, .undecided, .branch, .stop,
   .worked .body { border: 1px solid #000; break-inside: avoid; }
   .worked > summary { border: none; color: #000; padding: 0; font-style: italic; }
   .contrast > div { border: 1px solid #000; }

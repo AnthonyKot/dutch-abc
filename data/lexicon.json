@@ -402,6 +402,10 @@
       "gender": "het",
       "plural": "bezwaren"
     },
+    "bezwaarschrift": {
+      "gender": "het",
+      "src": "compound-head"
+    },
     "bh": {
       "gender": "de",
       "src": "opmaat"
