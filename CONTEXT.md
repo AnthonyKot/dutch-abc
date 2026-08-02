@@ -175,6 +175,25 @@ table too (*gebracht*, *gedacht*, *gekocht*).
 | 06 | modifiers-on-both-sides | Relative clauses — *die, dat, wat, waarvan, waarbij, waarin*, and formal *welke* — stacked, each with its own verb at the end. **Then the mirror image: the extended attributive participle**, an entire clause crammed between the article and its noun — *het **door u ingevulde** formulier*. | Needs 02, 04 and 05, and is where all three pay off. **The heaviest chapter in the book, deliberately** — the attributive participle is the same question as a relative clause with the modifier on the left, and separating them would hide that. ⚠ Not "English cannot do this" — English has prenominal participles (*the completed form*). What English cannot do is carry a **long agent phrase** in front of the noun: it says *the form filled in by you*, never *the by-you-filled-in form*. That narrower contrast is the useful one. |
 | 07 | daarbij-hiervan-waarop | Pronominal adverbs: an R-word (*er, hier, daar, waar*) plus an adposition. *Daarbij, hiervan, waarop, ernaar, hierbij, waardoor.* Opaque until someone shows you it is a pointer and a preposition written backwards. ⚠ **They split, and often must** — *daar … mee*, *waar … aan*, and especially *er … op*; there are substitutions (*met* → *mee*, *tot* → *toe*); and *ergens/nergens/overal* belong to the same family. "Pointer before preposition" is a decoding heuristic, not a closed mechanical system. | ⚠ **Confirmed gap.** *De Opmaat* gives three uses of *er* and *Taaltalent 2* gives one; **neither gives the prepositional forms**, which are exactly the ones that saturate written Dutch. Donaldson devotes a whole chapter to *Er* (printed 235–238). Pair with 12's abbreviations as pure decoding wins. |
 
+⚠ **Standing corrections to chapter 06, 2026-08-02, after the chapter shipped — do not undo.**
+
+1. **The reading procedure said "jump ahead to the first noun."** That is wrong on the chapter's own
+   examples: in *de door de gemeente verstuurde brief* the first noun is *gemeente*, and in *de op 3
+   juni door de inspecteur genomen beslissing* it is *inspecteur*. The head is the noun **after the
+   participle that closes the block**, and a second article inside the block means you have not
+   reached the head. `checks/forms.py` already guarded against exactly this by stopping at a nested
+   article; the prose did not.
+2. **"*Wat*, not *dat*, after *alles*" is too strong.** Both occur in current standard Dutch. Only
+   after a whole preceding clause is *wat* required.
+3. **"Everything a relative clause says can be packed in front" is false.** The construction wants a
+   head that carries the role the participle assigns — typically object or theme. Say "a relative
+   clause built around a completed action can very often be compressed", not "everything".
+4. **The attributive *-e* is ordinary adjective inflection**, so it is absent after *een* + neuter
+   singular: *het door u ingevulde formulier* but *een door u ingevuld formulier*.
+5. ***Welke* is dated, not merely formal.** Donaldson (1981) calls it common in formal writing; that
+   is a description of 1981. **This is the standing Donaldson caution firing for real** — he is
+   authoritative for what a form *is*, not for current register. Modern usage prefers *die*.
+
 ### PART III — WHO MUST DO WHAT (2)
 
 | # | Slug | The one idea | Notes |
