@@ -572,11 +572,21 @@ deterministic algorithm.**
 | 08 | *dienen*/*hoeven* "always take *te*" | only when they govern an infinitive — *dat hoeft niet* is a complete sentence |
 | 08 | the verb search "will include every requirement the letter makes" | **the chapter's own exercise 3 disproves it**: *stuurt u mee* is a plain present tense doing the work of a command |
 | 08 | official letters "largely do not use" *moeten*; obligation vocabulary "barely overlaps" | *moeten* is good Dutch in every register and the IND form this chapter counts uses *moet u* once |
+| 11 | *hoor* softens | **contradicted by the chapter's own step-1 sentence**, where it is attached to a hard consequence and is underlining it |
+| 12 | "find a date whose first pair is above twelve → day-first" | fires wrongly on an ISO date, where the first pair is the century. Fixed by checking where the four-digit group sits *first* |
+| 12 | "three digits after the full stop is the grouping pattern" | **refuted by the chapter's own `2,750%`** — a rate quoted to three decimal places has exactly that shape |
+| 12 | a failed reconciliation means "you decoded at least one of them wrongly" | **the chapter's own exercise 3** is the case where the decode was right and the document was not |
+| 12 | "abbreviations take the gender of their final noun" | Donaldson says *many* abbreviations do; the chapter had promoted his hedge to a law |
 
-**Two of the chapter-08 rows are the chapter contradicting its own worked material**, which is now the
-single most reliable smell in this project. Before shipping, take each stated rule and run it against
-every example already in the chapter — the failures are usually *in the file*, not in some unconsidered
-case. Chapter 06 failed this way twice and chapter 08 twice more.
+**Four of these rows are the chapter contradicting its own worked material** — two in 08, one in 11 and
+three in 12 — which is now the single most reliable smell in this project. Before shipping, take each
+stated rule and run it against every example already in the chapter; the failures are usually *in the
+file*, not in some unconsidered case. Chapter 06 failed this way twice, 08 twice, 11 once and 12 twice.
+
+⚠ **Chapter 12 also shows the cheapest version of this check working.** All three of its defects were
+found by one pass with the drafted file open and no source needed: read each rule, then look for
+material already on the page that breaks it. That pass took minutes and caught a rule that would have
+misread every ISO date a reader met. **Run it on the draft, not on the idea.**
 
 **The fourth row is the one to remember.** The fix for an overclaim was itself an absolute, shipped in
 the same commit that added this gate. A rule can be corrected into a *different* wrong rule, and the
@@ -605,6 +615,38 @@ boundaries, without ever abandoning the practical method.
 procedure step and *not* inside `.undecided` or a stated-limit paragraph. It cannot decide whether an
 absolute is justified — some are — but the three defects above would all have been on its list. Not
 built; recorded so the idea is not lost.
+
+### 1b. The book describes documents; it does not advise on them — added 2026-08-02, before chapter 13
+
+**A new risk class that Parts I–IV never had.** Chapters 13 and 14 read letters that *do something to
+the reader* — assess a tax, set a deadline, offer a `bezwaar` route. A chapter about where the
+`bezwaar` paragraph sits drifts by itself into how to use it, and that drift is easy to miss because
+each individual sentence sounds helpful.
+
+**The line: this book says what the text says and where it sits. It does not say what to do about it.**
+
+Allowed — these are all readings of the page:
+
+- *this sentence is the one that requires something of you, and it is in the last section*
+- *the letter states a period of six weeks and does not say what it runs from*
+- *`bezwaar` is the word this genre uses for an objection, and the paragraph naming it is conventionally last*
+
+Not allowed — these are advice, prediction or law, and the book has no standing to give any of them:
+
+- what happens if a deadline passes
+- whether an objection suspends a payment obligation
+- whether the reader should object, pay, or call
+- how to write or submit anything
+
+**Why this is a correctness rule and not a liability one.** The book's entire claim is that its
+statements are checkable against a document the reader is holding. *Where the deadline sits* is
+checkable. *What happens if you miss it* is not on the page, varies by scheme and year, and no source
+in `sources/` establishes it — so asserting it would be the same defect as an unsourced grammar claim,
+with worse consequences. Chapter 12's `.undecided` already models the correct move: describe the
+problem precisely, then say who to ask.
+
+⚠ Chapter 14's `.undecided` is where this becomes explicit for the reader: the exit criterion was
+always *know what it wants*, never *know whether it is right*.
 
 ### 2. A visible core route — but the review's target was wrong, and the measurement says where to aim
 
