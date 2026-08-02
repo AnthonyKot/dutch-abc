@@ -3966,6 +3966,10 @@
       "gender": "het",
       "src": "opmaat"
     },
+    "vordering": {
+      "gender": "de",
+      "src": "chapter-example"
+    },
     "vork": {
       "gender": "de",
       "src": "opmaat"
