@@ -45,9 +45,36 @@ def load():
     return nouns, plurals
 
 
+def head_noun(words, nouns, plurals):
+    """The noun an article governs, which is not always the next word.
+
+    Chapter 06 is built on modifiers wedged between an article and its noun —
+    'het door u ingevulde formulier' — and the first version of this check only
+    ever looked at the adjacent word. It therefore never saw 'formulier', so the
+    construction the chapter is ABOUT went unverified, while 'door' and 'in' were
+    reported as unknown nouns.
+
+    So: scan forward for the first word the lexicon knows, and stop at anything
+    that starts a new noun phrase. Stopping is what keeps this safe — in
+    'de door het formulier veroorzaakte fout' the scan halts at 'het' rather than
+    matching 'formulier' against 'de' and raising a false failure. The check
+    would rather verify less than accuse wrongly.
+    """
+    for w in words:
+        if w in ("de", "het", "een"):        # a new noun phrase; this one is not ours
+            return None
+        if w in nouns or w in plurals:
+            return w
+    return None
+
+
 def check_articles(fn, text, nouns, plurals):
     for line, span in dutch_spans(text):
-        for art, noun in re.findall(r"\b(de|het)\s+([a-zà-ÿ]+)\b", span, flags=re.I):
+        for m in re.finditer(r"\b(de|het)\s+([a-zà-ÿ]+((?:\s+[a-zà-ÿ0-9]+){0,6}))",
+                             span, flags=re.I):
+            art = m.group(1)
+            following = [w.lower() for w in m.group(2).split()]
+            noun = head_noun(following, nouns, plurals) or following[0]
             n, a = noun.lower(), art.lower()
             if n in plurals:                      # every plural takes 'de'
                 if a != "de":

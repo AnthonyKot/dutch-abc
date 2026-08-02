@@ -328,6 +328,10 @@
       "gender": "het",
       "plural": "belastingjaren"
     },
+    "beoordeling": {
+      "gender": "de",
+      "plural": "beoordelingen"
+    },
     "berekening": {
       "gender": "de",
       "plural": "berekeningen"
@@ -877,6 +881,10 @@
       "gender": "de",
       "src": "opmaat"
     },
+    "document": {
+      "gender": "het",
+      "plural": "documenten"
+    },
     "doek": {
       "gender": "de",
       "src": "opmaat"
@@ -912,6 +920,10 @@
     "dorst": {
       "gender": "de",
       "src": "opmaat"
+    },
+    "dossier": {
+      "gender": "het",
+      "plural": "dossiers"
     },
     "douche": {
       "gender": "de",
@@ -3237,6 +3249,10 @@
     "slagroom": {
       "gender": "de",
       "src": "opmaat"
+    },
+    "sleutel": {
+      "gender": "de",
+      "plural": "sleutels"
     },
     "slipje": {
       "gender": "het",

@@ -65,24 +65,34 @@ def main():
     # is exactly the set checks/forms.py is able to fail on.
     if LEXICON.exists():
         nouns = json.loads(LEXICON.read_text(encoding="utf-8")).get("nouns", {})
-        plurals = {v["plural"].lower() for v in nouns.values()
+        plurals = {v["plural"].lower(): k for k, v in nouns.items()
                    if isinstance(v, dict) and v.get("plural")}
+        # Same head-noun resolution forms.py uses, imported rather than reimplemented:
+        # the two reported different totals for one commit because this copy still
+        # looked only at the word adjacent to the article.
+        from forms import head_noun  # noqa: E402
         used, unchecked = set(), set()
         for fn in CHAPTERS:
             for _, span in dutch_spans(fn.read_text(encoding="utf-8")):
-                for noun in re.findall(r"\b(?:de|het)\s+([a-zà-ÿ]+)\b", span, flags=re.I):
-                    n = noun.lower()
-                    used.add(n)
-                    if n not in nouns and n not in plurals:
-                        unchecked.add(n)
+                for m in re.finditer(r"\b(?:de|het)\s+([a-zà-ÿ]+((?:\s+[a-zà-ÿ0-9]+){0,6}))",
+                                     span, flags=re.I):
+                    following = [w.lower() for w in m.group(1).split()]
+                    n = head_noun(following, nouns, plurals)
+                    if n is None:
+                        unchecked.add(following[0])
+                        used.add(following[0])
+                    else:
+                        used.add(n)
         checked = len(used) - len(unchecked)
         print(f"\n  lexicon: {len(nouns)} nouns")
         print(f"  nouns used with an article in the chapters: {len(used)}; "
               f"forms.py can check {checked}, cannot check {len(unchecked)}")
         if unchecked:
             print(f"    unchecked: {', '.join(sorted(unchecked))}")
-            print("    (the pattern cannot tell article 'het' from pronoun 'het', and it "
-                  "picks up\n     the adjective in 'het ingevulde formulier' — see forms.py)")
+            print("    (two known causes, both benign: pronoun 'het' before a verb, and an\n"
+                  "     article whose noun phrase contains a nested article — 'de op 3 juni door\n"
+                  "     de inspecteur genomen beslissing', where the scan stops rather than risk\n"
+                  "     matching the wrong noun. The nested phrase is checked on its own.)")
 
     print("\n  (advisory: no failures are raised from this script)")
     return 0
