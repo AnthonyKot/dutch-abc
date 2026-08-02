@@ -594,6 +594,25 @@ deterministic algorithm.**
 | 12 | "three digits after the full stop is the grouping pattern" | **refuted by the chapter's own `2,750%`** — a rate quoted to three decimal places has exactly that shape |
 | 12 | a failed reconciliation means "you decoded at least one of them wrongly" | **the chapter's own exercise 3** is the case where the decode was right and the document was not |
 | 12 | "abbreviations take the gender of their final noun" | Donaldson says *many* abbreviations do; the chapter had promoted his hedge to a law |
+| 12 | **the *final* noun governs an abbreviation's gender** — the corrected version of the row above | **factually wrong, and the source is wrong too.** It is the **head** noun: *het CBS* although *statistiek* is last and is a *de*-word. Donaldson's own example *het KNMI* has head = final, so it cannot test the rule it illustrates |
+| 12 | the procedure's first step: "mark every token that is **not a word**" | *half, miljard, kwartier, kwartaal, begin, midden, medio, eind* are ordinary words and are **half of what the chapter teaches**. A reader following the procedure literally marks none of them |
+
+⚠ **Two new failure shapes, both from chapter 12 and both worth naming separately.**
+
+**A source can be the thing that is wrong.** The anti-overclaim gate has so far caught the book
+promoting a hedge into a law. The abbreviation-gender row is different: Donaldson's *final noun*
+formulation is not a hedge that got hardened, it is **incorrect**, and his own example cannot detect
+that because in *het KNMI* the head noun and the final noun are the same word. **An illustration that
+cannot distinguish the rule from its rival is not evidence for either.** When a source gives one
+example of a rule, ask whether a different example would come out differently — and if you cannot
+construct one, the rule is unverified rather than confirmed.
+
+**The procedure itself needs the gate, not just the rules inside it.** Every earlier failure was a
+stated rule breaking on the chapter's examples. Chapter 12's step-1 instruction — "mark every token
+that is **not a word**" — was the *procedure*, and it excluded *half*, *miljard*, *kwartaal* and the
+month adverbs, which are ordinary words and are half the chapter. Six sites descended from that one
+framing. **Run the procedure over the chapter's own material as a reader would, literally, before
+shipping.**
 
 **Four of these rows are the chapter contradicting its own worked material** — two in 08, one in 11 and
 three in 12 — which is now the single most reliable smell in this project. Before shipping, take each
