@@ -505,3 +505,111 @@ attested, while `forms.py` continues to check the article against all 1045. Conf
   cover, so it sat near 15% and did not move when the lexicon grew twentyfold. `checks/lexicon.py`
   now reports what forms.py can actually fail on: nouns used **with an article** in the chapters,
   checked vs unchecked.
+
+## Editorial gates for the remaining eight chapters — added 2026-08-02
+
+From an external review of 01–06. Its architectural verdict was *keep the spine, do not move chapters,
+do not split 06* — recorded here because a later pass tempted to reorganise should know the question
+was asked and answered. Five items, ordered by what they would actually change.
+
+### 1. The anti-overclaim gate — the most valuable item, because the defect has now happened three times
+
+The three blocking corrections in this book share one cause: **a useful tendency was written up as a
+deterministic algorithm.**
+
+| Chapter | The overclaim as drafted | Why it was wrong |
+|---|---|---|
+| 04 | four exclusive categories, "first question that fires" | two intersecting dimensions, not four alternatives |
+| 05 | a noun immediately before `dat` means a pointer | `het feit dat…` |
+| 06 | jump ahead to the first noun | breaks on the chapter's own examples |
+
+**The tell is grammatical, and it is checkable by eye.** All three were phrased as absolutes —
+*the first noun*, *wat, not dat*, *the first question that fires*. So before shipping any chapter, scan
+every procedure step for **always / every / never / the first / only / cannot** and ask whether the
+absolute survives the chapter's own examples. Chapter 06's did not, and the worked answers silently did
+the right thing while the stated rule sent the reader into the trap.
+
+Four questions before shipping. The template enforces 3 and 4 structurally; **1 and 2 are human and
+must go on the checklist:**
+
+1. What exact domain does this procedure cover?
+2. What is its most plausible **false positive**?
+3. What observation can prove the proposed reading wrong? → `.check`, `li.hard`
+4. What ordinary case must remain unresolved? → `.undecided`
+
+Prefer *candidate*, *signal*, *usually*, *confirm by…* wherever the operation is heuristic. **Chapter 02
+is the model**: fast procedure first, then questions, single verbs, tails and uncertain clause
+boundaries, without ever abandoning the practical method.
+
+⚠ Worth attempting: `checks/hedge.py`, **advisory**, reporting absolute quantifiers that appear in a
+procedure step and *not* inside `.undecided` or a stated-limit paragraph. It cannot decide whether an
+absolute is justified — some are — but the three defects above would all have been on its list. Not
+built; recorded so the idea is not lost.
+
+### 2. A visible core route — but the review's target was wrong, and the measurement says where to aim
+
+The review attributed chapter growth to "rules, exceptions, checks, references and retrieval material".
+Measured, that is not where the weight is:
+
+| ch | core words | apparatus | refs | core % |
+|---|---|---|---|---|
+| 01 | 1457 | 557 | 114 | 68% |
+| 02 | 2646 | 796 | 253 | 72% |
+| 03 | 2410 | 821 | 144 | 71% |
+| **04** | **3403** | 965 | 147 | **75%** |
+| 05 | 2367 | 852 | 204 | 69% |
+| 06 | 2670 | 895 | 172 | 71% |
+
+The apparatus is a stable ~23% and the references ~5%. **The growth is in the core body**, and chapter
+04's is 2.3× chapter 01's. Marking the apparatus optional would therefore buy almost nothing — the fast
+path has to be carved out of the explanation itself.
+
+So: every chapter must contain a route that reads
+**obstruction → core rule → the procedure → one worked example → try it yourself**, followed by an
+explicit **"you can stop here and use the procedure"**, with everything after it marked *When this
+fails* / *More cases* / *Reference*. **Chapter 04 first**, as the outlier and as Part I's closer.
+
+The reason this matters more than it sounds: the target reader has spent seven years routing around
+Dutch text. A chapter can be intellectually excellent and still reproduce the original failure if the
+usable operation is buried thirty kilobytes deep.
+
+### 3. Chapter 07 — fence the scope, and close Part II rather than cataloguing
+
+Fence it in the chapter, in these terms: **this chapter teaches pronominal adverbs used with
+prepositions; it does not teach every grammatical use of `er`.** The existing note that
+"pointer before preposition" is a decoding heuristic and not a closed mechanical system stands, and the
+`.undecided` slot is where it belongs.
+
+Four things to recover, and nothing else: the **pointer** (`er` / `hier` / `daar` / `waar`), the
+**preposition** (`bij` / `van` / `op` / `mee` / `aan`), the **separation** (`daar … mee`, `er … op`),
+and the **thing or clause pointed to**.
+
+Then end 07 with a **cumulative passage, not three isolated sentences** — one that cannot be read
+without chapters 02, 05, 06 and 07 together. That makes Part II's ending earned and gives *what refers
+to what* its first real test. **This is the first chapter written into the extended template rather
+than retrofitted to it**, and the slot that will take the work is `.undecided`.
+
+### 4. Test 01–06 on a real reader before writing all eight remaining chapters
+
+**The user's call, and the only item on this list that CI cannot substitute for.** `checks/template.py`
+says so in its own docstring: it cannot tell whether a retrieval question is good or a self-check
+criterion correct.
+
+Give 01–06 to someone near the stated reader and observe **three things only**: where they stop or
+start skimming; which procedures they can recall the next day without reopening the page; and whether
+they can apply them to one previously unseen letter. **Do not optimise for whether they liked the
+prose.** One reader will not validate the book, but they will settle whether the growing chapter depth
+is helping or hiding the method — which is item 2's open question, and it is currently being answered
+by argument rather than evidence.
+
+### 5. Part III is one question asked twice — bind 08 and 09 with a shared extraction format
+
+Keep them short and task-oriented. They answer **who must do what?**, and neither should become a
+comprehensive chapter on modal verbs, passives or nominalisations. Bind them with one repeated
+output the reader fills in: **actor / required action / deadline** — which also feeds chapter 13's
+"where the one actionable sentence sits" directly.
+
+For Parts IV–V the review proposed no change and neither do I. Two things worth carrying forward
+verbatim: chapter 10 teaches **logical consequences**, not a list of connectives; and the standing rule
+that **genre is content, not backdrop** is what chapter 11 is for — official letter against
+neighbourhood and messaging Dutch, which is the strong contrast the book has so far postponed.
