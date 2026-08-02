@@ -64,6 +64,9 @@
       "gender": "de",
       "plural": "brieven"
     },
+    "buitenland": {
+      "gender": "het"
+    },
     "controle": {
       "gender": "de",
       "plural": "controles"
