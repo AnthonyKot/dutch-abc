@@ -102,12 +102,31 @@ def main():
         rel = fn.relative_to(ROOT)
         if rel.parts[0] == "checks" and fn.name == "redaction.py":
             continue
+        # Every span occupied by a sanctioned placeholder, so a pattern that
+        # matches part of one can be recognised as harmless.
+        allowed_spans = [m.span() for m in ALLOW.finditer(text)]
+        for lit in ALLOW_LITERAL:
+            start = 0
+            while (i := text.find(lit, start)) != -1:
+                allowed_spans.append((i, i + len(lit)))
+                start = i + 1
         for label, rx in PATTERNS:
             for m in rx.finditer(text):
                 line_no = text[: m.start()].count("\n") + 1
                 # Exempt the MATCH, never the whole line: a real identifier
                 # sharing a line with a placeholder was previously skipped.
                 if ALLOW.fullmatch(m.group(0)) or m.group(0) in ALLOW_LITERAL:
+                    continue
+                # ⚠ AND a match that is only PART of a sanctioned placeholder.
+                # The allowlist blessed the whole aanslagnummer form
+                # 0000.00.000.X.00.00, but the 'dotted digit group' pattern
+                # extracts '0000.00.000' from inside it, which fullmatches
+                # nothing on the list. So the documented placeholder failed the
+                # build the first time it was used in a tracked file. Exempting
+                # the SPAN rather than the string keeps the earlier fix intact —
+                # a real identifier sharing a line with a placeholder is still
+                # caught, because it does not sit inside one.
+                if any(a <= m.start() and m.end() <= b for a, b in allowed_spans):
                     continue
                 problems.append(f"{rel}:{line_no}  {label}: {m.group(0)!r}")
 

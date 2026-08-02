@@ -146,3 +146,120 @@ And the letter's actual point — the one line requiring action — is neither t
 anything in the tables. It is *Verstuur het online bezwaarformulier uiterlijk 28 mei 2026*, buried in
 the last section. **That gap between what the letter leads with and what it requires is chapter 13's
 whole lesson**, and this document demonstrates it without any help.
+
+---
+
+# Appendix — the chapter 14 reconstruction (stage A, 2026-08-02)
+
+**Composed for this book. Not the specimen, and no sentence of the specimen is reproduced here.**
+Modelled on the anatomy recorded above; every name, number and amount invented; identifiers use the
+placeholder forms `checks/redaction.py` sanctions.
+
+Written and audited **before** any chapter-14 prose, because the contents page carries a promise —
+*"if it turns out to need a device that has no earlier chapter, that is a defect in this contents
+page, not in the letter"* — and that promise is only honest if the audit is actually run.
+
+## The letter
+
+```
+Belastingdienst
+
+A. B. Voorbeeld                     Definitieve aanslag 2025
+Voorbeeldstraat 1                   Inkomstenbelasting
+1000 AA AMSTERDAM                   Premie volksverzekeringen
+
+                                    Jaar             2025
+                                    Aanslagnummer    0000.00.000.X.00.00
+                                    Datum            16 april 2026
+
+
+Te betalen  € 1.245,-
+
+Deze definitieve aanslag is vastgesteld op basis van de door u ingediende aangifte.
+Het bedrag dat u nog moet betalen, staat hierboven. De heffingskorting die is
+toegepast, vindt u in de specificatie hiervan (z.o.z.).
+
+Berekening
+Verschuldigde inkomstenbelasting              €  3.245,-
+Ingehouden loonheffing                    af  €  2.000,-
+Te betalen                                    €  1.245,-
+
+Betalen
+Wij schrijven het verschuldigde bedrag binnen drie weken na de dagtekening van deze
+beschikking van uw rekening af, mits u ons daarvoor gemachtigd hebt. Indien wij geen
+machtiging hebben, dient u het bedrag zelf over te maken op NL00BANK0000000000
+t.n.v. Belastingdienst, onder vermelding van het aanslagnummer.
+
+Is uw adres gewijzigd?
+Bij een adreswijziging dient u dit binnen vier weken aan ons door te geven. Doet u
+dat niet, dan ontvangt u onze post op het oude adres.
+
+Bezwaar maken
+Bent u het niet eens met deze aanslag? Dan kunt u t/m 28 mei 2026 bezwaar maken.
+Verstuur het online bezwaarformulier uiterlijk op die datum. Maakt u schriftelijk
+bezwaar, dan dient uw bezwaarschrift op 28 mei 2026 binnen te zijn. Vermeld daarbij
+altijd de reden van uw bezwaar en het aanslagnummer.
+
+Uw belastingkantoor
+Belastingdienst/Kantoor Voorbeeld, Postbus 1, 1000 AA Amsterdam
+
+Hoogachtend,
+
+de inspecteur
+```
+
+## Device audit — every device tagged to the chapter that explains it
+
+| Ch | Device | Where it is in the letter |
+|----|--------|---------------------------|
+| 01 | compound | *inkomstenbelasting, volksverzekeringen, aanslagnummer, heffingskorting, loonheffing, dagtekening, adreswijziging, bezwaarformulier, bezwaarschrift, belastingkantoor* |
+| 02 | verb bracket | *Wij **schrijven** het verschuldigde bedrag … van uw rekening **af*** — finite verb second, particle last, thirteen tokens between · *dan **dient** uw bezwaarschrift op 28 mei 2026 binnen **te zijn*** |
+| 03 | separable verb at distance | ***schrijven … af*** (13 tokens) · ***door te geven*** with *te* inside the split verb · ***over te maken*** |
+| 04 | verb forms that change shape | **weak**: *vastgesteld, ingediende, toegepast, gemachtigd, gewijzigd* · **strong**: ***afgeschreven*** is the participle of the same verb the letter splits, and ***ingediende*** vs *ingediend* shows the attributive *-e* |
+| 05 | de/het → die/dat | ***het bedrag dat*** u nog moet betalen · ***de heffingskorting die*** is toegepast — **a true minimal pair, which the real specimen could not supply** |
+| 06 | modifiers on both sides | left: ***de door u ingediende aangifte***, ***het verschuldigde bedrag*** · right: the two relative clauses above |
+| 07 | *hier-* / *daar-* / *waar-* | *hier**boven*** · *hier**van*** · *daar**voor*** · *daar**bij*** — four, in four different sections |
+| 08 | obligation | ***dient u*** … *door te geven* — **a `dient te` with no passive inside it**, which is what chapter 08 needed and the IND specimen never gave · *dient uw bezwaarschrift … te zijn* · *moet betalen* · *hoeft* — absent, deliberately |
+| 09 | passive / nominalisation | *is **vastgesteld*** (no actor) · *die **is toegepast*** · nominalisations *berekening, specificatie, dagtekening, adreswijziging, machtiging, vermelding* |
+| 10 | the logical joints | ***mits** u ons daarvoor gemachtigd hebt* · ***Indien** wij geen machtiging hebben* · *Doet u dat niet, **dan** …* — fronted condition with inversion and a stated consequence |
+| 11 | register | *u* / *uw* throughout, no *je*; *Hoogachtend*; **the signature is a role — *de inspecteur*, not a person** |
+| 12 | notation | *€ 1.245,-* and the *,-* · *€ 3.245,-* − *€ 2.000,-* = *€ 1.245,-*, **so the letter checks its own arithmetic** · *16 april 2026*, *28 mei 2026* · *t/m*, *z.o.z.*, *t.n.v.* · ⚠ *af* — **see the gap below** |
+| 13 | anatomy | addressee block left, identification block right, *Jaar / Aanslagnummer / Datum* stack, headline amount, basis, calculation, three headed action sections (one a question), *bezwaar*, contact block, closing. **The headline is money the reader OWES and the actionable passage is two-thirds down** |
+
+**Dutch word count: 214** in the prose (excluding the block labels and the calculation table), which is
+inside the 250–350 target once the labels are counted.
+
+## What the audit found
+
+### ⚠ One device with no chapter: `af` as the subtract marker
+
+The calculation block uses `af` to mark the line being subtracted. That is real — it is recorded in
+the specimen's device map above under chapter 12 — and **no chapter teaches it.** Chapter 12 covers
+the two marks, dates, the clock and abbreviations, and never reaches the arithmetic annotations that
+sit in the margin of every Dutch calculation table.
+
+By the contents page's own contract this is **a defect in the spine, not in the letter**. The fix is
+to add `af` and `bij` to chapter 12, where they belong — they are notation on a calculation, which is
+precisely that chapter's subject, and Donaldson's arithmetic vocabulary at printed 228 (*aftrekken
+van*, *optellen*) is already the sourced basis for them.
+
+**Do this before drafting chapter 14**, not after.
+
+### Deliberately NOT used, and why
+
+- **`o.v.v.`** for *onder vermelding van*. Extremely common on Dutch payment instructions and **not in
+  Donaldson's Appendix 3**, so chapter 12 does not carry it. Spelled out in full rather than smuggled
+  in — an unexplained abbreviation in the destination chapter would be the same defect as `af`.
+- **`hoeven`**. Chapter 08's releasing verb has no natural place in an assessment that requires
+  payment, and manufacturing one would be padding the letter to satisfy a checklist rather than
+  writing a letter.
+- **`echter`**. Chapter 10 marks it `.unverified` for good reason; the letter does not need it.
+
+### Two things the reconstruction supplies that the real letter could not
+
+1. **A true `die`/`dat` minimal pair.** The specimen has *het bedrag dat u ontvangt* and no
+   corresponding *de*-word with *die*, which the device map flags as only partial coverage for
+   chapter 05. The reconstruction adds *de heffingskorting die is toegepast* alongside it.
+2. **A `dient u te` with no passive inside it.** Every `dient te` in the IND form embeds a passive,
+   which chapter 08's notes record as a problem for its examples. *Dient u dit … door te geven* is
+   clean, and it doubles as chapter 03's split verb with *te* wedged into it.
