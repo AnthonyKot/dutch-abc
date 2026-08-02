@@ -370,6 +370,10 @@
       "gender": "de",
       "src": "opmaat"
     },
+    "betalen": {
+      "gender": "het",
+      "src": "chapter-example"
+    },
     "betaling": {
       "gender": "de",
       "plural": "betalingen"
@@ -1564,6 +1568,10 @@
       "gender": "het",
       "src": "opmaat"
     },
+    "indienen": {
+      "gender": "het",
+      "src": "chapter-example"
+    },
     "informatie": {
       "gender": "de",
       "src": "opmaat"
@@ -1627,6 +1635,10 @@
     "invloed": {
       "gender": "de",
       "src": "opmaat"
+    },
+    "invullen": {
+      "gender": "het",
+      "src": "chapter-example"
     },
     "inwoner": {
       "gender": "de",
@@ -3478,7 +3490,7 @@
     },
     "stuk": {
       "gender": "het",
-      "src": "opmaat"
+      "plural": "stukken"
     },
     "stukje": {
       "gender": "het",
