@@ -45,6 +45,17 @@ def load():
     return nouns, plurals
 
 
+# Anything that can open a fresh noun phrase, so a noun after it is governed by
+# IT and not by the article the scan started from. Articles, demonstratives,
+# possessives and the quantifiers that behave like determiners.
+NEW_PHRASE = {
+    "de", "het", "een",
+    "deze", "dit", "die", "dat",
+    "mijn", "jouw", "uw", "zijn", "haar", "ons", "onze", "hun", "jullie",
+    "geen", "elke", "elk", "iedere", "ieder", "alle", "sommige", "welke",
+}
+
+
 def head_noun(words, nouns, plurals):
     """The noun an article governs, which is not always the next word.
 
@@ -59,9 +70,22 @@ def head_noun(words, nouns, plurals):
     'de door het formulier veroorzaakte fout' the scan halts at 'het' rather than
     matching 'formulier' against 'de' and raising a false failure. The check
     would rather verify less than accuse wrongly.
+
+    ⚠ THE STOP LIST WAS THREE WORDS LONG AND THE DOCSTRING PROMISED ALL OF THEM.
+    It listed de/het/een only, so any OTHER determiner opening a new phrase was
+    walked straight through. Chapter 13 wrote the ordinary Dutch idiom
+
+        Bent u het niet eens met deze beslissing?
+
+    where 'het' is the object pronoun of 'het eens zijn met'. The scan crossed
+    'niet eens met deze' and matched 'beslissing' against it, failing the build
+    on a correct sentence. Demonstratives and possessives open a noun phrase
+    exactly as articles do, so they belong on the list the docstring already
+    described. Returning None here means "not checked", which is the safe
+    direction and the one this function is built to prefer.
     """
     for w in words:
-        if w in ("de", "het", "een"):        # a new noun phrase; this one is not ours
+        if w in NEW_PHRASE:                  # a new noun phrase; this one is not ours
             return None
         if w in nouns or w in plurals:
             return w
@@ -69,11 +93,31 @@ def head_noun(words, nouns, plurals):
 
 
 def check_articles(fn, text, nouns, plurals):
+    # ⚠ THIS SCAN USED TO CONSUME THE PHRASES IT SKIPPED, AND THAT COST COVERAGE
+    # SILENTLY. The old pattern matched an article plus up to six following words
+    # in one go. Because re.finditer does not overlap, a phrase whose head noun is
+    # absent from the lexicon SWALLOWED the next article phrase, which was then
+    # never examined at all:
+    #
+    #     'De vergunning wordt pas geldig nadat de bedrag is bijgeschreven'
+    #
+    # matched once from 'De vergunning' (unknown noun -> unchecked) and the wrong
+    # 'de bedrag' inside it was never seen. Injected as a deliberate fault and the
+    # suite passed. The NOTE line reported 'vergunning' as unchecked and said
+    # nothing about the checkable error hiding behind it, which is the worst shape
+    # a check can fail in: quiet, and with a reassuring message next to it.
+    #
+    # Articles are now located one at a time and the window is read from the text
+    # after each, so every article is examined on its own regardless of what its
+    # neighbours are.
     for line, span in dutch_spans(text):
-        for m in re.finditer(r"\b(de|het)\s+([a-zà-ÿ]+((?:\s+[a-zà-ÿ0-9]+){0,6}))",
-                             span, flags=re.I):
+        for m in re.finditer(r"\b(de|het)\b", span, flags=re.I):
             art = m.group(1)
-            following = [w.lower() for w in m.group(2).split()]
+            window = re.match(r"\s+([a-zà-ÿ]+(?:\s+[a-zà-ÿ0-9]+){0,6})",
+                              span[m.end():], flags=re.I)
+            if not window:
+                continue
+            following = [w.lower() for w in window.group(1).split()]
             noun = head_noun(following, nouns, plurals) or following[0]
             n, a = noun.lower(), art.lower()
             if n in plurals:                      # every plural takes 'de'

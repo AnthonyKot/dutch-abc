@@ -2680,6 +2680,16 @@
       "gender": "de",
       "src": "opmaat"
     },
+    "parkeervergunning": {
+      "gender": "de",
+      "plural": "parkeervergunningen",
+      "src": "compound-head"
+    },
+    "parkeerverordening": {
+      "gender": "de",
+      "plural": "parkeerverordeningen",
+      "src": "compound-head"
+    },
     "parket": {
       "gender": "het",
       "src": "opmaat"
@@ -2835,6 +2845,11 @@
     "poep": {
       "gender": "de",
       "src": "opmaat"
+    },
+    "polis": {
+      "gender": "de",
+      "plural": "polissen",
+      "src": "chapter-example"
     },
     "politicus": {
       "gender": "de",
@@ -3687,6 +3702,11 @@
       "gender": "de",
       "src": "opmaat"
     },
+    "toewijzing": {
+      "gender": "de",
+      "plural": "toewijzingen",
+      "src": "chapter-example"
+    },
     "toilet": {
       "gender": "het",
       "src": "opmaat"
@@ -3839,6 +3859,11 @@
       "gender": "de",
       "src": "opmaat"
     },
+    "vergunning": {
+      "gender": "de",
+      "plural": "vergunningen",
+      "src": "chapter-example"
+    },
     "verhaal": {
       "gender": "het",
       "src": "opmaat"
@@ -3862,6 +3887,11 @@
     "verleden": {
       "gender": "het",
       "src": "opmaat"
+    },
+    "verordening": {
+      "gender": "de",
+      "plural": "verordeningen",
+      "src": "chapter-example"
     },
     "verpleegkundige": {
       "gender": "de",

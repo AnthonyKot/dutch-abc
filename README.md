@@ -44,7 +44,7 @@ No real letter is reproduced anywhere.
 
 ## Status
 
-Scaffold and the full fourteen-chapter map are in place. **Chapters 01–12 are written**; the rest
+Scaffold and the full fourteen-chapter map are in place. **Chapters 01–13 are written**; the rest
 are not. That sentence is checked against the files on disk by `checks/status.py`, here and on both
 public pages, because it has gone stale in this file twice.
 
