@@ -652,6 +652,21 @@ reader arrived with. A chapter that manufactures an unresolvable case out of som
 actually knows has taught the original problem back. Knowing that a Dutch-language letter from a Dutch
 organisation writes day-month-year is evidence, and the reader is entitled to it.
 
+**The question to carry into every remaining chapter's review**, and the general form of all of the
+above: **for each conclusion the chapter reaches, is it explicit, conventionally probable, or
+unresolved?** Chapter 12 now ranks its evidence in exactly those three levels — explicit notation
+(*t/m* includes the day), provenance selecting between conventions (a Dutch letter is
+day-month-year, unless the document signals otherwise), and variation living inside Dutch itself that
+provenance cannot touch (bare *tot*). The book already owns this distinction: it is chapter 09's
+*stated / recoverable / probable / not stated* grading of actors, and Part V should spend it rather
+than invent another vocabulary.
+
+⚠ **Level 2 needs its own hedge, and chapter 12 shipped without one for a few minutes.** "A Dutch
+letter from a Dutch sender is day-month-year" is an absolute, and the chapter's own procedure already
+knew better — a four-digit group in first position signals a different convention. The published
+wording is now *normally establishes … unless the document itself signals another convention*.
+**A hierarchy of evidence does not exempt its own levels from gate 1.**
+
 Prefer a genuinely undecidable residue instead. Chapter 12's replacement is bare *tot* against *t/m*:
 arithmetic does not apply, the calendar does not apply, and the document's origin fixes a date's
 *shape* but says nothing about what a preposition *includes*. Note also that it needed no new source,
