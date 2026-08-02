@@ -104,6 +104,11 @@
       "gender": "de",
       "src": "opmaat"
     },
+    "afrekening": {
+      "gender": "de",
+      "plural": "afrekeningen",
+      "src": "chapter-example"
+    },
     "afstand": {
       "gender": "de",
       "src": "opmaat"
@@ -1904,6 +1909,10 @@
       "gender": "de",
       "src": "opmaat"
     },
+    "knmi": {
+      "gender": "het",
+      "src": "chapter-example"
+    },
     "knotje": {
       "gender": "het",
       "src": "opmaat"
@@ -2023,6 +2032,11 @@
     "kwart": {
       "gender": "het",
       "src": "opmaat"
+    },
+    "kwartaal": {
+      "gender": "het",
+      "plural": "kwartalen",
+      "src": "chapter-example"
     },
     "kwartier": {
       "gender": "het",
@@ -3351,6 +3365,11 @@
     "specialist": {
       "gender": "de",
       "src": "opmaat"
+    },
+    "specificatie": {
+      "gender": "de",
+      "plural": "specificaties",
+      "src": "chapter-example"
     },
     "speelgoed": {
       "gender": "het",
