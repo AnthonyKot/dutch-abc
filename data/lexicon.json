@@ -56,6 +56,11 @@
       "gender": "de",
       "plural": "aanslagen"
     },
+    "aanslagnummer": {
+      "gender": "het",
+      "plural": "aanslagnummers",
+      "src": "compound-head"
+    },
     "aantal": {
       "gender": "het",
       "src": "opmaat"
@@ -835,6 +840,11 @@
     "daggroep": {
       "gender": "de",
       "src": "opmaat"
+    },
+    "dagtekening": {
+      "gender": "de",
+      "plural": "dagtekeningen",
+      "src": "chapter-example"
     },
     "dak": {
       "gender": "het",

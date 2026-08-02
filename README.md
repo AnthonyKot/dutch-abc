@@ -37,16 +37,17 @@ Each chapter follows four steps — **On the page → What it is doing → Read 
 and closes with a **kaart**: what was introduced, which earlier chapters it leaned on, and what is
 deliberately postponed. Chapters are in dependency order; nothing uses what a later chapter builds.
 
-The last chapter — **not yet written** — will work through a reconstructed Belastingdienst letter end
-to end, to be composed for this book and modelled on a real one, using every device and introducing
-nothing new. If it turns out to need something with no earlier chapter, that is a defect in the spine.
-No real letter is reproduced anywhere.
+The last chapter works through a reconstructed Belastingdienst letter end to end — composed for this
+book and modelled on a real one — using every device and introducing nothing new. The rule was that a
+device with no earlier chapter would be a defect in the spine rather than in the letter, and the audit
+found one: `af`, the subtraction marker in a calculation, which chapter 12 now carries. No real letter
+is reproduced anywhere.
 
 ## Status
 
-Scaffold and the full fourteen-chapter map are in place. **Chapters 01–13 are written**; the rest
-are not. That sentence is checked against the files on disk by `checks/status.py`, here and on both
-public pages, because it has gone stale in this file twice.
+**Chapters 01–14 are written.** All five Parts are complete. That sentence is checked against the
+files on disk by `checks/status.py`, here and on both public pages, because it went stale in this file
+twice while the book was being drafted.
 
 | | |
 |---|---|
