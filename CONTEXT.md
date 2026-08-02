@@ -287,7 +287,7 @@ evidence, not an exceptionless decoder, in that configuration.
 | # | Slug | The one idea | Notes |
 |---|------|--------------|-------|
 | 12 | z-o-z | The furniture of Dutch documents: abbreviations (*o.a., d.w.z., i.v.m., t/m, m.b.t., z.o.z., a.u.b., excl.*), dates, money, and how amounts and periods are written. **€ 5.000 is five thousand; 9,320% has a decimal comma.** ***Half drie* is 2:30, not 3:30.** | Small, unglamorous, and the source of years of real errors — missed appointments and wrong payments. Donaldson: numerals printed 222–234, **Appendix 3 abbreviations printed 260–264**. Justify by the failure, not the grammar. Completes the toolkit; nothing new after this. |
-| 13 | anatomy-of-a-dutch-brief | The shape of a Dutch official letter: the addressee block, the identification block that says what the document is, the named reference number, the date, the headline, the conditions, the one actionable sentence, the *bezwaar* section, the closing. Where each lives, and how to skim to the two that matter. | Genre, not grammar. Donaldson's Appendix 1 (printed 244–247) is letter *writing*, the mirror image, usable as evidence of the conventions. ⚠ **Corrected 2026-08-02 during the verification pass: this row said "*kenmerk*, *betreft*".** *Kenmerk* is sourced (printed 246, *Uw kenmerk / referentie*). ***Betreft* is in neither specimen and not in Donaldson**, so the chapter teaches the identification block by its **function** — usually top right, sometimes labelled *Betreft* or *Onderwerp*, often unlabelled — and names *Betreft* as one label that does that job rather than as the thing to look for. The aanslag performs it with three unlabelled lines naming the instrument. |
+| 13 | anatomy-of-a-dutch-brief | The shape of a Dutch official letter: the addressee block, the identification block that says what the document is, the number to quote when replying, the date, the headline, the conditions, **the passage** that requires action, the *bezwaar* section **when the document is a decision**, the closing. Where each lives, and how to skim to the two that matter. ⚠ Three hedges added 2026-08-02 on external review, all of them narrowing a promise to what one specimen can support: **"the one line" → "the passage"**, because actionable content routinely spans several sentences (the aanslag states its deadline twice, once for the online route and once for the paper one, with different requirements); **"reference number" → the number you need when replying**, which is the function rather than the label; and *bezwaar* **conditioned on the letter being an appealable decision**, since much official post is not. | Genre, not grammar. Donaldson's Appendix 1 (printed 244–247) is letter *writing*, the mirror image, usable as evidence of the conventions. ⚠ **Corrected 2026-08-02 during the verification pass: this row said "*kenmerk*, *betreft*".** *Kenmerk* is sourced (printed 246, *Uw kenmerk / referentie*). ***Betreft* is in neither specimen and not in Donaldson**, so the chapter teaches the identification block by its **function** — usually top right, sometimes labelled *Betreft* or *Onderwerp*, often unlabelled — and names *Betreft* as one label that does that job rather than as the thing to look for. The aanslag performs it with three unlabelled lines naming the instrument. |
 | 14 | the-blue-envelope | A Belastingdienst letter, read completely, using every device in the book — compounds, the bracket, a split verb, a strong participle, two relative clauses, *daarbij*, a *dient u te*, a passive, a *tenzij*, three abbreviations. | The destination. Nothing new is introduced; everything is consumed. A **reconstruction**, not the specimen — see `data/running-document.md`. If a device in this letter has no earlier chapter, that is a spine defect: fix the spine, not the letter. |
 
 ### Why 07 became 04, and what it fixed
@@ -487,6 +487,23 @@ worse than a wrong number in a maths book: the reader cannot detect it and will 
     decisive test, an `.undecided` block, a step 4 that reruns step 3's tests, and a *terug* column
     of questions that all point backwards. **Fails the build.** See the ⚠ notes under Chapter
     template for why structure is gated when content is not.
+
+⚠ **The register adapts to the Dutch; the Dutch never adapts to the register. Added 2026-08-02 after
+it happened.** Chapter 12 shipped the sentence *Meterstanden t/m 31-12-2025 staan op de afrekening*
+with the article deliberately removed — not for any editorial reason, but because `forms.py` could not
+check `de meterstanden` against a lexicon that lacked the noun, and dropping the article dodged the
+check. **That is the tail wagging the dog**, and an external reader caught it: bare *Meterstanden* is
+fine as a table label or interface text and wrong in an ordinary prose sentence.
+
+The rule, now standing: **when a checker cannot verify good Dutch, extend the checker.** Add the noun
+with an honest `src` tag and the reasoning for its gender, exactly as `chapter-example` exists to do.
+Never reword a published sentence to fit what the register happens to hold. A book whose Dutch is
+shaped by its own tooling has inverted the reason the tooling exists, and the damage is invisible —
+the suite stays green and the prose quietly degrades.
+
+The tell to watch for: a Dutch example that avoids an article, a plural or a gendered form **in a
+position where a real document would use one**. If the reason it is missing is the checker, it is a
+defect.
 
 **`src: "compound-head"` in `data/lexicon.json`, and why `checks/stats.py` excludes it.** Chapter 05
 claims in prose that the printed article checks a chapter-01 split, using

@@ -2285,6 +2285,11 @@
       "gender": "het",
       "src": "opmaat"
     },
+    "meterstand": {
+      "gender": "de",
+      "plural": "meterstanden",
+      "src": "chapter-example"
+    },
     "metro": {
       "gender": "de",
       "src": "opmaat"
