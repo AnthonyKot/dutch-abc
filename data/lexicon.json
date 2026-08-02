@@ -19,7 +19,13 @@
     "",
     "Transcribing a gender register is not reproducing prose; the examples built from it must",
     "still be our own. Compound gender follows the last element, so a compound need only be",
-    "listed when a chapter uses it with an article."
+    "listed when a chapter uses it with an article.",
+    "",
+    "A third, tiny tranche: \"src\": \"compound-head\". These are compounds whose gender is DERIVED",
+    "from an entry already in this file by the last-element rule, listed only because a chapter",
+    "states the article in prose and the claim should be machine-checked rather than trusted.",
+    "They assert nothing the register did not already contain. No plural is given, because the",
+    "rule transfers gender and does not license inventing a plural form nobody has attested."
   ],
   "nouns": {
     "aanbieding": {
@@ -1565,6 +1571,10 @@
     "inkomen": {
       "gender": "het",
       "plural": "inkomens"
+    },
+    "inkomstenbelasting": {
+      "gender": "de",
+      "src": "compound-head"
     },
     "innerlijk": {
       "gender": "het",

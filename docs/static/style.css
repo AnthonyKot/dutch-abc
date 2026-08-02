@@ -407,6 +407,120 @@ p.nl, .nl-block {
 
 img, svg { max-width: 100%; }
 
+/* ---- opening retrieval prompt ----
+   Sits between the lede and the device box — that is, after the chapter has said
+   what it is about but BEFORE it states any rule, including the previous
+   chapter's. A prompt placed after the restatement is not retrieval, it is a quiz
+   about the paragraph you just read. */
+.recall {
+  margin: 0 0 1.6rem; padding: .8rem 1rem;
+  border: 1px solid var(--rule); border-left: 3px solid var(--known);
+  border-radius: 8px; background: var(--bg-raised);
+  font-family: var(--sans); font-size: .9rem; line-height: 1.5;
+}
+.recall h2 {
+  margin: 0 0 .4rem; font-size: .66rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--known);
+}
+.recall .q { margin: 0; color: var(--ink); font-weight: 600; }
+.recall details { margin: .5rem 0 0; }
+.recall summary {
+  cursor: pointer; list-style: none;
+  font-size: .82rem; color: var(--ink-faint);
+}
+.recall summary::-webkit-details-marker { display: none; }
+.recall summary:hover { color: var(--ink-soft); }
+.recall details > p {
+  margin: .4rem 0 0; padding-left: .6rem;
+  border-left: 2px solid var(--known);
+  color: var(--ink-soft); font-size: .88rem;
+}
+.recall .kref { color: var(--ink-faint); font-size: .8em; font-weight: 400; }
+
+/* ---- attempt, then reveal ----
+   Step 3 gives an unseen example and hides the worked parse behind this. The
+   hiding is the point: a reader who has read the answer cannot afterwards find
+   out whether they would have got it, and that is the one thing worth knowing. */
+.worked { margin: 1.4rem 0; }
+.worked > summary {
+  cursor: pointer; list-style: none;
+  font-family: var(--sans); font-size: .84rem; font-weight: 600;
+  color: var(--accent); padding: .5rem .8rem;
+  border: 1px dashed var(--accent-soft); border-radius: 7px;
+  display: inline-block;
+}
+.worked > summary::-webkit-details-marker { display: none; }
+.worked > summary:hover { border-style: solid; }
+.worked[open] > summary { margin-bottom: .9rem; border-style: solid; }
+.worked .body {
+  padding: .9rem 1.1rem; border-left: 3px solid var(--accent-soft);
+  background: var(--bg-raised); border-radius: 0 8px 8px 0;
+}
+.worked .body > :last-child { margin-bottom: 0; }
+
+/* ---- the case the procedure cannot settle ----
+   Every chapter carries one. A reading method that never admits a limit teaches
+   the reader to force an answer, which on a real letter is worse than stopping. */
+.undecided {
+  margin: 1.6rem 0; padding: .9rem 1.1rem;
+  border: 1px solid var(--rule); border-left: 3px solid var(--trap);
+  border-radius: 8px; background: var(--bg-raised);
+  font-family: var(--sans); font-size: .92rem; line-height: 1.5;
+}
+.undecided h3 {
+  margin: 0 0 .45rem; font-size: .72rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--trap);
+}
+.undecided p { margin: 0 0 .7rem; color: var(--ink-soft); }
+.undecided > :last-child { margin-bottom: 0; }
+
+/* ---- self-check block, closing step 3 and reused in step 4 ----
+   The reader works on a letter nobody has an answer key for, so these are the
+   tests that run without one. Deliberately not styled like a summary box: it is
+   a procedure, and it should look like work rather than like a recap. */
+.check {
+  margin: 2rem 0 1.4rem; padding: 1rem 1.15rem;
+  border: 1px solid var(--rule); border-left: 3px solid var(--known);
+  border-radius: 8px; background: var(--bg-raised);
+  font-family: var(--sans); font-size: .92rem; line-height: 1.5;
+}
+.check h3 {
+  margin: 0 0 .5rem; font-size: .74rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--known);
+}
+.check > p { margin: 0 0 .8rem; color: var(--ink-soft); font-size: .88rem; }
+.check ul { margin: 0; padding: 0; list-style: none; }
+.check li {
+  margin: 0 0 .7rem; padding-left: 1.3rem; position: relative; color: var(--ink-soft);
+}
+.check li:last-child { margin-bottom: 0; }
+.check li::before {
+  content: "\2713"; position: absolute; left: 0; top: 0;
+  color: var(--known); font-weight: 700;
+}
+/* A test whose failure is decisive gets the trap colour: these are the ones that
+   tell the reader they are wrong, which is the only feedback an unseen letter
+   can give. */
+.check li.hard::before { content: "\2717"; color: var(--trap); }
+.check li strong { color: var(--ink); }
+.check .nl { font-size: .95em; }
+
+/* ---- retrieval in the kaart's terug column ----
+   The column used to state what earlier chapters established, which is re-reading,
+   not recall. It now asks. The answer is one click away so that a reader who wants
+   the old summary still has it, but has to fail first. */
+.kaart .terug details > summary {
+  cursor: pointer; list-style: none; color: var(--ink-soft);
+}
+.kaart .terug details > summary::-webkit-details-marker { display: none; }
+.kaart .terug details > summary:hover { color: var(--ink); }
+.kaart .terug details[open] > summary { color: var(--ink); font-weight: 600; }
+.kaart .terug details > p {
+  margin: .35rem 0 0; padding-left: .1rem;
+  border-left: 2px solid var(--known); padding-left: .55rem;
+  color: var(--ink-faint); font-size: .95em;
+}
+
 /* ---- responsive ---- */
 @media (max-width: 34rem) {
   body { font-size: 1.06rem; }
@@ -428,6 +542,16 @@ img, svg { max-width: 100%; }
   main { padding: 0; }
   a { color: #000; text-decoration: none; }
   .step > h2 .num { color: #000; background: none; border: 1px solid #000; }
-  .kaart, .device, .fence, .doc, .split { border: 1px solid #000; break-inside: avoid; }
+  .kaart, .device, .fence, .doc, .split, .check, .recall, .undecided,
+  .worked .body { border: 1px solid #000; break-inside: avoid; }
+  .worked > summary { border: none; color: #000; padding: 0; font-style: italic; }
   .contrast > div { border: 1px solid #000; }
+  /* On paper there is no clicking, so a retrieval prompt whose answer is hidden
+     would print as a question with no answer anywhere in the book. theme.js opens
+     every details on beforeprint; this is the fallback for print-to-PDF paths that
+     never fire that event, and it is only a fallback — in browsers that hide the
+     content with content-visibility on the slot rather than display:none, CSS
+     alone cannot reveal it. */
+  details > *:not(summary) { display: block !important; }
+  .kaart .terug details > summary { font-weight: 700; }
 }

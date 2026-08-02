@@ -72,6 +72,12 @@ cannot detect it and will learn it. So the Dutch is checked by machine, not by e
   identifiers (personal and account numbers, IBANs, postcodes, phone numbers, email addresses) and a
   private list of names. It matches patterns, not meaning: a safety net under a manual reading, never
   a substitute for one.
+- **`checks/template.py`** *(hard fail)* — every chapter carries the full teaching apparatus: an
+  opening retrieval prompt naming exactly the previous chapter and placed before any restatement, a
+  worked answer hidden behind `<details>`, self-check criteria including at least one test that can
+  prove the reader wrong, one case the procedure cannot settle, a step 4 that reruns step 3's tests,
+  and a *terug* column of questions that all point backwards. It gates structure, not editorial
+  quality: it cannot tell whether a self-check criterion is *correct*.
 - **`checks/lexicon.py`** *(advisory, by decision)* — new words per chapter, cumulative total, and
   how many of the nouns the chapters use **with an article** the checker can actually vouch for.
   Raises no findings; a non-zero exit means the script itself broke, and that does fail.

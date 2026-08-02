@@ -114,21 +114,60 @@ completely in chapter 14. Choose it before drafting 02.
 
 ## Chapter template (every chapter)
 
+**Extended 2026-08-02 after external review, and retrofitted to 01–06 the same day. Enforced by
+`checks/template.py` (HARD FAIL) — do not drop a slot while tidying.**
+
+The review's finding was that six chapters of correct procedures would leave a reader retaining two
+or three of them, because the book explained and then asked, but never let the reader *attempt* and
+find out. The fix combines **calibration** (attempt before the answer is visible) with
+**self-checking** (criteria that run on a document nobody has an answer key for). Not a choice
+between the two — the calibration is what makes the reader want the criteria.
+
 Exact headings, `<section class="step">` with a numbered pill on the `<h2>`:
 
+0. **`<section class="recall">`, above the device box** — one retrieval prompt drawn from the
+   *previous chapter only*, answer hidden behind `<details>`. Placed before the chapter restates any
+   rule, including that one: a prompt asked after the restatement is a quiz about the paragraph you
+   just read. Chapter 01 has none and must not acquire one.
 1. **On the page** — the raw material. A real fragment the reader cannot currently get through, and a
    plain statement of exactly where the eye stops and why.
 2. **What it is doing** — the one device, explained properly, with a rule you can apply. The single idea.
-3. **Read it** — the reader works the device on the fragment from step 1, then on two more. Includes the
-   failure modes: the wrong parse a learner reaches for, and how the text would have looked if it
-   meant that instead.
+3. **Read it** — the reader works the device on the fragment from step 1, then on two more. Now in
+   four parts, in this order:
+   - the unseen examples, with an instruction to **write the answer down first**;
+   - `<details class="worked">` hiding the worked parse — the hiding is the whole point, since a
+     reader who has seen the answer can no longer find out whether they would have got it;
+   - `<div class="check">` — the self-check criteria, at least three, at least one marked
+     `li.hard` for a test that can prove the reader wrong outright;
+   - `<div class="undecided">` — **one case the procedure cannot settle.** Every chapter has a real
+     one. A method that never admits a limit teaches the reader to force an answer, which on a real
+     letter is worse than stopping.
+   Plus the failure modes as before: the wrong parse a learner reaches for, and how the text would
+   have looked if it meant that instead.
 4. **In your own post** — where this appears in documents the reader already owns, and what to go look
-   at this week. Plus references, checked.
+   at this week. Then **run the same tests from step 3** (the check greps for that phrasing, so the
+   criteria are reused rather than restated), and **state what remains uncertain** — with the
+   standing point that recording a sentence as unresolved is a correct outcome, not a failure.
+   Plus references, checked.
 
 Then a short **kaart** (`<section class="kaart">`): three columns — *nieuw* (introduced here), *terug*
 (earlier chapters leaned on, by number), *nog niet* (deliberately postponed, and to which chapter).
-The ledger idea, kept because it enforces the no-forward-reference discipline that made book 3
-readable — but advisory, not a build gate. See Verification.
+
+**The *terug* column is retrieval, not restatement.** Each entry is
+`<details><summary>question (ch. NN)</summary><p>answer</p></details>`. It used to state what earlier
+chapters established, which is re-reading. Two retrieval sites is deliberate and they cover different
+spans: the opening prompt reaches back exactly one chapter, the kaart reaches back across the whole
+book so far.
+
+⚠ **Narrowing of a recorded decision, stated so it is not read as a reversal.** CONTEXT has said the
+kaart ledger is advisory, not a build gate. That decision was about *content* — which words a chapter
+may use — and it stands. `checks/template.py` gates *structure* only: that the slots exist, that the
+recall names exactly the previous chapter, and that no *terug* entry cites a chapter at or after the
+current one. A terug entry pointing forwards is not a stylistic preference, it is a defect.
+
+⚠ **What the checker deliberately does not check**, so nobody mistakes green for reviewed: whether the
+retrieval question is a good one, whether the self-check criteria are *correct*, or whether the
+undecidable case is genuinely undecidable. Those are editorial and they are where the real work is.
 
 ## Spine — 14 chapters, five parts
 
@@ -399,6 +438,22 @@ worse than a wrong number in a maths book: the reader cannot detect it and will 
 10. **`checks/redaction.py`** — **new and important.** Any real document text used as an example is
     scanned for BSN patterns, IBANs, postcodes, addresses, phone numbers and the user's name.
     **Fails the build.** Real post is the book's best material and its only privacy risk.
+11. **`checks/template.py`** — added 2026-08-02 with the extended chapter template. Asserts every
+    chapter carries the teaching apparatus: opening recall naming exactly the previous chapter and
+    placed before the device box, a hidden `details.worked` in step 3, a `.check` with at least one
+    decisive test, an `.undecided` block, a step 4 that reruns step 3's tests, and a *terug* column
+    of questions that all point backwards. **Fails the build.** See the ⚠ notes under Chapter
+    template for why structure is gated when content is not.
+
+**`src: "compound-head"` in `data/lexicon.json`, and why `checks/stats.py` excludes it.** Chapter 05
+claims in prose that the printed article checks a chapter-01 split, using
+`de inkomstenbelasting` as the worked case. That claim should be machine-checked rather than trusted,
+so the compound was added to the lexicon — but its gender is *derived* from `belasting` by the
+last-element rule, not observed. Adding it moved four published integers in chapter 05 at once and
+`stats.py` failed, correctly. The fix was the denominator, not the prose: derived entries are excluded
+from every statistic, so "the register holds 1044 nouns" still counts only what the register
+attested, while `forms.py` continues to check the article against all 1045. Confirmed by injecting
+`het inkomstenbelasting` and watching `forms.py` fail.
 
 ## Tech stack (unchanged from books 1–3, minus the maths)
 

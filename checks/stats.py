@@ -44,6 +44,20 @@ def main():
         return 0
 
     nouns = json.loads(LEXICON.read_text(encoding="utf-8"))["nouns"]
+
+    # Derived entries are excluded from every figure below.
+    #
+    # data/lexicon.json carries a small tranche marked "src": "compound-head" —
+    # compounds whose gender was deduced from an entry already present, listed only
+    # so that a claim a chapter makes in prose gets machine-checked. They are not
+    # observations. Counting them would inflate "the register holds N nouns" with
+    # words the register never independently attested, and would move the de/het
+    # split by the arithmetic of a rule rather than by evidence.
+    #
+    # Found the moment it mattered: adding one such compound for chapter 05's own
+    # article-agreement exercise moved four published integers at once, and the
+    # honest correction was to fix the denominator, not the prose.
+    nouns = {w: e for w, e in nouns.items() if e.get("src") != "compound-head"}
     text = re.sub(r"\s+", " ", CHAPTER.read_text(encoding="utf-8"))
     # Figures must be in prose, not in attributes. Tags become a SPACE, not nothing:
     # stripping "<td>36</td><td>36 het</td>" to "" yields "3636 het" and no \b36\b.

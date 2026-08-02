@@ -8,6 +8,8 @@
 #   * every piece of Dutch is marked up, so the corpus is extractable
 #   * checks/forms.py validates the Dutch we assert   (HARD FAIL)
 #   * checks/redaction.py catches personal data in real documents (HARD FAIL)
+#   * checks/template.py asserts every chapter carries the teaching apparatus —
+#     retrieval prompt, hidden worked answer, self-check, undecidable case (HARD FAIL)
 #   * checks/lexicon.py reports vocabulary growth      (ADVISORY, by decision)
 #
 # Counts are COMPUTED, never typed. Exits non-zero on any hard failure.
