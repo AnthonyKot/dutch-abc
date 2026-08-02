@@ -453,7 +453,15 @@ Ported from books 2 and 3:
 
 1. **Count sync** — chapter files vs distinct contents links. Computed, never typed.
 2. **Link resolution** — every internal link resolves.
-3. **Generated prev/next** — derived from the chapter files, never hand-maintained.
+3. ~~**Generated prev/next** — derived from the chapter files, never hand-maintained.~~
+   ⚠ **This was never true and stayed on the list for the whole project.** The nav is hand-written in
+   every chapter, and both this line and `verify.sh`'s header asserted a guarantee that did not
+   exist — which is precisely why nobody looked. Chapter 07 shipped linking forward to
+   "08 · *dient u*, *gelieve*", a title that appears nowhere in the spine or on the contents page.
+   **`checks/nav.py` (HARD FAIL) now does what this line claimed**: contiguity, prev/next targets,
+   the "(not yet written)" marker, and the chapter title in a nav link matching the contents page.
+   Exercised against five injected faults including the original one. The links are still
+   hand-written; they are now *checked*, which is the honest version of this promise.
 4. **Quotation scan** — grep ASCII and curly quotes, read every `<blockquote>` by eye. **Higher stakes
    here than in any previous book**, because the sources are pedagogical texts full of exactly the
    sentences we would be tempted to lift, and because real letters are quotable and must not be quoted.
@@ -616,7 +624,7 @@ The reason this matters more than it sounds: the target reader has spent seven y
 Dutch text. A chapter can be intellectually excellent and still reproduce the original failure if the
 usable operation is buried thirty kilobytes deep.
 
-### 3. Chapter 07 — fence the scope, and close Part II rather than cataloguing
+### 3. ~~Chapter 07 — fence the scope, and close Part II rather than cataloguing~~ — DONE, shipped `f4b310d`
 
 Fence it in the chapter, in these terms: **this chapter teaches pronominal adverbs used with
 prepositions; it does not teach every grammatical use of `er`.** The existing note that
@@ -632,13 +640,13 @@ without chapters 02, 05, 06 and 07 together. That makes Part II's ending earned 
 to what* its first real test. **This is the first chapter written into the extended template rather
 than retrofitted to it**, and the slot that will take the work is `.undecided`.
 
-### 4. Test 01–06 on a real reader before writing all eight remaining chapters
+### 4. Test 01–07 on a real reader before writing the seven remaining chapters — ⚠ STILL OPEN, AND IT IS NEXT
 
 **The user's call, and the only item on this list that CI cannot substitute for.** `checks/template.py`
 says so in its own docstring: it cannot tell whether a retrieval question is good or a self-check
 criterion correct.
 
-Give 01–06 to someone near the stated reader and observe **three things only**: where they stop or
+Give 01–07 to someone near the stated reader and observe **three things only**: where they stop or
 start skimming; which procedures they can recall the next day without reopening the page; and whether
 they can apply them to one previously unseen letter. **Do not optimise for whether they liked the
 prose.** One reader will not validate the book, but they will settle whether the growing chapter depth

@@ -2,8 +2,14 @@
 # DutchABC — standing verification. Run from anywhere: ./verify.sh
 #
 # Ports the checks from The Bridge and No Such Form (count sync, link resolution,
-# prev/next contiguity, quotation scan, self-assessment scan, no tracked PDFs)
-# and adds the three this book needs:
+# quotation scan, self-assessment scan, no tracked PDFs) and adds the ones this
+# book needs.
+#
+# ⚠ This header claimed "prev/next contiguity" among the ported checks from the
+# first commit onwards, and no such check existed. The claim is what stopped
+# anyone looking: chapter 07 shipped linking forward to a chapter title that
+# appears nowhere in the spine. checks/nav.py now does what this line said.
+# A comment asserting a guarantee is worse than no comment at all.
 #
 #   * every piece of Dutch is marked up, so the corpus is extractable
 #   * checks/forms.py validates the Dutch we assert   (HARD FAIL)
