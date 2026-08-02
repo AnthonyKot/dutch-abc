@@ -65,12 +65,20 @@ PATTERNS = [
     ("KvK number",                   re.compile(r"(?<!\d)\d{8}(?!\d)")),
     ("IBAN",                         re.compile(r"\bNL\d{2}[ ]?[A-Z]{4}(?:[ ]?\d{4}){2}[ ]?\d{2}\b|\bNL\d{2}[A-Z]{4}\d{10}\b")),
     ("spaced/hyphenated 9-digit id", re.compile(r"\b\d{3}[ -]\d{3}[ -]\d{3}\b")),
-    # Lowercase postcodes are real, but "1310 as" is prose and "#6389ad" is a hex
-    # colour. Require either a space (then reject common two-letter words) or
-    # uppercase-without-space, and never match inside a longer alphanumeric run.
-    ("Dutch postcode",
-     re.compile(r"(?<![#\w])\d{4} (?!(?:as|is|in|of|to|it|at|be|or|on|an|so|we|he|by|do|if|no|up|us|my)\b)"
-                r"[A-Za-z]{2}\b|(?<![#\w])\d{4}[A-Z]{2}\b")),
+    # Case is the discriminator, not a stopword list. The first version allowed a
+    # lowercase spaced form and excluded common English two-letter words, which
+    # cannot work in a book whose examples are Dutch: a four-digit year followed
+    # by op / in / en / te / om / uw is ordinary prose, and chapter 02 produced
+    # three such hits in one page ("belastingjaar 2025 op dit moment"). Growing
+    # the list would mean re-growing it for every chapter.
+    #
+    # Real postcodes are printed uppercase in every Dutch document, so requiring
+    # uppercase removes the whole class of false hits at a cost that is stated
+    # rather than hidden: a postcode HAND-TYPED in lowercase is now missed. That
+    # is acceptable only because copied document text is the actual risk here and
+    # it is uppercase, and because real documents get a redaction pass before use.
+    # Never match inside a longer alphanumeric run ("#6389ad" is a hex colour).
+    ("Dutch postcode", re.compile(r"(?<![#\w])\d{4} ?[A-Z]{2}\b")),
     ("foreign postcode",             re.compile(r"\b\d{2}-\d{3}\b")),
     ("phone number",                 re.compile(r"\b(?:\+\d{2}|0)\s?\d[\s-]?\d{7,9}\b")),
     ("email address",                re.compile(r"\b[\w.+-]+@[\w-]+\.[\w.]+\b")),

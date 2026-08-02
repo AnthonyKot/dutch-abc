@@ -10,9 +10,17 @@
     "compound need only be listed when it is used with an article in a chapter."
   ],
   "nouns": {
+    "aangifte": {
+      "gender": "de",
+      "plural": "aangiften"
+    },
     "aanslag": {
       "gender": "de",
       "plural": "aanslagen"
+    },
+    "adres": {
+      "gender": "het",
+      "plural": "adressen"
     },
     "arbeid": {
       "gender": "de"
@@ -36,6 +44,10 @@
     "beslissing": {
       "gender": "de",
       "plural": "beslissingen"
+    },
+    "betaling": {
+      "gender": "de",
+      "plural": "betalingen"
     },
     "bezwaar": {
       "gender": "het",
@@ -84,6 +96,10 @@
       "gender": "het",
       "plural": "inkomens"
     },
+    "inspecteur": {
+      "gender": "de",
+      "plural": "inspecteurs"
+    },
     "jaar": {
       "gender": "het",
       "plural": "jaren"
@@ -123,6 +139,9 @@
       "gender": "de",
       "plural": "rekeningen"
     },
+    "rente": {
+      "gender": "de"
+    },
     "tafel": {
       "gender": "de",
       "plural": "tafels"
@@ -130,6 +149,10 @@
     "termijn": {
       "gender": "de",
       "plural": "termijnen"
+    },
+    "verschil": {
+      "gender": "het",
+      "plural": "verschillen"
     },
     "verzekeraar": {
       "gender": "de",
