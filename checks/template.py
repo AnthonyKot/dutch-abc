@@ -18,7 +18,8 @@ WHAT THIS CHECKS, per chapter:
   * one .undecided inside step 3 — the case the procedure cannot settle
   * step 4 points back at step 3's tests rather than restating them
   * every kaart terug entry is a details with a question and an answer, and every
-    chapter it cites is strictly EARLIER than this one
+    chapter it cites is strictly EARLIER than this one — including multi-cites of
+    the form (ch. 01, 05), which the first version of this check silently ignored
 
 WHAT IT DOES NOT CHECK: whether the retrieval question is a good one, whether the
 self-check criteria are correct, or whether the undecidable case is genuinely
@@ -34,7 +35,22 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from corpus import chapters  # noqa: E402
 
 problems = []
-KREF = re.compile(r"\(ch\.\s*(\d+)\)")
+# Single cite: (ch. 01). Multi-cite: (ch. 01, 05) or (ch. 08, 09, 10).
+# The old regex only matched the single form, so multi-cites were silently
+# unchecked for the backwards-only rule — the hole that let a forward cite
+# hide as (ch. 12, 14) with nothing failing.
+KREF_BLOCK = re.compile(r"\(ch\.\s*([\d,\s]+)\)")
+
+
+def chapter_cites(text):
+    """Every chapter number mentioned in (ch. …) forms, single or multi."""
+    cites = []
+    for m in KREF_BLOCK.finditer(text):
+        for part in m.group(1).split(","):
+            part = part.strip()
+            if part.isdigit():
+                cites.append(int(part))
+    return cites
 
 
 def chapter_number(fn):
@@ -92,12 +108,15 @@ def check_chapter(fn):
             problems.append(f"{name}  .recall sits after the .device box. A prompt asked once "
                             f"the rule has been restated is a quiz, not retrieval")
         head = text[recall[0]:recall[0] + 1200]
-        cited = KREF.findall(head)
+        cited = chapter_cites(head)
         if not cited:
             problems.append(f"{name}  .recall names no chapter; it must carry (ch. NN)")
-        elif int(cited[0]) != n - 1:
+        elif cited[0] != n - 1:
             problems.append(f"{name}  .recall cites ch. {cited[0]}, expected ch. {n - 1:02d} "
                             f"— the prompt is meant to reach back exactly one chapter")
+        if len(cited) > 1:
+            problems.append(f"{name}  .recall cites more than one chapter {cited}; the opening "
+                            f"prompt reaches back exactly one chapter (kaart terug covers the rest)")
         if "<details" not in head:
             problems.append(f"{name}  .recall reveals its answer immediately; it must be "
                             f"behind a <details> so the reader attempts first")
@@ -146,8 +165,8 @@ def check_chapter(fn):
         after = item[summary.end():] if summary else ""
         if "<p>" not in after:
             problems.append(f"{name}  terug entry {i} hides no answer behind its question")
-        for cited in KREF.findall(item):
-            if int(cited) >= n:
+        for cited in chapter_cites(item):
+            if cited >= n:
                 problems.append(f"{name}  terug entry {i} cites ch. {cited}, which is not "
                                 f"earlier than {n:02d}. The terug column looks backwards only")
 

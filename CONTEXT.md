@@ -48,8 +48,9 @@ words apart.
 Pronouns fuse with prepositions into *daarbij*, *hiervan*, *waarop*. Officialese nominalises its verbs
 and hides its one actionable sentence in the fourth paragraph.
 
-Each of those is mechanical rather than mysterious, and the core mechanism of each can be explained
-in a page. Courses teach several of them as grammar — the verified teaching order in this file records
+Each of those is mechanical rather than mysterious. Every chapter leads with a short usable core
+route, then the boundaries and failure cases — not a literal one-page mechanism (06 and 12 would
+refute that claim). Courses teach several of them as grammar — the verified teaching order in this file records
 *Taaltalent* covering separable verbs twice, gender, the imperfect and relative pronouns — but they
 rarely assemble them into a practical method for reading real documents. **That is the book's claim,
 and it is deliberately narrower than "nobody teaches this": it is that nobody puts it together for

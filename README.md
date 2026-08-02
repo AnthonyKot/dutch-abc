@@ -15,9 +15,10 @@ recurring devices that can make words you already know hard to recognise — com
 appear as dictionary entries, verbs split ten or fifteen words apart, pronominal adverbs like
 *daarbij* and *waarop*, and an official register that backgrounds whoever has to act.
 
-Each is mechanical rather than mysterious, and the core mechanism of each can be explained in a page.
-Courses teach several of them as grammar, but rarely assemble them into a practical method for reading
-real documents. This book is about the Dutch that was not written for you.
+Each is mechanical rather than mysterious. Every chapter leads with a short usable core route, then
+the boundaries and failure cases. Courses teach several of them as grammar, but rarely assemble them
+into a practical method for reading real documents. This book is about the Dutch that was not written
+for you.
 
 **Reading only.** Not listening, speaking or writing; not inburgering preparation. Stated on the
 landing page and in About rather than left to be discovered.
