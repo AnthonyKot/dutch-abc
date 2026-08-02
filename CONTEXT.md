@@ -568,6 +568,15 @@ deterministic algorithm.**
 | 06 | **the head is the *word* after the participle** — *the correction to the row above* | an adjective can intervene: *het door u ingevulde nieuwe formulier* |
 | 06 | "an article not followed by a noun" is the only signal you need | over-fires on *de nieuwe brief* |
 | 03 | with no `er`/`daar`/`hier`/`waar` in the clause, a stranded particle belongs to the verb | ignores direction and period phrases: *de grens over*, *het hele jaar door* |
+| 08 | *te* sits "immediately before the final infinitive" / "one word before the final verb" | **fails on the chapter's own step-1 sentence**: *dient … te worden ingeleverd* puts it two words back, and *dient afgesloten te worden* moves it again |
+| 08 | *dienen*/*hoeven* "always take *te*" | only when they govern an infinitive — *dat hoeft niet* is a complete sentence |
+| 08 | the verb search "will include every requirement the letter makes" | **the chapter's own exercise 3 disproves it**: *stuurt u mee* is a plain present tense doing the work of a command |
+| 08 | official letters "largely do not use" *moeten*; obligation vocabulary "barely overlaps" | *moeten* is good Dutch in every register and the IND form this chapter counts uses *moet u* once |
+
+**Two of the chapter-08 rows are the chapter contradicting its own worked material**, which is now the
+single most reliable smell in this project. Before shipping, take each stated rule and run it against
+every example already in the chapter — the failures are usually *in the file*, not in some unconsidered
+case. Chapter 06 failed this way twice and chapter 08 twice more.
 
 **The fourth row is the one to remember.** The fix for an overclaim was itself an absolute, shipped in
 the same commit that added this gate. A rule can be corrected into a *different* wrong rule, and the
