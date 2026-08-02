@@ -144,7 +144,28 @@ gets silently undone later.
 | 01 | words-you-cannot-look-up | Dutch welds nouns into compounds without limit: *ziektekostenverzekering*, *inkomstenbelasting*, *arbeidsongeschiktheidsverzekering*. Dutch productively welds these into single written words. Many will not have their own dictionary entry, and in ordinary noun compounds the rightmost element is usually the head — the noun that actually matters. ⚠ *Usually*, not always: this is a strong generalisation, not an exceptionless rule. | **The diagnosis chapter and the highest-value skill in the book.** A great deal of officialese becomes readable once you can split. The linking *-s-* and *-en-* are a real sub-rule. Donaldson has noun formation; the courses have nothing systematic. |
 | 02 | the-verb-at-the-end | The verb bracket, at reading speed. In an ordinary declarative main clause Dutch puts the finite verb second and throws the rest of the cluster to the end, so the meaning-bearing word arrives last. (Questions can be verb-first; subordinate clauses send the finite verb to the final cluster too; and material can be extraposed after it.) Reading — unlike listening — you can jump to the end first, and should. | Highest-dependency chapter: 03, 04, 06, 07, 08 and 09 all speak its language. Donaldson **refused** to write a word-order chapter — every formalisation he had seen "fails miserably" — which is the argument for a reading *strategy* over a rule table. His Time–Manner–Place order (printed 95) is usable. |
 | 03 | verbs-that-split | Separable verbs at a distance: *bel … op*, *neem … mee*, *maken … over*. In a long written clause the halves can sit fifteen words apart, and neither half alone is findable. | Taught twice before A2 by *Taaltalent*, so this is not an introduction. It is about the *reading* failure: you looked up *maken*, you looked up *over*, and both were wrong. |
-| 04 | verbs-that-change-shape | A past tense or participle on the page is usually not its own dictionary entry, and there are **four separate reasons**, not one: weak *-d/-t* participles with *ge-* (*gebaseerd*); separable verbs with *ge-* **infixed** (*invullen* → *ingevuld*, *vaststellen* → *vastgesteld*); prefixed verbs that take **no** *ge-* (*verrekenen* → *verrekend*); and strong verbs with a **stem-vowel change** (*ontvangen* → *ontving*/*ontvangen*, *blijken* → *bleek*/*gebleken*). | **Was chapter 07. Reframed and moved — see below.** ⚠ **Corrected after external review:** an earlier draft said one stem-change story yields both imperfect and participle. It does not. Vowel alternation characterises *strong* verbs only; the imperfect does not predict the participle (*worden–werd–geworden*); mixed verbs exist (*bakken–bakte–gebakken*). And six of the seven participles cited from the specimens are **weak**, so a strong-verb-only chapter would not serve 06 and 09. The *ge-* infix rule links this chapter directly back to 03. Donaldson printed 125–135 for the strong list. |
+| 04 | verbs-that-change-shape | A past tense or participle on the page is usually not its own dictionary entry, and **two independent things** have happened to it. **Structure** — simple / separable / inseparable — decides where *ge-* goes and therefore where the dictionary verb begins. **Inflection** — weak / strong / irregular — decides whether the stem survived and therefore whether the reader can reverse it or must consult a table. | **Was chapter 07. Reframed and moved — see below.** ⚠ **Corrected after external review:** an earlier draft said one stem-change story yields both imperfect and participle. It does not. Vowel alternation characterises *strong* verbs only; the imperfect does not predict the participle (*worden–werd–geworden*); mixed verbs exist (*bakken–bakte–gebakken*). And six of the seven participles cited from the specimens are **weak**, so a strong-verb-only chapter would not serve 06 and 09. The *ge-* infix rule links this chapter directly back to 03. Donaldson printed 125–135 for the strong list. |
+
+⚠ **Standing correction, 2026-08-02, after the chapter shipped — do not undo this.** This row
+originally read "**four separate reasons**, not one: weak participles / separable / inseparable /
+strong", and the chapter was drafted from it as four mutually exclusive questions with "the first one
+that fires is your answer." **That is wrong: the four are two orthogonal axes, not four alternatives.**
+The chapter's own examples prove it — *vastgesteld* is separable **and** weak, *afgewezen* separable
+**and** strong, *beoordeeld* inseparable **and** weak, *overschreden* inseparable **and** strong.
+
+Two concrete failures followed from the collapse, both shipped and both since fixed:
+
+1. The "does it start with one of the six inseparable prefixes?" question was applied to
+   *overschreden*, but ***over-* is not one of the six** — it is a variable prefix (ch. 03) used
+   inseparably. The correct test is "is there no *ge-* anywhere?", which covers both.
+2. That question said "strip the ending only", which on *overschreden* yields *overschreed* rather
+   than *overschrijden*. Locating the structure never recovers a strong stem; only the table does.
+
+The published procedure is now **three passes, all of them run**: (1) what job is the form doing —
+ch. 02 settles participle vs finite vs infinitive, and it is the only thing that disambiguates
+*ontvangen*; (2) where does the dictionary verb begin — position of *ge-*; (3) can the ending be
+reversed — *-d/-t* reverses, *-n* means the table, and a reversal that yields a non-word means the
+table too (*gebracht*, *gedacht*, *gekocht*).
 
 ### PART II — WHAT REFERS TO WHAT (3)
 
