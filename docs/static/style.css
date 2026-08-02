@@ -110,7 +110,25 @@ body {
 }
 .theme-toggle:hover { border-color: var(--accent-soft); color: var(--ink); }
 
+/* Skip link: off-screen until focused, then a real, visible target. Not
+   display:none and not width:0 — both remove it from the focus order, which
+   defeats the point. The site header is sticky, so this sits above it. */
+.skip {
+  position: absolute; left: .75rem; top: -3rem; z-index: 20;
+  padding: .5rem .9rem; border-radius: 0 0 7px 7px;
+  background: var(--accent); color: var(--bg);
+  font-family: var(--sans); font-size: .85rem; text-decoration: none;
+  transition: top .12s ease-in;
+}
+.skip:focus { top: 0; color: var(--bg); outline: 2px solid var(--ink); }
+
 main { padding: 2.6rem 0 4rem; }
+
+/* A visible focus ring everywhere, since the skip link only helps if what it
+   lands on can then be navigated. */
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px;
+}
 
 /* ---- typography ---- */
 h1, h2, h3 { font-family: var(--sans); line-height: 1.22; color: var(--ink); }
@@ -358,10 +376,17 @@ p.nl, .nl-block {
 
 /* ---- table of contents (landing) ---- */
 .part { margin: 2.4rem 0; }
+/* An <h2>, not a <p>: these divide the contents page and a screen-reader user
+   navigating by heading was previously offered the <h1> and nothing else on the
+   one page that IS the book's navigation. Every property h2 would contribute is
+   restated here so the rendering is unchanged — in particular the margin, since
+   h2's 2.6rem top would otherwise stack on .part's own 2.4rem. */
 .part-head {
   font-family: var(--sans); font-size: .82rem; font-weight: 700;
-  letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
-  border-bottom: 1px solid var(--rule); padding-bottom: .4rem; margin-bottom: .3rem;
+  line-height: 1.35; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--rule); padding-bottom: .4rem;
+  margin: 0 0 .3rem;
 }
 .part-intro {
   font-family: var(--sans); font-size: .92rem; line-height: 1.5;

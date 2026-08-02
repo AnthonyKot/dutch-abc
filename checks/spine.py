@@ -26,9 +26,14 @@ ctx = (ROOT / "CONTEXT.md").read_text(encoding="utf-8")
 idx = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
 
 spine = re.findall(r"^### PART [IVX]+ — (.+?) \((\d+)\)\s*$", ctx, flags=re.M)
-page = re.findall(r'<p class="part-head">Part [IVX]+ · (.+?)</p>', idx)
+# The Part divisions are <h2 class="part-head">; they were <p> until the
+# accessibility pass, since they divide the contents page and belong in the
+# heading outline. Matched on the CLASS rather than the tag so the next change of
+# element does not silently reduce this check to zero Parts — which is exactly what
+# happened when they became headings.
+page = re.findall(r'<[a-z0-9]+ class="part-head">Part [IVX]+ · (.+?)</[a-z0-9]+>', idx)
 page_counts = [len(re.findall(r'<span class="n">\d\d</span>', block))
-               for block in re.split(r'<p class="part-head">', idx)[1:]]
+               for block in re.split(r'<[a-z0-9]+ class="part-head">', idx)[1:]]
 
 if len(spine) != len(page):
     problems.append(f"Part count differs: CONTEXT.md has {len(spine)}, index.html has {len(page)}")

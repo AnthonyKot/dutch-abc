@@ -10,6 +10,8 @@
 #   * checks/redaction.py catches personal data in real documents (HARD FAIL)
 #   * checks/template.py asserts every chapter carries the teaching apparatus —
 #     retrieval prompt, hidden worked answer, self-check, undecidable case (HARD FAIL)
+#   * checks/a11y.py asserts every Dutch fragment is marked lang="nl" — semantic in
+#     a bilingual book, not decoration — plus skip links and heading order (HARD FAIL)
 #   * checks/lexicon.py reports vocabulary growth      (ADVISORY, by decision)
 #
 # Counts are COMPUTED, never typed. Exits non-zero on any hard failure.
@@ -32,7 +34,7 @@ from html.parser import HTMLParser
 KNOWN = {"meta","title","link","script","header","div","a","nav","button","main","p","h1","h2","h3",
          "span","section","ul","ol","li","em","strong","table","thead","tbody","tr","th","td","br",
          "footer","code","hr","sup","sub","abbr","figure","figcaption","blockquote","b","i",
-         "details","summary","mark","dl","dt","dd"}
+         "details","summary","mark","dl","dt","dd","html"}
 bad = 0
 class P(HTMLParser):
     def handle_starttag(self, tag, attrs):

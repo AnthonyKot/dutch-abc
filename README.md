@@ -78,6 +78,14 @@ cannot detect it and will learn it. So the Dutch is checked by machine, not by e
   prove the reader wrong, one case the procedure cannot settle, a step 4 that reruns step 3's tests,
   and a *terug* column of questions that all point backwards. It gates structure, not editorial
   quality: it cannot tell whether a self-check criterion is *correct*.
+- **`checks/a11y.py`** *(hard fail)* — every page declares a document language, and **every one of
+  the ~1265 Dutch fragments carries `lang="nl"`**. In a bilingual book that is semantic, not
+  decoration: without it a screen reader pronounces *arbeidsongeschiktheidsverzekering* with English
+  phonetics, in the chapter arguing you can read that word once you split it. It is enforceable only
+  because the markup contract already puts every Dutch fragment in a known class, and it imports that
+  definition from `checks/corpus.py` rather than keeping a second copy. Also checks skip links
+  resolve and heading levels do not skip. It is **not** an accessibility audit — no contrast, focus
+  order or reading order — and About says so.
 - **`checks/lexicon.py`** *(advisory, by decision)* — new words per chapter, cumulative total, and
   how many of the nouns the chapters use **with an article** the checker can actually vouch for.
   Raises no findings; a non-zero exit means the script itself broke, and that does fail.
