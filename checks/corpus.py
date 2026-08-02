@@ -71,13 +71,23 @@ class _Stripper(HTMLParser):
     bug; a parser that tracks its own stack is the fix.
     """
 
+    # <title> and <script> cannot carry markup, so Dutch in them is a false
+    # positive by construction — chapter 05 is titled "de, het, die, dat" and
+    # there is nowhere to put a span. Their text is excluded from the English
+    # stream entirely rather than exempted word by word.
+    OPAQUE = {"title", "script", "style"}
+
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.out = []
         self.depth = 0        # >0 while inside a Dutch region
         self._stack = []
+        self._opaque = None
 
     def handle_starttag(self, tag, attrs):
+        if self._opaque is None and tag in self.OPAQUE:
+            self._opaque = tag
+            return
         cls = set((dict(attrs).get("class") or "").split())
         if self.depth:
             self._stack.append(tag)
@@ -88,6 +98,10 @@ class _Stripper(HTMLParser):
         pass
 
     def handle_endtag(self, tag):
+        if self._opaque is not None:
+            if tag == self._opaque:
+                self._opaque = None
+            return
         if not self.depth:
             return
         if self._stack:
@@ -96,7 +110,10 @@ class _Stripper(HTMLParser):
             self.depth = 0
 
     def handle_data(self, data):
-        self.out.append(data if not self.depth else "\n" * data.count("\n"))
+        if self._opaque is not None or self.depth:
+            self.out.append("\n" * data.count("\n"))   # keep line numbers exact
+        else:
+            self.out.append(data)
 
 
 def strip_dutch(text):

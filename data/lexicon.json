@@ -348,6 +348,10 @@
       "gender": "de",
       "plural": "beslissingen"
     },
+    "besluit": {
+      "gender": "het",
+      "plural": "besluiten"
+    },
     "bestelling": {
       "gender": "de",
       "src": "opmaat"
@@ -403,6 +407,10 @@
     "bijbaan": {
       "gender": "de",
       "src": "opmaat"
+    },
+    "bijlage": {
+      "gender": "de",
+      "plural": "bijlagen"
     },
     "bijsluiter": {
       "gender": "de",
@@ -1056,6 +1064,9 @@
       "gender": "de",
       "src": "opmaat"
     },
+    "eten": {
+      "gender": "het"
+    },
     "examen": {
       "gender": "het",
       "src": "opmaat"
@@ -1478,6 +1489,10 @@
     "huishouden": {
       "gender": "het",
       "src": "opmaat"
+    },
+    "huisje": {
+      "gender": "het",
+      "plural": "huisjes"
     },
     "huiswerk": {
       "gender": "het",
@@ -3722,6 +3737,10 @@
       "gender": "het",
       "src": "opmaat"
     },
+    "verbod": {
+      "gender": "het",
+      "plural": "verboden"
+    },
     "verdieping": {
       "gender": "de",
       "src": "opmaat"
@@ -3996,6 +4015,9 @@
     "werkdag": {
       "gender": "de",
       "src": "opmaat"
+    },
+    "werken": {
+      "gender": "het"
     },
     "werkkamer": {
       "gender": "de",
