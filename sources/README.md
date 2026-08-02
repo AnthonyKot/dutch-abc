@@ -38,15 +38,15 @@ pdftoppm -png -r 110 -f $((P/2)) -l $((P/2)) sources/donaldson-dutch-reference-g
 | 185–189 | **Verbs followed by prepositional objects** | 07 |
 | 190–204 | Conjunctions: 190 co-ordinating, 192 subordinating | 10 |
 | 222–234 | Numerals; 229 money, **230 time**, 231 dates | 12 |
-| **235–238** | ***Er* — its own chapter** | 06 |
+| **235–238** | ***Er* — its own chapter** | 07 |
 | 239–243 | Negation | — |
-| 244–247 | Appendix 1: letter writing | 14 (writing, not reading) |
+| 244–247 | Appendix 1: letter writing | 13 (writing, as evidence of the conventions a reader meets) |
 | 125–135 | Alphabetical list of strong and irregular verbs | 04 |
 | 265–274 | Index — Donaldson's substitute for a syntax chapter | 02 |
 
 ⚠ **Donaldson is 45 years old and says himself he is "quite strongly prescriptive."** For a book whose
 thesis is how people speak *now*, that is a live risk, not a footnote. Usage has moved since 1980,
-most visibly on *u* vs *je* — which is chapter 10's entire subject. **Rule: Donaldson is authoritative
+most visibly on *u* vs *je* — which is chapter 11's entire subject. **Rule: Donaldson is authoritative
 for structure and for what a form is; he is not authoritative for current usage or social register.**
 Where the two conflict, prefer *De Opmaat* (2009) and *Taaltalent* (2020), and say in the chapter that
 the older account differs.

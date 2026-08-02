@@ -29,9 +29,16 @@
       "gender": "het",
       "plural": "bedragen"
     },
+    "behandeling": {
+      "gender": "de",
+      "plural": "behandelingen"
+    },
     "belasting": {
       "gender": "de",
       "plural": "belastingen"
+    },
+    "belastingdienst": {
+      "gender": "de"
     },
     "belastingjaar": {
       "gender": "het",
@@ -57,6 +64,10 @@
       "gender": "de",
       "plural": "brieven"
     },
+    "controle": {
+      "gender": "de",
+      "plural": "controles"
+    },
     "datum": {
       "gender": "de",
       "plural": "data"
@@ -68,6 +79,10 @@
     "formulier": {
       "gender": "het",
       "plural": "formulieren"
+    },
+    "fout": {
+      "gender": "de",
+      "plural": "fouten"
     },
     "gegeven": {
       "gender": "het",
@@ -139,6 +154,10 @@
       "gender": "de",
       "plural": "rekeningen"
     },
+    "rekeningnummer": {
+      "gender": "het",
+      "plural": "rekeningnummers"
+    },
     "rente": {
       "gender": "de"
     },
@@ -165,6 +184,10 @@
     "wet": {
       "gender": "de",
       "plural": "wetten"
+    },
+    "wijziging": {
+      "gender": "de",
+      "plural": "wijzigingen"
     },
     "woning": {
       "gender": "de",

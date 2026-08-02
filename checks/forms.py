@@ -11,6 +11,13 @@ WHAT THIS CHECKS — and the public pages must not claim more:
 WHAT IT DOES NOT CHECK: inflection, tense formation, word order, idiom, or
 whether a sentence is natural. It is a narrow net, not a proof.
 
+KNOWN NOISE IN THE UNKNOWN-NOUN NOTE, so nobody "fixes" a non-bug: the article
+pattern cannot tell the article 'het' from the pronoun 'het'. "Het is niet
+nodig" and "stuur het vóór 1 juni" therefore report 'is' and 'vóór' as unchecked
+nouns. They are not nouns and nothing is wrong with the Dutch. Resist adding a
+function-word stoplist for this — the words that can follow pronoun 'het' are
+most of the language, and the note is advisory anyway. Read past them.
+
 An external review found four ways a bad example passed the first version:
 'het bedragen' (plurals never looked up), a wrong article after a nested <span>
 (extraction stopped at the first </span>), an unknown noun with a wrong article
