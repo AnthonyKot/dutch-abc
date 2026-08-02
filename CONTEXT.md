@@ -287,7 +287,7 @@ evidence, not an exceptionless decoder, in that configuration.
 | # | Slug | The one idea | Notes |
 |---|------|--------------|-------|
 | 12 | z-o-z | The furniture of Dutch documents: abbreviations (*o.a., d.w.z., i.v.m., t/m, m.b.t., z.o.z., a.u.b., excl.*), dates, money, and how amounts and periods are written. **€ 5.000 is five thousand; 9,320% has a decimal comma.** ***Half drie* is 2:30, not 3:30.** | Small, unglamorous, and the source of years of real errors — missed appointments and wrong payments. Donaldson: numerals printed 222–234, **Appendix 3 abbreviations printed 260–264**. Justify by the failure, not the grammar. Completes the toolkit; nothing new after this. |
-| 13 | anatomy-of-a-dutch-brief | The shape of a Dutch official letter: *kenmerk*, *betreft*, the dated opening, the conditions, the one actionable sentence, the *bezwaar* paragraph, *zie ommezijde*. Where each lives, and how to skim to the two that matter. | Genre, not grammar. Donaldson's Appendix 1 (printed 244–247) is letter *writing*, the mirror image, usable as evidence of the conventions. The highest practical payoff per page in the book. |
+| 13 | anatomy-of-a-dutch-brief | The shape of a Dutch official letter: the addressee block, the identification block that says what the document is, the named reference number, the date, the headline, the conditions, the one actionable sentence, the *bezwaar* section, the closing. Where each lives, and how to skim to the two that matter. | Genre, not grammar. Donaldson's Appendix 1 (printed 244–247) is letter *writing*, the mirror image, usable as evidence of the conventions. ⚠ **Corrected 2026-08-02 during the verification pass: this row said "*kenmerk*, *betreft*".** *Kenmerk* is sourced (printed 246, *Uw kenmerk / referentie*). ***Betreft* is in neither specimen and not in Donaldson**, so the chapter teaches the identification block by its **function** — usually top right, sometimes labelled *Betreft* or *Onderwerp*, often unlabelled — and names *Betreft* as one label that does that job rather than as the thing to look for. The aanslag performs it with three unlabelled lines naming the instrument. |
 | 14 | the-blue-envelope | A Belastingdienst letter, read completely, using every device in the book — compounds, the bracket, a split verb, a strong participle, two relative clauses, *daarbij*, a *dient u te*, a passive, a *tenzij*, three abbreviations. | The destination. Nothing new is introduced; everything is consumed. A **reconstruction**, not the specimen — see `data/running-document.md`. If a device in this letter has no earlier chapter, that is a spine defect: fix the spine, not the letter. |
 
 ### Why 07 became 04, and what it fixed
@@ -606,6 +606,41 @@ must go on the checklist:**
 2. What is its most plausible **false positive**?
 3. What observation can prove the proposed reading wrong? → `.check`, `li.hard`
 4. What ordinary case must remain unresolved? → `.undecided`
+5. **What does the chapter admit as evidence — and does it admit the same kind everywhere?**
+
+### The evidence-consistency check — a fifth question, added 2026-08-02, and the absolute scan cannot find it
+
+**Found by an external reader, in the same chapter whose three absolutes I had just caught.** Chapter
+12's `.branch` let Dutch convention settle a thousands separator — *"Dutch convention makes it fifteen
+hundred"* — and its `.undecided`, **two boxes later**, forbade Dutch convention from settling a date
+order and dismissed it as *"inferences about the world, not readings of the document."* Same kind of
+knowledge, opposite treatment, one screen apart. Step 2 had already said day-month-year is the
+ordinary shape in Dutch letters, so the chapter refuted its own undecidable case in its own body.
+
+⚠ **Gate 1's tell would never have caught this.** Neither box contained an absolute. Each was locally
+reasonable and defensible on its own. **The defect only exists in the relation between them**, which
+means scanning sentences — by eye or by any `hedge.py` — cannot surface it. This is a second, distinct
+failure mode and it needs its own pass.
+
+**The pass, and it is quick.** After drafting, list every kind of evidence the chapter lets the reader
+use — the marks on the page, arithmetic, the calendar, the document's genre, where it came from, what
+the reader knows about living here. Then check that each kind is admitted or refused *consistently*.
+Where a chapter refuses one, it must say why, and the reason must not apply equally to a kind it
+accepted.
+
+**The substantive lesson, which is bigger than the bug.** This book trains a reader to distrust their
+guesses, and that training has a failure mode: **refusing to use knowledge you legitimately have is
+not rigour, it is paralysis** — and paralysis in front of Dutch text is the exact condition the target
+reader arrived with. A chapter that manufactures an unresolvable case out of something a resident
+actually knows has taught the original problem back. Knowing that a Dutch-language letter from a Dutch
+organisation writes day-month-year is evidence, and the reader is entitled to it.
+
+Prefer a genuinely undecidable residue instead. Chapter 12's replacement is bare *tot* against *t/m*:
+arithmetic does not apply, the calendar does not apply, and the document's origin fixes a date's
+*shape* but says nothing about what a preposition *includes*. Note also that it needed no new source,
+because it is an **absence claim** — *t/m* = *tot en met* is pinned at printed 262, and the point is
+that the document had that form and declined to use it. **Absence claims are the cheapest honest
+`.undecided`s available**, and Parts V should reach for them first.
 
 Prefer *candidate*, *signal*, *usually*, *confirm by…* wherever the operation is heuristic. **Chapter 02
 is the model**: fast procedure first, then questions, single verbs, tails and uncertain clause
