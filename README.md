@@ -37,8 +37,10 @@ Each chapter follows four steps — **On the page → What it is doing → Read 
 and closes with a **kaart**: what was introduced, which earlier chapters it leaned on, and what is
 deliberately postponed. Chapters are in dependency order; nothing uses what a later chapter builds.
 
-The last chapter works through a reconstructed Belastingdienst letter end to end — composed for this
-book, modelled and checked against a real one — using every device and introducing nothing new. If it needs something with no earlier chapter, that is a defect in the spine.
+The last chapter — **not yet written** — will work through a reconstructed Belastingdienst letter end
+to end, to be composed for this book and modelled on a real one, using every device and introducing
+nothing new. If it turns out to need something with no earlier chapter, that is a defect in the spine.
+No real letter is reproduced anywhere.
 
 ## Status
 

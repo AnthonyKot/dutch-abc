@@ -26,6 +26,10 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 FILES = ["docs/index.html", "docs/about.html", "README.md"]
 
+# The spine is 14 chapters; checks/spine.py is what enforces that the contents page
+# and CONTEXT.md agree on it. Needed here only to resolve "the last chapter".
+TOTAL_CHAPTERS = 14
+
 
 def written():
     """Chapter numbers with a file on disk, as zero-padded strings."""
@@ -51,6 +55,79 @@ def sentence(nums):
     return f"Chapters {', '.join(nums[:-1])} and {nums[-1]} are written"
 
 
+# Verbs that assert work already DONE to an artefact. A chapter with no file on
+# disk cannot have been composed, modelled or checked against anything.
+DONE_TO_IT = re.compile(
+    r"\b(composed|modelled|modeled|checked|verified|reproduced|transcribed|"
+    r"proof-?read|audited)\b", re.I)
+PLANNED = re.compile(r"\b(will|not yet|to be|planned|would|is going to)\b", re.I)
+
+
+def unwritten_asserted_as_done(rel, text, nums):
+    """A chapter with no file is described as having had work done to it.
+
+    Caught by an external reviewer who read the About page's "Chapter 14 works
+    through a reconstructed Belastingdienst letter — composed for this book,
+    modelled and CHECKED AGAINST A REAL ONE", went looking for chapter 14 on the
+    public branch, and did not find it. The tense was the small problem. The real
+    one is that the sentence asserted VERIFICATION — composed, modelled, checked —
+    of an artefact that did not exist, on the page whose entire subject is what has
+    been checked.
+
+    NARROWED DELIBERATELY, AFTER THE BROAD VERSION FAILED. The first attempt
+    flagged any present-tense mention of an unwritten chapter. It fired on
+    "Chapter 09 needs the participles built in chapter 04" and on
+    "Chapter 10's connectives govern clauses built in chapters 02 and 06" — which
+    are statements about the SPINE's dependency structure, true of the plan, and
+    not claims that anything exists. A check that cries wolf on the contents page's
+    own design notes gets ignored, and an ignored check is worse than none.
+
+    So this asks the narrow question that matches the actual harm: has the prose
+    claimed that work was DONE to something that is not there? Describing a planned
+    chapter's content in the present tense is ordinary book-blurb English and is
+    left alone.
+    """
+    out = []
+    flat = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", text))
+    # A parenthetical "(chapter 13)" is a pointer into the contents map, not a
+    # claim that the chapter exists — the contents page is the authority on that,
+    # and it marks unwritten chapters as stubs. Flagging those was this check's
+    # first behaviour and it produced four false positives immediately. Only a
+    # chapter named in running prose is asserting anything.
+    spans = [(m.start(), m.end()) for m in re.finditer(r"\([^()]*\)", flat)]
+
+    refs = []
+    # (?:&nbsp;|\s)+ and not \s*&nbsp;?\s* — the latter makes only the SEMICOLON
+    # optional, so it demanded the literal string "&nbsp" and quietly matched only
+    # the one site that used the entity. Three of four injected faults passed
+    # because of it, which is the whole reason faults get injected.
+    for m in re.finditer(r"[Cc]hapters?(?:&nbsp;|\s)+(\d{1,2})", flat):
+        refs.append((m.start(), f"{int(m.group(1)):02d}"))
+    # "The last chapter" is a reference to chapter 14 by another name, and it is
+    # how both the homepage and README phrase it. A number-only pattern cannot see
+    # them, and they were two of the four sites that needed correcting.
+    last = f"{max(int(n) for n in nums) if nums else 0:02d}"
+    total = TOTAL_CHAPTERS
+    if last != f"{total:02d}":
+        for m in re.finditer(r"[Tt]he (?:last|final) chapter", flat):
+            refs.append((m.start(), f"{total:02d}"))
+
+    seen = set()
+    for at, n in sorted(refs):
+        if n in nums or any(a <= at < b for a, b in spans):
+            continue
+        start = max(0, flat.rfind(".", 0, at) + 1)
+        end = flat.find(".", at)
+        sent = flat[start: end if end != -1 else len(flat)].strip()
+        verb = DONE_TO_IT.search(sent)
+        if not verb or PLANNED.search(sent) or (rel, n, sent) in seen:
+            continue
+        seen.add((rel, n, sent))
+        out.append(f"{rel} — chapter {n} has no file on disk, but the prose says it was "
+                   f"{verb.group(0).lower()}: …{sent[:110]}…")
+    return out
+
+
 def main():
     nums = written()
     want = sentence(nums)
@@ -60,10 +137,12 @@ def main():
         if not fn.exists():
             missing.append(f"{rel} — file not found")
             continue
+        text = fn.read_text(encoding="utf-8")
         # HTML wraps mid-sentence, so compare on collapsed whitespace.
-        hay = re.sub(r"\s+", " ", fn.read_text(encoding="utf-8"))
+        hay = re.sub(r"\s+", " ", text)
         if want not in hay:
             missing.append(f"{rel} — does not contain {want!r}")
+        missing += unwritten_asserted_as_done(rel, text, nums)
 
     if missing:
         print(f"  {len(nums)} chapter file(s) on disk, so every status claim must read: {want!r}")
