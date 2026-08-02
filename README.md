@@ -72,8 +72,9 @@ cannot detect it and will learn it. So the Dutch is checked by machine, not by e
   identifiers (personal and account numbers, IBANs, postcodes, phone numbers, email addresses) and a
   private list of names. It matches patterns, not meaning: a safety net under a manual reading, never
   a substitute for one.
-- **`checks/lexicon.py`** *(advisory, by decision)* — new words per chapter, cumulative total,
-  lexicon coverage, and nouns used without a gender entry. Reports; never fails.
+- **`checks/lexicon.py`** *(advisory, by decision)* — new words per chapter, cumulative total, and
+  how many of the nouns the chapters use **with an article** the checker can actually vouch for.
+  Raises no findings; a non-zero exit means the script itself broke, and that does fail.
 - Plus the checks ported from the previous three books: computed count sync, link resolution, HTML
   well-formedness, a quotation scan, a self-assessment scan, and a ban on page numbers for books not
   in `sources/`.

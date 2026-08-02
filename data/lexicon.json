@@ -1,37 +1,321 @@
 {
   "_comment": [
     "Gender and form register. checks/forms.py validates every 'de X' / 'het X' in the",
-    "chapters against this file, singular and plural. Seeded by hand; the bulk is still",
-    "to be transcribed from De Opmaat's woordenlijst (printed 283-289), which marks",
-    "(de)/(het) on every noun and is grouped by thema. See CONTEXT.md -> Standing work.",
-    "Transcribing a gender register is not reproducing prose; the examples built from it",
-    "must still be our own.",
-    "Compound gender follows the last element (Donaldson 7.1.3, printed 32), so a",
-    "compound need only be listed when it is used with an article in a chapter."
+    "chapters against this file, singular and plural.",
+    "",
+    "TWO TRANCHES, DIFFERENT CONFIDENCE.",
+    "  * entries with no 'src': hand-seeded and individually checked. Most carry a plural.",
+    "  * entries with \"src\": \"opmaat\": bulk-transcribed from De Opmaat's woordenlijst",
+    "    (printed 283-289), which marks (de)/(het) on every noun. Gender only - that list",
+    "    gives no plurals - so forms.py checks their articles but not their plurals.",
+    "Where both tranches had a word, the hand-checked entry won and the bulk one was dropped.",
+    "",
+    "THE SOURCE CONTAINS ERRORS; see _corrections. A gender register feeding a checker that",
+    "exists to prevent wrong Dutch cannot be transcribed on trust. Every entry was put through",
+    "three checks before merging: internal duplicate conflicts, disagreement with the",
+    "hand-verified tranche, and Donaldson's suffix rules (printed 27-32). Two real errors and",
+    "one misspelling surfaced. The compound-head rule (Donaldson 7.1.3, printed 32) found no",
+    "genuine disagreements, which is the useful negative result.",
+    "",
+    "Transcribing a gender register is not reproducing prose; the examples built from it must",
+    "still be our own. Compound gender follows the last element, so a compound need only be",
+    "listed when a chapter uses it with an article."
   ],
   "nouns": {
+    "aanbieding": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "aanbod": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "aandacht": {
+      "gender": "de",
+      "src": "opmaat"
+    },
     "aangifte": {
       "gender": "de",
       "plural": "aangiften"
+    },
+    "aannemer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "aanrecht": {
+      "gender": "het",
+      "src": "opmaat"
     },
     "aanslag": {
       "gender": "de",
       "plural": "aanslagen"
     },
+    "aantal": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "aardappel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "aardbei": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "accountant": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "achternaam": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "activiteit": {
+      "gender": "de",
+      "src": "opmaat"
+    },
     "adres": {
       "gender": "het",
       "plural": "adressen"
     },
+    "advertentie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "advies": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "advocaat": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "afdeling": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "affiniteit": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "afstand": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "afstandsbediening": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "afwas": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "afzuigkap": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "agenda": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "agent": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "alcohol": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "allergie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ambtenaar": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ananas": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "andijvie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "antwoord": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "antwoordapparaat": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "apotheek": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "appartement": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "appel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "aquarium": {
+      "gender": "het",
+      "src": "opmaat"
+    },
     "arbeid": {
       "gender": "de"
+    },
+    "architect": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "arm": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "armband": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "arts": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "aspirine": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "assistente": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "auto": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "avond": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "avondgroep": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "baan": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "baas": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "baby": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "badkamer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bakker": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bakkerij": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "balie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "baliemedewerker": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "balkon": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "ballet": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "banaan": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bank": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "barman": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "basis": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "basisschool": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "beamer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bed": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "bediening": {
+      "gender": "de",
+      "src": "opmaat"
     },
     "bedrag": {
       "gender": "het",
       "plural": "bedragen"
     },
+    "bedrijf": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "been": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "begin": {
+      "gender": "het",
+      "src": "opmaat"
+    },
     "behandeling": {
       "gender": "de",
       "plural": "behandelingen"
+    },
+    "behanger": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bejaardenverzorger": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "beker": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bekeuring": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "belangstelling": {
+      "gender": "de",
+      "src": "opmaat"
     },
     "belasting": {
       "gender": "de",
@@ -48,56 +332,1037 @@
       "gender": "de",
       "plural": "berekeningen"
     },
+    "beroep": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "beroepsmilitair": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "beroepssporter": {
+      "gender": "de",
+      "src": "opmaat"
+    },
     "beslissing": {
       "gender": "de",
       "plural": "beslissingen"
+    },
+    "bestelling": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bestemming": {
+      "gender": "de",
+      "src": "opmaat"
     },
     "betaling": {
       "gender": "de",
       "plural": "betalingen"
     },
+    "beurt": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "beweging": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bewoner": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bezem": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bezichtiging": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bezoek": {
+      "gender": "het",
+      "src": "opmaat"
+    },
     "bezwaar": {
       "gender": "het",
       "plural": "bezwaren"
+    },
+    "bh": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bibliotheek": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bier": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "bijbaan": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bijsluiter": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bijwerking": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bijzettafeltje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "bikini": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bil": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "binnenzak": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bioscoop": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "blaas": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "blik": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "blikje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "bloedvat": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "bloem": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bloemenzaak": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bloemist": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bloemkool": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "blouse": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "boek": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "boekenkast": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "boekwinkel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "boer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "boerderij": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "boete": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bolletje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "bon": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bonnetje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "boodschap": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "boom": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "boontje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "boormachine": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "boot": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bord": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "borst": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bos": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "boter": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "boterham": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bouwmarkt": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bouwvakker": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bovenbeen": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "brandweerman": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "brie": {
+      "gender": "de",
+      "src": "opmaat"
     },
     "brief": {
       "gender": "de",
       "plural": "brieven"
     },
+    "briefje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "bril": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "brochure": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "broek": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "broer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "brommer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bron": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "brood": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "broodje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "brug": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bruid": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bruidegom": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "budget": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "buik": {
+      "gender": "de",
+      "src": "opmaat"
+    },
     "buitenland": {
       "gender": "het"
+    },
+    "bureau": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "bureaulamp": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bureaustoel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "buren": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "burgemeester": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "bus": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "busje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "buur": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "buurt": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "cadeau": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "café": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "cake": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "calorie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "camping": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "capsule": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "catastrofe": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "categorie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "cd-rom": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "cd-speler": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "cement": {
+      "gender": [
+        "het",
+        "de"
+      ],
+      "src": "opmaat"
+    },
+    "centrum": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "cervelaat": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "chemicus": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "chirurg": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "colbert": {
+      "gender": [
+        "het",
+        "de"
+      ],
+      "src": "opmaat"
+    },
+    "collega": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "college": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "computer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "concert": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "conducteur": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "consult": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "contact": {
+      "gender": "het",
+      "src": "opmaat"
     },
     "controle": {
       "gender": "de",
       "plural": "controles"
     },
+    "coupé": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "croissant": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "crèche": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "cursus": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "cursusaanbod": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "cursusboek": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "cursusplanning": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "dag": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "daggroep": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "dak": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "dakterras": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "dame": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "danser": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "dansvoorstelling": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "darm": {
+      "gender": "de",
+      "src": "opmaat"
+    },
     "datum": {
       "gender": "de",
       "plural": "data"
+    },
+    "deel": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "dekbedovertrek": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "deur": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "dieet": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "dier": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "dierenarts": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "dierentuin": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "discotheek": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "docent": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "dochter": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "doek": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "doel": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "dokter": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "dominee": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "dood": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "doos": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "doosje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "dorp": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "dorst": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "douche": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "douchecrème": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "douchegordijn": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "drank": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "drankje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "dressoir": {
+      "gender": [
+        "het",
+        "de"
+      ],
+      "src": "opmaat"
+    },
+    "drogist": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "drogisterij": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "druif": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "druppel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "dubbeldekker": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "duim": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "duin": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "dutje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "dvd-recorder": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "dvd-speler": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "echtpaar": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "economie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "econoom": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "eengezinswoning": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "eettafel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "eeuw": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ei": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "eigenaar": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "eigenschap": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "eiland": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "eindexamen": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "elektricien": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "elleboog": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "emotie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "energie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "engels": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "enkel": {
+      "gender": "de",
+      "src": "opmaat"
     },
     "envelop": {
       "gender": "de",
       "plural": "enveloppen"
     },
+    "ervaring": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "etage": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "etalagepop": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "examen": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "expositie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "faculteit": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "familie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "fan": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "fauteuil": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "feest": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "feestdag": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "feestje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "fiets": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "fietsenmaker": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "fietspad": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "file": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "film": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "flat": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "fles": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "flesje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "fluitje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
     "formulier": {
       "gender": "het",
       "plural": "formulieren"
+    },
+    "fornuis": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "foto": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "fotograaf": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "fotomodel": {
+      "gender": "het",
+      "src": "opmaat"
     },
     "fout": {
       "gender": "de",
       "plural": "fouten"
     },
+    "framboos": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "fruit": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "fysiotherapeut": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "garage": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "gast": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "gebak": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "geboorte": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "gebrek": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "geduld": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "geest": {
+      "gender": "de",
+      "src": "opmaat"
+    },
     "gegeven": {
       "gender": "het",
       "plural": "gegevens"
+    },
+    "gehakt": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "geld": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "geluidsoverlast": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "geluk": {
+      "gender": "het",
+      "src": "opmaat"
     },
     "gemeente": {
       "gender": "de",
       "plural": "gemeenten"
     },
+    "gemeentehuis": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "gesprek": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "gevaar": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "gezicht": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "gezin": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "gezondheid": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "gootsteen": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "gordijn": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "gracht": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "gram": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "groente": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "groenteboer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "groentewinkel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "groep": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "groet": {
+      "gender": "de",
+      "src": "opmaat"
+    },
     "grondslag": {
       "gender": "de",
       "plural": "grondslagen"
+    },
+    "grootmoeder": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "grootvader": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "gum": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "haar": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "haarband": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "haast": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hak": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hal": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hals": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "halsketting": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "halvarine": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ham": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hamburger": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hamer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hand": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "handdoek": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "handschoen": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hart": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "hectiek": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "heden": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "heer": {
+      "gender": "de",
+      "src": "opmaat"
     },
     "heffing": {
       "gender": "de",
@@ -107,16 +1372,216 @@
       "gender": "de",
       "plural": "heffingskortingen"
     },
+    "hek": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "hekel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "herhaling": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "herinnering": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hersenen": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "herstel": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "heup": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hiel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hitte": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hoek": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hoekwoning": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hoeveelheid": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hond": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hondenpoep": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hoofd": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "hoofdstad": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "hoofdstuk": {
+      "gender": "het",
+      "src": "opmaat"
+    },
     "hoogte": {
       "gender": "de"
+    },
+    "horloge": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "hotel": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "hout": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "hovenier": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "huis": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "huisarts": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "huisartsenpraktijk": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "huisdier": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "huishouden": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "huiswerk": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "hulp": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "huur": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "huurwoning": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "huwelijk": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "hypotheek": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ict-specialist": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "idee": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "ijs": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "informatie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ingang": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ingenieur": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "inhoud": {
+      "gender": "de",
+      "src": "opmaat"
     },
     "inkomen": {
       "gender": "het",
       "plural": "inkomens"
     },
+    "innerlijk": {
+      "gender": "het",
+      "src": "opmaat"
+    },
     "inspecteur": {
       "gender": "de",
       "plural": "inspecteurs"
+    },
+    "installateur": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "instrument": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "intake": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "intakegesprek": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "intercity": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "interieur": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "internet": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "invloed": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "inwoner": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "isolatie": {
+      "gender": "de",
+      "src": "opmaat"
     },
     "jaar": {
       "gender": "het",
@@ -126,13 +1591,840 @@
       "gender": "de",
       "plural": "jaaropgaven"
     },
+    "jas": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "jazz": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "jenever": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "jeugd": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "jongen": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "jongere": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "journaal": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "journalist": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "jurk": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "juwelier": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kaartje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "kaas": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kaaswinkel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kabaal": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "kachel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kalender": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kamer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kampioen": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kanker": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kantine": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kantoor": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "kapper": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kapstok": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "karakter": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "karaktereigenschap": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kassière": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kast": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kat": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "keel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "keeltablet": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "keer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kelder": {
+      "gender": "de",
+      "src": "opmaat"
+    },
     "kenmerk": {
       "gender": "het",
       "plural": "kenmerken"
     },
+    "kerk": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kers": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ketchup": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "keuken": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "keus": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kies": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kiespijn": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kilo": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kin": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kind": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "kinderopvang": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kip": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kipfilet": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kippenbout": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kippenpoot": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "klant": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kleding": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kledingkast": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kledingwinkel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kleed": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "kleermaker": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kleren": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kleur": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "klimaat": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "klok": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "klus": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "knie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "knotje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "koekje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "koelkast": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "koffie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kok": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "komkommer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "konijn": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "kooi": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "koopavond": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "koopwoning": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "koor": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "koorts": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kop": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kopje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
     "korting": {
       "gender": "de",
       "plural": "kortingen"
+    },
+    "kostuum": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "kraan": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "krant": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kredietcrisis": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "krentenbol": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kroeg": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kroket": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "krop": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kruispunt": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "kruk": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kuit": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kussen": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "kust": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kwaliteit": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "kwart": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "kwartier": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "laars": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ladekast": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "laminaat": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "lamp": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "lamsvlees": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "land": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "landkaart": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "landschap": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "laptop": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "last": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "lawaai": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "leeftijd": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "leerkracht": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "leerplicht": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "leidinggevende": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "lente": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "lepel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "leraar": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "letter": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "levensverwachting": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "lever": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "lichaam": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "lied": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "liefde": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "liefhebberij": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "liefje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "ligging": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "lijn": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "linkerenkel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "lip": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "lippenstift": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "logopedist": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "long": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "loodgieter": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "loon": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "luchtpijp": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "maag": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "maand": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "maat": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "maatschappelijk werker": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "machinist": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "magnetron": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "make-up": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "makelaar": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "makelaarskantoor": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "man": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "manager": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "mandarijn": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "manier": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "map": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "markt": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "medewerkster": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "medicijn": {
+      "gender": [
+        "het",
+        "de"
+      ],
+      "src": "opmaat"
+    },
+    "melk": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "meloen": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "meneer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "mentaliteit": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "menu": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "mes": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "metro": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "metselaar": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "meubel": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "meubelzaak": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "middag": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "middelbare school": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "middelvinger": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "middernacht": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "miljoen": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "minister": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "minuut": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "model": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "moeder": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "moment": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "mond": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "monteur": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "mouw": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "mp3-speler": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "museum": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "musicus": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "muur": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "muziek": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "muziekcentrum": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "naam": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "nacht": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "nachtkastje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "natuur": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "natuurkundige": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "navel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "nederlander": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "nederlands": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "neef": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "neefje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "nek": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "netvlies": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "netwerkbeheerder": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "neus": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "nicht": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "nichtje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "nier": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "nieuws": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "niveau": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "noorden": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "notaris": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "notulen": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "nummer": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "ober": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ochtend": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ogenblik": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "olie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "oma": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "omgeving": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "omroeper": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "onderbroek": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ondergoed": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "onderzoek": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "onderzoeker": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "onkostenvergoeding": {
+      "gender": "de",
+      "src": "opmaat"
     },
     "ontbijt": {
       "gender": "het"
@@ -141,17 +2433,496 @@
       "gender": "de",
       "plural": "ontbijttafels"
     },
+    "ontmoeting": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ontwikkeling": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "oog": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "oom": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "oor": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "oorbel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "oorlog": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "oorzaak": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "opa": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "operatie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
     "opgave": {
       "gender": "de",
       "plural": "opgaven"
+    },
+    "opleiding": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "oplossing": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "opticien": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "opvoeding": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "organisatie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "orkest": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "ouder": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "oven": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "overeenkomst": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "overgrootmoeder": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "overgrootvader": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "overhemd": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "overkant": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "overlast": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "paar": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "paardenstaart": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pak": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "pakje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "pakket": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "pantoffel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "papier": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "paprika": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "paraplu": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "parfum": {
+      "gender": [
+        "het",
+        "de"
+      ],
+      "src": "opmaat"
+    },
+    "park": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "parkeerplaats": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "parket": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "partner": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pasta": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pastoor": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "patiënt": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "paté": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "peer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pen": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "penis": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pensioen": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "persoon": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "peulvrucht": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "piano": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "piemel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pijn": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pil": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "piloot": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pilsje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "pinda": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pink": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pinpas": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pizza": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "plaats": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "plaatsbewijs": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "plafond": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "plan": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "plant": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "plattegrond": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pleegdochter": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pleeggezin": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "pleegkind": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "pleegmoeder": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pleegvader": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pleegzoon": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "plein": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "pleister": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "plezier": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "plug": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "poep": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "politicus": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pols": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "popmuziek": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "port": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "portier": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "post": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "postbode": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "postkantoor": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "postuur": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "postzegel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pot": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "potgrond": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "potje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "potlood": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "praktijk": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "prei": {
+      "gender": "de",
+      "src": "opmaat"
     },
     "premie": {
       "gender": "de",
       "plural": "premies"
     },
+    "prijs": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "prijscategorie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "prijsklasse": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "prikbord": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "printer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "probleem": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "procent": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "product": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "proef": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "programmeur": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "provincie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "psychologie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "psycholoog": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "pyjama": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "raam": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "raamkozijn": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "radio": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "recensie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "recept": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "receptie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "receptionist": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "rechter": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "reclame": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "reden": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "reep": {
+      "gender": "de",
+      "src": "opmaat"
+    },
     "regel": {
       "gender": "de",
       "plural": "regels"
+    },
+    "reis": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "reisgenoot": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "reiziger": {
+      "gender": "de",
+      "src": "opmaat"
     },
     "rekening": {
       "gender": "de",
@@ -161,20 +2932,847 @@
       "gender": "het",
       "plural": "rekeningnummers"
     },
+    "rekverband": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "relatie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "renovatie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
     "rente": {
       "gender": "de"
+    },
+    "restaurant": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "resultaat": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "retour": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "rij": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "rijbewijs": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "rijst": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ring": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ringvinger": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "risico": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "rivier": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "rok": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "rol": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "rollade": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "rolletje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "roltrap": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "roos": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "rosé": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "rug": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ruimte": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ruitjeshuis": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "rundvlees": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "rust": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "salami": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "salaris": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "salontafel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "salsa": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "sandaal": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schaduw": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schat": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "scheenbeen": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "scheiding": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schilder": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schilderij": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "schipper": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schoen": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schoenenzaak": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schoenmaker": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "school": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schoolvak": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "schoonheidsspecialiste": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schoonmaker": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schoonmoeder": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schoonouder": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schoonvader": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schoonzus": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schoorsteen": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schouder": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schrift": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "schrijver": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schroef": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schroevendraaier": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "schuur": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "scriptie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "secretaresse": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "seizoen": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "seniorenwoning": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "servies": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "sfeer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "shampoo": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "shirt": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "sinaasappel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "situatie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "sjaal": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "sla": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "slaapkamer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "slager": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "slagerij": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "slagroom": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "slipje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "slipper": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "slok": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "slokdarm": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "slot": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "snelweg": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "snijboon": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "snob": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "sok": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "soort": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "spaans": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "spaghetti": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "specialist": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "speelgoed": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "speler": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "spelletje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "spijker": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "spijkerbroek": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "spinazie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "spits": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "spoor": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "sporthal": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "spray": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "spreekuur": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "spullen": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "staart": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "stad": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "stage": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "stapelbed": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "starter": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "station": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "stem": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "stewardess": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "stiefbroer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "stiefmoeder": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "stiefvader": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "stiefzus": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "stift": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "stijl": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "stoel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "stokbrood": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "straat": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "strand": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "stroopwafel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "stropdas": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "studeerkamer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "studentenhuis": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "studententijd": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "studie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "stuk": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "stukje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "suggestie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "suiker": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "t-shirt": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "taal": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "taalinstituut": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "taart": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tabel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tablet": {
+      "gender": [
+        "het",
+        "de"
+      ],
+      "src": "opmaat"
     },
     "tafel": {
       "gender": "de",
       "plural": "tafels"
     },
+    "tafeltje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "tante": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tapijt": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "tapijtlegger": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tas": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tasje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "taxi": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "team": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "teen": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tegel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tegelzetter": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tekst": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "telefoon": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "telefoongesprek": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "televisie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tempel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "temperatuur": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tennisbaan": {
+      "gender": "de",
+      "src": "opmaat"
+    },
     "termijn": {
       "gender": "de",
       "plural": "termijnen"
     },
+    "terras": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "theater": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "thee": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "therapeut": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tijd": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tijdschrift": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "timmerman": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tip": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "titel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "toegang": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "toekomst": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "toilet": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "tolk": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tong": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "top": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "traditie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tram": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "trap": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "trein": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "trommelvlies": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "trui": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tuin": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tuinman": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tulp": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tussenwoning": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tweeling": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "tweepersoonsbed": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "twijfel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ui": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "uitdaging": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "uiterlijk": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "uitleg": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "uitspraak": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "uitstapje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "uitstraling": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "uitzendbureau": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "uitzending": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "universiteit": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "uur": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "vaas": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vaatwasser": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vader": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vagina": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vakkenvuller": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "varkensvlees": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "verband": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "verdieping": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vergadering": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "verhaal": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "verjaardag": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "verkeer": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "verkeersoverlast": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "verkoper": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "verleden": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "verpleegkundige": {
+      "gender": "de",
+      "src": "opmaat"
+    },
     "verschil": {
       "gender": "het",
       "plural": "verschillen"
+    },
+    "vertraging": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "verwarming": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "verwijsbrief": {
+      "gender": "de",
+      "src": "opmaat"
     },
     "verzekeraar": {
       "gender": "de",
@@ -184,25 +3782,409 @@
       "gender": "de",
       "plural": "verzekeringen"
     },
+    "vest": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "vijver": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "villa": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vinger": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vis": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vitrage": {
+      "gender": [
+        "het",
+        "de"
+      ],
+      "src": "opmaat"
+    },
+    "vlaai": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vlag": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vlees": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "vleesvervanger": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vleeswaren": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vliegtuig": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "vloed": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vloer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vlucht": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "voedsel": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "voet": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "voetbalwedstrijd": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vogel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "voicemail": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "volière": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "voorbeeld": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "voorhoofd": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "voorlichting": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "voornaam": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "voorwerp": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "vork": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vraag": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vriend": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vriendin": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vriendinnetje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "vriendje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "vrijheid": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vrijwilliger": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vrijwilligerswerk": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "vrouw": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "vuilniszak": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "wad": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "wang": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "wastafel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "water": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "wc": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "wc-papier": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "website": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "week": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "weekend": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "wekker": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "wenkbrauw": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "wens": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "wereld": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "wereldrecord": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "werk": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "werkdag": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "werkkamer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "werknemer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "werktijd": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "werkzaamheden": {
+      "gender": "de",
+      "src": "opmaat"
+    },
     "wet": {
       "gender": "de",
       "plural": "wetten"
+    },
+    "whisky": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "wijk": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "wijn": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "wijsvinger": {
+      "gender": "de",
+      "src": "opmaat"
     },
     "wijziging": {
       "gender": "de",
       "plural": "wijzigingen"
     },
+    "wimper": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "winkel": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "winkelcentrum": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "winter": {
+      "gender": "de",
+      "src": "opmaat"
+    },
     "woning": {
       "gender": "de",
       "plural": "woningen"
+    },
+    "woningmarkt": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "woonkamer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "woonplaats": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "woonwijk": {
+      "gender": "de",
+      "src": "opmaat"
     },
     "woord": {
       "gender": "het",
       "plural": "woorden"
     },
+    "woordenboek": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "zaag": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "zaal": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "zak": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "zakje": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "zalf": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "zanger": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "zee": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "zeehond": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "zelfstandige": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "ziekenhuis": {
+      "gender": "het",
+      "src": "opmaat"
+    },
     "ziekte": {
       "gender": "de",
       "plural": "ziektes"
+    },
+    "zin": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "zolder": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "zomer": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "zomervakantie": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "zon": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "zoon": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "zuiden": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "zus": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "zwager": {
+      "gender": "de",
+      "src": "opmaat"
+    },
+    "zwembad": {
+      "gender": "het",
+      "src": "opmaat"
+    },
+    "zzp-er": {
+      "gender": "de",
+      "src": "opmaat"
+    }
+  },
+  "_corrections": {
+    "appartement": {
+      "opmaat_prints": "de",
+      "we_use": "het",
+      "why": "De Opmaat prints 'appartement (de)'. Wrong: het appartement. Donaldson's -ment rule (printed 27-32) makes every -ment noun neuter."
+    },
+    "netvlies": {
+      "opmaat_prints": "de",
+      "we_use": "het",
+      "why": "De Opmaat prints 'netvlies (de)'. Wrong: het netvlies. The same page prints 'trommelvlies (het)', so the list contradicts itself."
+    },
+    "website": {
+      "opmaat_prints": "webiste (de)",
+      "we_use": "website (de)",
+      "why": "Misspelling in the source list."
     }
   }
 }

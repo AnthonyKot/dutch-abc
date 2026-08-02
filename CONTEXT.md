@@ -407,6 +407,27 @@ worse than a wrong number in a maths book: the reader cannot detect it and will 
 
 ## Standing work
 
-- **Transcribe the gender register** from *De Opmaat*'s woordenlijst (printed 283–289) into
-  `data/lexicon.json`. Currently seeded with 17 nouns chosen by hand, which is enough to prove
-  `checks/forms.py` works and not enough to check a real chapter. Wanted before chapter 05.
+- ~~**Transcribe the gender register** from *De Opmaat*'s woordenlijst (printed 283–289).~~
+  **Done 2026-08-02.** `data/lexicon.json` now holds **1033 nouns**: 50 hand-checked (with plurals)
+  and 983 bulk-transcribed from the woordenlijst (gender only — that list gives no plurals).
+  Chapter 05 is unblocked.
+
+  **The source contains errors, and this matters more than the count.** A gender register feeding
+  the checker that exists to prevent wrong Dutch cannot be transcribed on trust. Three validation
+  passes ran before the merge — internal duplicate conflicts, disagreement with the hand-checked
+  tranche, and Donaldson's suffix rules (printed 27–32). They surfaced:
+
+  - *appartement (de)* → **het** (every *-ment* noun is neuter);
+  - *netvlies (de)* → **het** — and the same page prints *trommelvlies (het)*, so the list
+    contradicts itself;
+  - *webiste* → *website*, a misspelling.
+
+  All three are recorded in `_corrections` in the JSON with the reason. The compound-head rule
+  (Donaldson §7.1.3) found **no** genuine disagreements across all 995 transcribed entries, which
+  is the useful negative result. Do not "restore" any of the three corrections to match the book.
+
+- **The old lexicon-coverage metric was meaningless** and is gone. It divided lexicon hits by all
+  distinct Dutch words, most of which are verbs and function words a gender register can never
+  cover, so it sat near 15% and did not move when the lexicon grew twentyfold. `checks/lexicon.py`
+  now reports what forms.py can actually fail on: nouns used **with an article** in the chapters,
+  checked vs unchecked.

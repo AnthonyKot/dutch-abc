@@ -59,9 +59,14 @@ def check_articles(fn, text, nouns, plurals):
                 unknown.add(n)
                 continue
             expected = entry["gender"] if isinstance(entry, dict) else entry
-            if expected != a:
+            # A minority of Dutch nouns genuinely take either article — het/de tablet,
+            # het/de parfum. De Opmaat marks these, so the lexicon stores a list and
+            # both readings pass. Not a fudge for uncertainty: a single-gender entry
+            # still fails hard.
+            allowed = expected if isinstance(expected, list) else [expected]
+            if a not in allowed:
                 problems.append(f"{fn.name}:{line}  article: wrote '{art} {noun}', "
-                                f"lexicon says '{expected} {noun}'")
+                                f"lexicon says '{'/'.join(allowed)} {noun}'")
 
 
 def check_splits(fn, text):

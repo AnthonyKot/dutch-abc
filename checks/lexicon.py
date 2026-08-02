@@ -22,6 +22,7 @@ import re
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from corpus import dutch_spans  # noqa: E402
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 LEXICON = ROOT / "data" / "lexicon.json"
@@ -53,12 +54,35 @@ def main():
         seen |= words
         print(f"  {fn.name:<34} {len(new):>5} {len(seen):>6}")
 
-    # Gender coverage: how much of the corpus checks/forms.py can actually check.
+    # Gender coverage.
+    #
+    # This used to report lexicon-hits over ALL distinct Dutch words, which was a
+    # meaningless denominator and actively misleading: most words in a chapter are
+    # verbs, adverbs and function words that a gender register can never cover, so
+    # the figure was pinned near 15% and barely moved when the lexicon went from 50
+    # entries to 1000. The number that means something is how many of the nouns the
+    # chapters ACTUALLY USE WITH AN ARTICLE the checker can vouch for — because that
+    # is exactly the set checks/forms.py is able to fail on.
     if LEXICON.exists():
         nouns = json.loads(LEXICON.read_text(encoding="utf-8")).get("nouns", {})
-        known = len(seen & set(nouns))
-        print(f"\n  lexicon covers {known} of {len(seen)} distinct words "
-              f"({100 * known // max(len(seen), 1)}%) — forms.py can only check these")
+        plurals = {v["plural"].lower() for v in nouns.values()
+                   if isinstance(v, dict) and v.get("plural")}
+        used, unchecked = set(), set()
+        for fn in CHAPTERS:
+            for _, span in dutch_spans(fn.read_text(encoding="utf-8")):
+                for noun in re.findall(r"\b(?:de|het)\s+([a-zà-ÿ]+)\b", span, flags=re.I):
+                    n = noun.lower()
+                    used.add(n)
+                    if n not in nouns and n not in plurals:
+                        unchecked.add(n)
+        checked = len(used) - len(unchecked)
+        print(f"\n  lexicon: {len(nouns)} nouns")
+        print(f"  nouns used with an article in the chapters: {len(used)}; "
+              f"forms.py can check {checked}, cannot check {len(unchecked)}")
+        if unchecked:
+            print(f"    unchecked: {', '.join(sorted(unchecked))}")
+            print("    (the pattern cannot tell article 'het' from pronoun 'het', and it "
+                  "picks up\n     the adjective in 'het ingevulde formulier' — see forms.py)")
 
     print("\n  (advisory: no failures are raised from this script)")
     return 0

@@ -128,7 +128,12 @@ echo "== checks/ =="
 for f in checks/*.py; do
   [ -e "$f" ] || continue
   case "$f" in
-    */lexicon.py) echo "  -- $f (advisory)"; python3 "$f" || true ;;
+    # Advisory means "raises no findings", NOT "cannot fail". It returns 0 by design,
+    # so a non-zero exit is the script itself breaking — which is a real problem and
+    # must not pass. Caught for real: a bad regex unpack crashed this check and the
+    # suite still printed PASS.
+    */lexicon.py) echo "  -- $f (advisory)"
+                  if ! python3 "$f"; then echo "  FAIL: advisory check crashed"; fail=1; fi ;;
     *)            echo "  -- $f"; python3 "$f" || fail=1 ;;
   esac
 done

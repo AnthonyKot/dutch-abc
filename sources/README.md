@@ -64,7 +64,9 @@ pdftoppm -png -r 100 -f <first> -l <last> sources/de-opmaat-a2.pdf /tmp/…/out
 - printed 222–268 — the whole grammar reference
 - printed 263–265 — `8 Er`, all three subsections
 - printed 269–282 — **transcripten luisterteksten**
-- printed 283–289 — **woordenlijst**, gender-marked, grouped by thema
+- printed 283–289 — **woordenlijst**, gender-marked, grouped by thema. **Transcribed 2026-08-02**
+  into `data/lexicon.json` (983 nouns, gender only — the list gives no plurals). Three of its
+  entries are wrong and are corrected there rather than copied; see `_corrections` in that file.
 
 ## Specimens
 
