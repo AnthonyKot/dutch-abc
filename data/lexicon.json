@@ -1173,6 +1173,10 @@
       "gender": "het",
       "plural": "formulieren"
     },
+    "formuliertje": {
+      "gender": "het",
+      "src": "chapter-example"
+    },
     "fornuis": {
       "gender": "het",
       "src": "opmaat"
@@ -1324,6 +1328,10 @@
     "groet": {
       "gender": "de",
       "src": "opmaat"
+    },
+    "grofvuil": {
+      "gender": "het",
+      "src": "chapter-example"
     },
     "grondslag": {
       "gender": "de",

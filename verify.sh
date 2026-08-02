@@ -41,17 +41,40 @@ KNOWN = {"meta","title","link","script","header","div","a","nav","button","main"
          "span","section","ul","ol","li","em","strong","table","thead","tbody","tr","th","td","br",
          "footer","code","hr","sup","sub","abbr","figure","figcaption","blockquote","b","i",
          "details","summary","mark","dl","dt","dd","html"}
+VOID = {"meta", "link", "br", "hr", "img", "input"}
 bad = 0
+# Tag NESTING, not just tag names. The name check alone passed a chapter in which
+# <span class="nl"> was closed by </strong> — the browser recovers, the Dutch was
+# still marked, and nothing failed. Caught by an ad-hoc script run by hand for
+# several chapters running, which is exactly the kind of check that belongs here
+# instead.
 class P(HTMLParser):
+    def __init__(self):
+        super().__init__(); self.stack = []
     def handle_starttag(self, tag, attrs):
         if tag not in KNOWN:
             print(f"  UNKNOWN TAG <{tag}> in {self.fn} line {self.getpos()[0]}")
+            globals().__setitem__("bad", globals()["bad"] + 1)
+        if tag not in VOID:
+            self.stack.append((tag, self.getpos()[0]))
+    def handle_endtag(self, tag):
+        if not self.stack:
+            print(f"  STRAY </{tag}> in {self.fn} line {self.getpos()[0]}")
+            globals().__setitem__("bad", globals()["bad"] + 1); return
+        top, line = self.stack.pop()
+        if top != tag:
+            print(f"  MISNESTED in {self.fn} line {self.getpos()[0]}: "
+                  f"</{tag}> closes <{top}> opened on line {line}")
+            globals().__setitem__("bad", globals()["bad"] + 1)
+    def finish(self):
+        for tag, line in self.stack:
+            print(f"  UNCLOSED <{tag}> in {self.fn} line {line}")
             globals().__setitem__("bad", globals()["bad"] + 1)
 for fn in sorted(glob.glob("docs/*.html") + glob.glob("docs/chapters/*.html")):
     t = open(fn, encoding="utf-8").read()
     if not t.lstrip().lower().startswith("<!doctype html>"):
         print(f"  MISSING DOCTYPE in {fn}"); bad += 1
-    p = P(); p.fn = fn; p.feed(t)
+    p = P(); p.fn = fn; p.feed(t); p.finish()
 sys.exit(1 if bad else 0)
 PY
 
