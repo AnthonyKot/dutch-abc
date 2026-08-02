@@ -726,6 +726,10 @@
       "gender": "de",
       "src": "opmaat"
     },
+    "cbs": {
+      "gender": "het",
+      "src": "chapter-example"
+    },
     "cd-rom": {
       "gender": "de",
       "src": "opmaat"
@@ -3462,6 +3466,11 @@
     "station": {
       "gender": "het",
       "src": "opmaat"
+    },
+    "statistiek": {
+      "gender": "de",
+      "plural": "statistieken",
+      "src": "chapter-example"
     },
     "stem": {
       "gender": "de",
